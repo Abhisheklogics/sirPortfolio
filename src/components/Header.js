@@ -24,18 +24,19 @@ export default function Header() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
       {/* Banner */}
-      <div className="bg-blue-900 text-white text-center py-5 px-4">
-        <h1 className="text-2xl md:text-3xl font-serif font-bold tracking-wide">
-          Dr. Amarjeet Singh Chauhan
-        </h1>
-        <p className="mt-1 text-sm md:text-base italic text-blue-100 max-w-2xl mx-auto">
-          Researcher in Swarm Intelligence, Artificial Intelligence, IoT & Embedded Systems
-        </p>
-        <p className="text-xs md:text-sm text-blue-200 mt-1">
-          IOT Procter, Physics and Computer Science , Dayalbagh Educational Institute Agra UP India
-        </p>
-       
-      </div>
+    {/* Banner */}
+<div className="bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 text-white text-center py-5 px-4">
+  <h1 className="text-2xl md:text-3xl font-serif font-bold tracking-wide">
+    Dr. Amarjeet Singh Chauhan
+  </h1>
+  <p className="mt-1 text-sm md:text-base italic text-blue-200 max-w-2xl mx-auto">
+    Researcher in Swarm Intelligence, Artificial Intelligence, IoT & Embedded Systems
+  </p>
+  <p className="text-xs md:text-sm text-blue-300 mt-1">
+    IOT Procter, Physics and Computer Science , Dayalbagh Educational Institute Agra UP India
+  </p>
+</div>
+
 
       {/* Navigation */}
       <nav className="bg-white">
