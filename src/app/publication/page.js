@@ -24,7 +24,10 @@ export default function Page()
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2  hover:text-blue-500 ">Smart Air : Transforming Air Quality Monitoring with IoT, AI and Drone Technology</h3>
             <p className="flex gap-4"><span className="hover:text-blue-500">Sanjay saini</span> <span className="hover:text-blue-500">Amarjeet Singh Chauhan</span> <span className="hover:text-blue-500">Mohit Yadav</span></p>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
-            The book "Smart Air: Transforming Air Quality Monitoring with IoT, AI, and Drone Technology" explores how cutting-edge innovations in technology have revolutionized the way air quality is monitored. This book examines how big data and cloud computing provide effective processing and storage of enormous amounts of air quality data, while IoT devices...
+           
+  The book &quot;Smart Air: Transforming Air Quality Monitoring with IoT, AI, and Drone Technology&quot; explores how cutting-edge...
+
+
             </p>
             <button className="bg-blue-500 text-white mt-2 p-2 hover:text-black  rounded hover:shadow-md">Veiw</button>
           </div>
