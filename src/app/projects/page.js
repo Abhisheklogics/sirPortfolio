@@ -83,7 +83,7 @@ export default function Page() {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <button className="w-full text-sm bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition">
+                  <button className="w-full text-sm bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-md transition">
                     View Details
                   </button>
                 </a>
