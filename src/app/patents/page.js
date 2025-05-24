@@ -28,7 +28,7 @@ const patentList = [
   },
 ];
 
-export default function PatentsPage() {
+export default function Page() {
   useEffect(() => {
     AOS.init({ duration: 700, once: true });
   }, []);
