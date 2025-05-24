@@ -24,3 +24,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* styles/slick-arrows.css */
+/* Slick slider arrows: bigger, round, visible */
+.slick-prev,
+.slick-next {
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 50%; /* perfect circle */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Larger arrow icons, with brand blue color */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 34px !important;
+  color: #2563EB !important; /* Tailwind blue-600 */
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+/* Slightly lift and brighten on hover */
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #2563EB !important;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: white !important;
+  opacity: 1;
+}
+
+/* Position tweaks */
+.slick-prev {
+  left: 12px !important;
+}
+
+.slick-next {
+  right: 12px !important;
+}
