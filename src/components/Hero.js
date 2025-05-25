@@ -88,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* IMAGE BLOCK - only visible on desktop */}
-        <div data-aos="fade-left" className="hidden  md:mt-[-140px] md:flex justify-center order-2">
+        <div data-aos="fade-left" className="hidden  md:mt-[-200px] md:flex justify-center order-2">
           <div className="relative w-[320px] h-[440px] rounded-2xl overflow-hidden shadow-xl border border-gray-300">
             <Image
               src={photo}

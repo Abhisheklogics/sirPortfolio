@@ -43,6 +43,7 @@ body {
   cursor: pointer;
 }
 
+
 /* Larger arrow icons, with brand blue color */
 .slick-prev:before,
 .slick-next:before {

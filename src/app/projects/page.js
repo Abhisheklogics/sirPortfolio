@@ -9,7 +9,7 @@ const projectList = [
     title: 'Smart Air: A Multi-Modal Framework for Air Quality Monitoring using IoT, AI, and Drones',
     inventors: ['Dr. Sanjay Saini', 'Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav'],
     description:
-      'This research proposes an integrative architecture combining IoT sensors, machine learning algorithms, and drone-based data acquisition to monitor and analyze air quality in real-time, supported by scalable cloud infrastructure.',
+      'An integrative architecture combining IoT sensors, AI models, and drone data acquisition to monitor and analyze air quality in real-time.',
     link: '#',
     aos: 'fade-up',
   },
@@ -17,7 +17,7 @@ const projectList = [
     title: 'High-Speed VTOL UAV for Tactical Aerial Surveillance',
     inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
     description:
-      'This project details a novel design of a vertical take-off and landing (VTOL) drone incorporating high-thrust propulsion mechanisms, optimized for agile movement in complex terrains and urban scenarios.',
+      'A vertical take-off and landing (VTOL) UAV featuring high-thrust propulsion optimized for surveillance in complex terrains.',
     link: '#',
     aos: 'fade-up',
   },
@@ -25,7 +25,7 @@ const projectList = [
     title: 'Patent: Modular VTOL UAV with Enhanced Aerodynamic Efficiency',
     inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
     description:
-      'This intellectual property covers a customizable VTOL drone architecture with reconfigurable flight modules, promoting use in research, industrial inspections, and high-precision mapping tasks.',
+      'Covers a customizable VTOL drone with reconfigurable modules for industrial inspections, mapping, and research.',
     link: '#',
     aos: 'fade-up',
   },
@@ -33,60 +33,68 @@ const projectList = [
 
 export default function Page() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 900, once: true });
   }, []);
 
   return (
-    <section className="min-h-screen py-16   md:mt-[-30px] px-6 md:px-12 bg-gray-100 dark:bg-slate-900">
-      <div className="max-w-6xl mx-auto">
+    <section
+      className="min-h-screen py-16 px-4 md:px-12 bg-gradient-to-br from-blue-50 to-slate-100 dark:from-slate-900 dark:to-gray-800 transition-colors"
+      data-aos="fade-in"
+    >
+      <div className="max-w-5xl mx-auto">
         <h1
-          data-aos="zoom-in"
-          className="text-3xl md:text-5xl font-bold text-center mb-16 text-gray-800 dark:text-white"
+          data-aos="fade-down"
+          data-aos-delay="200"
+          className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-slate-800 dark:text-white tracking-tight"
         >
-          <span className="text-blue-700"> Projects</span> & Patents
+          <span className="text-blue-700">Projects</span> & Patents
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-10">
           {projectList.map((item, index) => (
             <article
               key={index}
               data-aos={item.aos}
-              className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 flex flex-col justify-between border border-gray-200 dark:border-slate-700"
+              data-aos-delay={index * 150}
+              className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
             >
-              <div>
-                <div className="flex items-center gap-3 text-blue-700 mb-3">
-                  <FaFlask className="text-xl" />
-                  <h2 className="text-lg font-semibold dark:text-white text-gray-900 leading-tight">
-                    {item.title}
-                  </h2>
+              <div className="absolute inset-0 z-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500 transition duration-300"></div>
+              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 text-blue-700 mb-4">
+                    <FaFlask className="text-2xl" />
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h2>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.inventors.map((inv, i) => (
+                      <span
+                        key={i}
+                        className="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium dark:bg-blue-900 dark:text-blue-300"
+                      >
+                        {inv}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
 
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-                  <span className="font-medium">Contributors:</span>{' '}
-                  {item.inventors.map((inv, i) => (
-                    <span key={i} className="hover:text-blue-500">
-                      {inv}
-                      {i < item.inventors.length - 1 ? ', ' : ''}
-                    </span>
-                  ))}
-                </p>
-
-                <p className="text-sm text-gray-600 dark:text-gray-400 text-justify leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-
-              <div className="mt-6">
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full"
-                >
-                  <button className="w-full text-sm bg-blue-700 hover:bg-blue-800 text-white px-4 py-3 rounded-md transition duration-200">
-                    View Full Details
-                  </button>
-                </a>
+                <div className="mt-6">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-full shadow-md transition duration-200">
+                      View Full Details
+                    </button>
+                  </a>
+                </div>
               </div>
             </article>
           ))}
