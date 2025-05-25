@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-16 md:mt-[-30px] bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6 md:px-12">
         <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Get in <span className="text-blue-600">Touch</span>

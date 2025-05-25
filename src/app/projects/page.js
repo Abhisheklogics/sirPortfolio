@@ -37,7 +37,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="min-h-screen py-16 px-6 md:px-12 bg-gray-100 dark:bg-slate-900">
+    <section className="min-h-screen py-16   md:mt-[-30px] px-6 md:px-12 bg-gray-100 dark:bg-slate-900">
       <div className="max-w-6xl mx-auto">
         <h1
           data-aos="zoom-in"

@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-br from-white to-blue-50 py-20 md:py-32 md:mt-[-100px] mt-[-40px] md:ml-10 min-h-screen flex items-center">
+    <section className="bg-gradient-to-br from-white to-blue-50 py-20 md:py-32 md:mt-[-100px] mt-[-40px] md:ml-16 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* TEXT BLOCK */}
