@@ -2,33 +2,57 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { FaFlask } from 'react-icons/fa';
+import { FaFlask, FaProjectDiagram } from 'react-icons/fa';
 
-const projectList = [
+const fundedProjects = [
   {
-    title: 'Smart Air: A Multi-Modal Framework for Air Quality Monitoring using IoT, AI, and Drones',
-    inventors: ['Dr. Sanjay Saini', 'Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav'],
+    title: 'Internet of Things',
+    sponsor: 'MHRD Virtual Labs',
+    amount: '₹20 Lakhs',
     description:
-      'An integrative architecture combining IoT sensors, AI models, and drone data acquisition to monitor and analyze air quality in real-time.',
+      'A project sanctioned under MHRD Virtual Labs focusing on IoT development and research.',
     link: '#',
-    aos: 'fade-up',
   },
   {
-    title: 'High-Speed VTOL UAV for Tactical Aerial Surveillance',
-    inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
-    description:
-      'A vertical take-off and landing (VTOL) UAV featuring high-thrust propulsion optimized for surveillance in complex terrains.',
+    title: 'Smart Home Automation Kit',
+    sponsor: 'University Research Grant',
+    amount: '₹2 Lakhs',
+    description: 'Research grant for developing innovative smart home automation solutions.',
     link: '#',
-    aos: 'fade-up',
   },
   {
-    title: 'Patent: Modular VTOL UAV with Enhanced Aerodynamic Efficiency',
-    inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
+    title: 'AI based Agricultural Drone',
+    sponsor: 'University Research Grant',
+    amount: '₹2 Lakhs',
     description:
-      'Covers a customizable VTOL drone with reconfigurable modules for industrial inspections, mapping, and research.',
+      'Project focusing on AI integration with drones for agricultural applications.',
     link: '#',
-    aos: 'fade-up',
   },
+];
+
+const supervisedProjects = [
+  'IoT based Automatic Irrigation System in Agriculture',
+  'Smart Polyhouse using IoT',
+  'Plant disease detection using Image Processing',
+  'Smart Garbage Collection using LORA Technology and IoT',
+  'IoT Lab Automation',
+  'Air Quality Monitoring and Analysis System using IoT',
+  'Mobile Robot',
+  'Smart Attendance System using Fingerprint and Face Recognition',
+  'Smart Health Kit',
+  'Fire Detection Alarm System using IoT',
+  'Soil and Water Quality Monitoring System using IoT',
+  'Baal Jyoti: An E-Learning Android Application for Kids Learning',
+  'Women’s Safety Mobile Application',
+  'Mobile Application for Multi-QR Scanning',
+  'Inventory Management System',
+  'Blog Application using Python',
+  'Quad-copter Drone',
+  'Flower Dropping Drone',
+  'Medicine Delivery Drone',
+  'High Payload Drone using 16 Rotors',
+  '32-Rotor High Payload Drone',
+  'Air-Ambulance up to 45 KG Payload',
 ];
 
 export default function Page() {
@@ -42,62 +66,96 @@ export default function Page() {
       data-aos="fade-in"
     >
       <div className="max-w-5xl mx-auto">
+        {/* Page Header */}
         <h1
           data-aos="fade-down"
           data-aos-delay="200"
           className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-slate-800 dark:text-white tracking-tight"
         >
-          <span className="text-blue-700">Projects</span> & Patents
+          <span className="text-blue-700">Funded Projects</span> &{' '}
+          <span className="text-purple-700">Supervised Projects</span>
         </h1>
 
-        <div className="grid grid-cols-1 gap-10">
-          {projectList.map((item, index) => (
-            <article
-              key={index}
-              data-aos={item.aos}
-              data-aos-delay={index * 150}
-              className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-            >
-              <div className="absolute inset-0 z-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500 transition duration-300"></div>
-              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 text-blue-700 mb-4">
-                    <FaFlask className="text-2xl" />
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                      {item.title}
-                    </h2>
+        {/* Funded Projects */}
+        <div>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay={100}
+            className="text-3xl font-bold text-blue-700 mb-8"
+          >
+            Funded Projects
+          </h2>
+          <div className="grid grid-cols-1 gap-10">
+            {fundedProjects.map((item, index) => (
+              <article
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+                className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 z-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500 transition duration-300"></div>
+                <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 text-blue-700 mb-4">
+                      <FaFlask className="text-2xl" />
+                      <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                        {item.title}
+                      </h2>
+                    </div>
+
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                      <span className="font-semibold">Sanctioned By: </span>
+                      {item.sponsor}
+                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                      <span className="font-semibold">Amount Sanctioned: </span>
+                      {item.amount}
+                    </p>
+
+                    <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.inventors.map((inv, i) => (
-                      <span
-                        key={i}
-                        className="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium dark:bg-blue-900 dark:text-blue-300"
-                      >
-                        {inv}
-                      </span>
-                    ))}
+                  <div className="mt-6">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      <button className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-full shadow-md transition duration-200">
+                        View Full Details
+                      </button>
+                    </a>
                   </div>
-
-                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
 
-                <div className="mt-6">
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-full shadow-md transition duration-200">
-                      View Full Details
-                    </button>
-                  </a>
+        {/* Projects Supervised */}
+        <div className="mt-20">
+          <h2
+            data-aos="fade-up"
+            data-aos-delay={100}
+            className="text-3xl font-bold text-purple-700 mb-8"
+          >
+            Projects Supervised
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {supervisedProjects.map((title, idx) => (
+              <article
+                key={idx}
+                data-aos="fade-up"
+                data-aos-delay={idx * 60}
+                className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-lg p-5 cursor-default transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-3 text-purple-700 mb-3">
+                  <FaProjectDiagram className="text-xl" />
+                  <h3 className="font-semibold text-gray-900 dark:text-white text-base">
+                    {title}
+                  </h3>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
