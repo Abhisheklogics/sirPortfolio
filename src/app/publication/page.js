@@ -213,7 +213,7 @@ export default function Page() {
   );
 
   return (
-    <section className="py-12 bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <section className="py-12 bg-white dark:bg-gray-900 min-h-screen">
       <div className="container mx-auto px-6 md:px-12">
         <h1
           className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"

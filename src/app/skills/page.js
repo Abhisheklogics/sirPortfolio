@@ -141,34 +141,37 @@ const skills = [
           </div>
         </div>
       </section>
-   <section className="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl p-10 mt-10">
+  <section className="max-w-6xl mx-auto bg-white shadow-3xl rounded-3xl p-12 mt-12 border border-gray-100">
   <h2
-    className="text-2xl font-semibold text-gray-700 mb-6 border-b pb-2"
+    className="text-3xl font-extrabold text-gray-800 mb-8 border-b-4 border-yellow-400 pb-3 tracking-wide"
     data-aos="fade-up"
   >
     Teaching Experience
   </h2>
 
   <div
-    className="bg-yellow-50 border border-yellow-100 p-6 rounded-2xl mb-8"
+    className="bg-yellow-50 border-l-8 border-yellow-400 p-8 rounded-3xl mb-12 shadow-sm hover:shadow-lg transition-shadow duration-300"
     data-aos="fade-up"
   >
-    <h3 className="text-xl font-bold text-yellow-800 mb-1">
+    <h3 className="text-2xl font-bold text-yellow-900 mb-2 leading-tight">
       Lecturer, Department of Physics and Computer Science
     </h3>
-    <p className="text-gray-700 mb-1">
+    <p className="text-gray-700 text-lg mb-2 font-medium">
       Faculty of Science, Dayalbagh Educational Institute, Agra
     </p>
-    <p className="text-sm text-gray-600 italic mb-4">
+    <p className="text-sm italic text-yellow-700 font-semibold tracking-wide">
       Duration: From 2019 to Present
     </p>
   </div>
 
-  <h4 className="text-lg font-semibold text-gray-800 mb-4" data-aos="fade-up">
+  <h4
+    className="text-2xl font-semibold text-gray-900 mb-8 tracking-wide"
+    data-aos="fade-up"
+  >
     Courses Taught
   </h4>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {[
       "Programming of IoT Principles",
       "Cognitive Robotics",
@@ -187,15 +190,18 @@ const skills = [
     ].map((course, idx) => (
       <div
         key={idx}
-        className="bg-white border border-gray-200 p-4 rounded-xl shadow hover:shadow-md transition"
+        className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 cursor-default"
         data-aos="fade-up"
-        data-aos-delay={idx * 50}
+        data-aos-delay={idx * 60}
       >
-        <p className="text-sm text-gray-700">{course}</p>
+        <p className="text-gray-800 font-medium leading-relaxed text-sm sm:text-base">
+          {course}
+        </p>
       </div>
     ))}
   </div>
 </section>
+
 
     </main>
   );

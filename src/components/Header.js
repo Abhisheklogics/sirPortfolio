@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from "next/link";
@@ -14,10 +15,10 @@ export default function Header() {
     { href: "/skills", label: "Skills & Expertise" },
     { href: "/projects", label: "Projects" },
     { href: "/publication", label: "Patents & Publications" },
-    { href: "/gallery", label: "Gallery" },
     { href: "/book", label: "Book Chapters" },
     { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
-    { href: "/industrialvisit", label: "Industrial Visit" },
+    { href: "/industrialvisit", label: "Industrial Visits" },
+    { href: "/gallery", label: "Gallery" },
   ];
 
   const NavLink = ({ href, label }) => {
@@ -25,7 +26,7 @@ export default function Header() {
     return (
       <Link
         href={href}
-        className={`relative px-4 py-2 transition-colors duration-300 whitespace-nowrap ${
+        className={`relative px-1 md:px-1 md:ml-1 py-2 transition-colors duration-300 whitespace-nowrap ${
           isActive
             ? "text-blue-800 font-semibold"
             : "text-gray-700 hover:text-blue-700"
@@ -51,6 +52,7 @@ export default function Header() {
         <h1 className="text-2xl md:text-3xl font-serif font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white to-blue-300">
           Dr. Amarjeet Singh Chauhan
         </h1>
+      
         <p className="mt-1 text-sm md:text-base italic text-blue-200">
           Researcher in{" "}
           <span className="font-semibold text-white underline underline-offset-4 decoration-blue-300">
@@ -64,37 +66,26 @@ export default function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white/95 backdrop-blur-sm">
+      <nav className="bg-white/95 backdrop-blur-sm ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
           
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 font-medium">
-            {navLinks.map((link) => (
-              <li key={link.href} className="relative group">
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
+      <ul className="flex space-x-6 font-medium overflow-x-auto hide-scrollbar max-w-full">
+  {navLinks.map((link) => (
+    <li key={link.href} className="relative group min-w-max">
+      <NavLink href={link.href} label={link.label} />
+    </li>
+  ))}
+</ul>
+
+
 
           {/* Mobile Toggle Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-            className="md:hidden text-gray-800 hover:text-blue-700 focus:outline-none"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+         
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden fixed inset-0 bg-white bg-opacity-95 backdrop-blur-sm z-40 flex flex-col items-center py-10 px-6 space-y-4 shadow-lg animate-slideDownFade">
-            {navLinks.map((link) => (
-              <NavLink key={link.href} href={link.href} label={link.label} />
-            ))}
-          </div>
-        )}
+  
       </nav>
 
       {/* Animations */}

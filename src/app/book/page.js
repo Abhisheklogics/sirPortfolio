@@ -20,38 +20,49 @@ const proposedBooks = [
 
 export default function BooksPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-6 md:px-12">
-      <section className="max-w-5xl mx-auto bg-white shadow-xl rounded-lg p-10">
-        
-        <header className="mb-10 flex items-center space-x-4 text-blue-900">
-          <FaBook size={42} />
-          <h1 className="text-4xl font-extrabold font-serif tracking-tight">Publications & Proposed Books</h1>
+    <main className="min-h-screen bg-gradient-to-br from-gray-100 to-white py-16 px-6 md:px-12">
+      <section className="max-w-6xl mt-[-40px] mx-auto bg-white shadow-2xl rounded-3xl p-12 md:p-16 space-y-20 border border-gray-100">
+
+        {/* Header */}
+        <header className="flex items-center gap-6 text-blue-900 select-none">
+          <FaBook size={48} className="text-indigo-700" />
+          <h1 className="text-2xl md:text-4xl font-extrabold font-serif tracking-tight drop-shadow-sm">
+            Publications & Proposed Books
+          </h1>
         </header>
 
-        {/* Book Chapters Section */}
-        <section className="mb-14">
-          <h2 className="flex items-center text-3xl font-semibold mb-6 text-indigo-700">
-            <FaPenFancy className="mr-3" />
+        {/* Book Chapters */}
+        <section>
+          <h2 className="flex items-center text-xl md:text-2xl font-bold mb-8 text-indigo-700 select-none">
+            <FaPenFancy className="mr-4 text-indigo-600" />
             Book Chapters
           </h2>
-          <ol className="list-decimal list-inside space-y-4 text-gray-800 text-lg leading-relaxed">
+          <ol className="list-decimal list-inside space-y-8 text-gray-800 text-xl leading-relaxed pl-5">
             {bookChapters.map((chapter, idx) => (
-              <li key={idx} className="hover:text-indigo-900 transition-colors cursor-default">
+              <li
+                key={idx}
+                className="transition-all duration-300 ease-in-out cursor-default rounded-lg px-4 py-2
+                  hover:text-indigo-900 hover:bg-indigo-50 hover:shadow-lg hover:scale-[1.02]"
+              >
                 {chapter}
               </li>
             ))}
           </ol>
         </section>
 
-        {/* Proposed Books Section */}
+        {/* Proposed Books */}
         <section>
-          <h2 className="flex items-center text-3xl font-semibold mb-6 text-indigo-700">
-            <FaFileAlt className="mr-3" />
+          <h2 className="flex items-center text-xl md:text-2xl font-bold mb-8 text-indigo-700 select-none">
+            <FaFileAlt className="mr-4 text-indigo-600" />
             Proposed Books
           </h2>
-          <ul className="space-y-4 text-gray-700 text-lg">
+          <ul className="space-y-6 text-gray-700 text-xl leading-relaxed">
             {proposedBooks.map((book, idx) => (
-              <li key={idx} className="flex items-start space-x-3 hover:text-indigo-900 transition-colors cursor-default">
+              <li
+                key={idx}
+                className="flex items-start gap-4 cursor-default rounded-lg px-5 py-3 transition-all duration-300 ease-in-out
+                  hover:text-indigo-900 hover:bg-indigo-50 hover:shadow-lg hover:scale-[1.02]"
+              >
                 <FaBook className="mt-1 text-indigo-600 flex-shrink-0" />
                 <p>{book}</p>
               </li>
