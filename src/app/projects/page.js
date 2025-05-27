@@ -62,7 +62,7 @@ export default function Page() {
 
   return (
     <section
-      className="min-h-screen py-16 px-4 md:px-12 bg-gradient-to-br from-blue-50 to-slate-100 dark:from-slate-900 dark:to-gray-800 transition-colors"
+      className="min-h-screen py-16 px-4 md:px-12 bg-white dark:from-slate-900 dark:to-gray-800 transition-colors"
       data-aos="fade-in"
     >
       <div className="max-w-5xl mx-auto">
