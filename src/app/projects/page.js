@@ -70,10 +70,10 @@ export default function Page() {
         <h1
           data-aos="fade-down"
           data-aos-delay="200"
-          className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-slate-800 dark:text-white tracking-tight"
+          className="text-4xl md:text-5xl font-bold text-center mb-16  dark:text-white tracking-tight"
         >
-          <span className="text-blue-700">Funded Projects</span> &{' '}
-          <span className="text-purple-700">Supervised Projects</span>
+          <span className="">Funded Projects</span> &{' '}
+          <span className="">Supervised Projects</span>
         </h1>
 
         {/* Funded Projects */}
@@ -81,7 +81,7 @@ export default function Page() {
           <h2
             data-aos="fade-up"
             data-aos-delay={100}
-            className="text-3xl font-bold text-blue-700 mb-8"
+            className="text-2xl font-semibold  mb-8"
           >
             Funded Projects
           </h2>
@@ -98,7 +98,7 @@ export default function Page() {
                   <div>
                     <div className="flex items-center gap-3 text-blue-700 mb-4">
                       <FaFlask className="text-2xl" />
-                      <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-md md:text-xl font-bold text-gray-900 dark:text-white">
                         {item.title}
                       </h2>
                     </div>
@@ -135,7 +135,7 @@ export default function Page() {
           <h2
             data-aos="fade-up"
             data-aos-delay={100}
-            className="text-3xl font-bold text-purple-700 mb-8"
+            className="text-2xl font-semibold  mb-8"
           >
             Projects Supervised
           </h2>
@@ -143,13 +143,13 @@ export default function Page() {
             {supervisedProjects.map((title, idx) => (
               <article
                 key={idx}
-                data-aos="fade-up"
+                data-aos="fade-left"
                 data-aos-delay={idx * 60}
                 className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-lg p-5 cursor-default transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <div className="flex items-center gap-3 text-purple-700 mb-3">
                   <FaProjectDiagram className="text-xl" />
-                  <h3 className="font-semibold text-gray-900 dark:text-white text-base">
+                  <h3 className="font-semi text-gray-900 dark:text-white text-base">
                     {title}
                   </h3>
                 </div>

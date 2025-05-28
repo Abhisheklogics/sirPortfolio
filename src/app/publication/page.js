@@ -169,7 +169,7 @@ export default function Page() {
       {icon}
       <h3
         id={`entry-title-${idx}`}
-        className="text-xl font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-500 transition-colors"
+        className="text-lg font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-500 transition-colors"
       >
         {item.title}
       </h3>
@@ -219,7 +219,7 @@ export default function Page() {
           className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
           data-aos="fade-down"
         >
-          My <span className="text-blue-600">Patents & Publications</span>
+          My <span className="">Patents & Publications</span>
         </h1>
 
         {/* Patents */}
@@ -231,7 +231,7 @@ export default function Page() {
         </h2>
         <div className="flex flex-col items-center gap-8 mb-14">
           {patents.map((item, idx) =>
-            renderEntry(item, idx, <FaAtom className="text-indigo-500 text-4xl mb-4" />, "View Patent")
+            renderEntry(item, idx, <FaAtom className="text-indigo-500 text-2xl mb-4" />, "View Patent")
           )}
         </div>
 

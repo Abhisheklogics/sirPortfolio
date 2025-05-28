@@ -1,10 +1,10 @@
-
 'use client';
 
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
+import { FaEnvelope, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,17 +26,14 @@ export default function Header() {
     return (
       <Link
         href={href}
-        className={`relative px-1 md:px-1 md:ml-1 py-2 transition-colors duration-300 whitespace-nowrap ${
-          isActive
-            ? "text-blue-800 font-semibold"
-            : "text-gray-700 hover:text-blue-700"
+        className={`relative px-2 py-2 font-medium whitespace-nowrap transition duration-300 ${
+          isActive ? "text-blue-800 font-semibold" : "text-gray-700 hover:text-blue-700"
         }`}
-        aria-current={isActive ? "page" : undefined}
         onClick={() => setIsOpen(false)}
       >
         {label}
         <span
-          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-blue-700 transition-transform duration-300 ${
+          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-blue-700 transform transition-transform duration-300 ${
             isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
           } origin-left`}
         />
@@ -45,47 +42,83 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200">
-      
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md border-b border-gray-200">
       {/* Banner */}
       <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white text-center py-6 px-4 animate-fadeInDown">
-        <h1 className="text-2xl md:text-3xl font-serif font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-white to-blue-300">
-          Dr. Amarjeet Singh Chauhan
-        </h1>
-      
+        <h1 className="text-2xl md:text-3xl font-semibold"> Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+</h1>
         <p className="mt-1 text-sm md:text-base italic text-blue-200">
-          Researcher in{" "}
-          <span className="font-semibold text-white underline underline-offset-4 decoration-blue-300">
-            Swarm Intelligence
-          </span>
-          , AI, IoT & Embedded Systems
+          Lecturer, Department of Physics and Computer Science
         </p>
         <p className="text-xs md:text-sm text-blue-300 mt-1 font-light">
-          IoT Proctor, Physics & Computer Science, DEI, Agra, UP, India
+          Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
         </p>
+
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 md:ml-20 lg:grid-cols-4 place-items-center md:place-items-start text-sm">
+          <div className="flex items-center gap-2">
+            <FaEnvelope className="text-white " />
+            <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
+              amarjeetsinghchauhan96@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center gap-2 md:ml-12">
+            <FaEnvelope className="text-white" />
+            <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
+              amarjeetsinghchauhan@dei.ac.in
+            </a>
+          </div>
+          <div className="flex items-center gap-2 md:ml-24">
+            <FaLinkedin className="text-white" />
+            <Link
+              href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
+              className="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn Profile
+            </Link>
+          </div>
+          <div className="flex items-center gap-2 md:ml-10">
+            <FaPhoneAlt className="text-white" />
+            <a href="tel:+917248132510" className="hover:underline">
+              +91 7248132510
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white/95 backdrop-blur-sm ">
+      <nav className="bg-white/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
-          
-          {/* Desktop Menu */}
-      <ul className="flex space-x-6 font-medium overflow-x-auto hide-scrollbar max-w-full">
-  {navLinks.map((link) => (
-    <li key={link.href} className="relative group min-w-max">
-      <NavLink href={link.href} label={link.label} />
-    </li>
-  ))}
-</ul>
-
-
-
-          {/* Mobile Toggle Button */}
+          {/* Logo or Name */}
          
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex space-x-6 items-center font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href} className="relative group">
+                <NavLink href={link.href} label={link.label} />
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Toggle */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 focus:outline-none">
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
-  
+        {/* Mobile Menu Items */}
+        {isOpen && (
+          <ul className="md:hidden bg-white shadow-md animate-slideDownFade px-4 p-2 pb-4 space-y-2 font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <NavLink href={link.href} label={link.label} />
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
 
       {/* Animations */}
@@ -100,6 +133,7 @@ export default function Header() {
             transform: translateY(0);
           }
         }
+
         .animate-fadeInDown {
           animation: fadeInDown 0.6s ease forwards;
         }
@@ -114,6 +148,7 @@ export default function Header() {
             transform: translateY(0);
           }
         }
+
         .animate-slideDownFade {
           animation: slideDownFade 0.3s ease forwards;
         }

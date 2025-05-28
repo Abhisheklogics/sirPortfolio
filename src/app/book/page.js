@@ -12,7 +12,7 @@ const bookChapters = [
 ];
 
 const proposedBooks = [
-  "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Smart Forestry: Integration of IoT and AI in Ecosystem, Taylor and Francis, 2024 (Under Editing)",
+  "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Smart Forestry: Integration of IoT and AI in Ecosystem, Taylor and Francis, 2024 (Under Editing)”",
   "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Internet of Agriculture Drones”, Springer Nature, 2024 (In Press)",
   "Amarjeet Singh and Sanjay Saini, “Smart Justice: Modern Law with Integration of IoT and Blockchain”, Springer Nature, 2024 (Proposal Submitted)",
   "Mohit Yadav, Sanjay Saini and Amarjeet Singh Chauhan, “Nature’s Algorithms: Harnessing Swarm Intelligence for Complex Computational Paradigms”, Taylor and Francis, 2024 (Under Review)",
@@ -20,29 +20,28 @@ const proposedBooks = [
 
 export default function BooksPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-100 to-white py-16 px-6 md:px-12">
-      <section className="max-w-6xl mt-[-40px] mx-auto bg-white shadow-2xl rounded-3xl p-12 md:p-16 space-y-20 border border-gray-100">
+    <main className="min-h-screen bg-gradient-to-br md:mt-[-40px] from-slate-50 to-white py-16 px-4 sm:px-6 lg:px-12">
+      <section className="max-w-6xl mx-auto bg-white border border-gray-200 shadow-xl rounded-3xl p-6 sm:p-10 md:p-14 space-y-16">
 
         {/* Header */}
-        <header className="flex items-center gap-6 text-blue-900 select-none">
-          <FaBook size={48} className="text-indigo-700" />
-          <h1 className="text-2xl md:text-4xl font-extrabold font-serif tracking-tight drop-shadow-sm">
+        <header className="flex items-center gap-5 select-none">
+          <FaBook size={40} className="text-indigo-700" />
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
             Publications & Proposed Books
           </h1>
         </header>
 
         {/* Book Chapters */}
         <section>
-          <h2 className="flex items-center text-xl md:text-2xl font-bold mb-8 text-indigo-700 select-none">
-            <FaPenFancy className="mr-4 text-indigo-600" />
+          <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-6 select-none">
+            <FaPenFancy className="mr-3 text-indigo-600" />
             Book Chapters
           </h2>
-          <ol className="list-decimal list-inside space-y-8 text-gray-800 text-xl leading-relaxed pl-5">
+          <ol className="list-decimal space-y-6 text-gray-900 text-[1.05rem] sm:text-lg leading-relaxed sm:pl-5">
             {bookChapters.map((chapter, idx) => (
               <li
                 key={idx}
-                className="transition-all duration-300 ease-in-out cursor-default rounded-lg px-4 py-2
-                  hover:text-indigo-900 hover:bg-indigo-50 hover:shadow-lg hover:scale-[1.02]"
+                className="bg-gray-50 rounded-xl px-4 py-3 hover:bg-indigo-50 hover:shadow transition-all duration-300 ease-in-out"
               >
                 {chapter}
               </li>
@@ -52,16 +51,15 @@ export default function BooksPage() {
 
         {/* Proposed Books */}
         <section>
-          <h2 className="flex items-center text-xl md:text-2xl font-bold mb-8 text-indigo-700 select-none">
-            <FaFileAlt className="mr-4 text-indigo-600" />
+          <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-6 select-none">
+            <FaFileAlt className="mr-3 text-indigo-600" />
             Proposed Books
           </h2>
-          <ul className="space-y-6 text-gray-700 text-xl leading-relaxed">
+          <ul className="space-y-5 text-gray-900 text-[1.05rem] sm:text-lg leading-relaxed">
             {proposedBooks.map((book, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-4 cursor-default rounded-lg px-5 py-3 transition-all duration-300 ease-in-out
-                  hover:text-indigo-900 hover:bg-indigo-50 hover:shadow-lg hover:scale-[1.02]"
+                className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 hover:bg-indigo-50 hover:shadow transition-all duration-300 ease-in-out"
               >
                 <FaBook className="mt-1 text-indigo-600 flex-shrink-0" />
                 <p>{book}</p>

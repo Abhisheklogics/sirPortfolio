@@ -9,8 +9,6 @@ import Link from 'next/link';
 import Footer from './Footer';
 import {
   FaEnvelope,
-  FaLinkedin,
-  FaPhoneAlt,
   FaBookOpen,
   FaBrain,
   FaRobot,
@@ -27,21 +25,20 @@ export default function Hero() {
 
   return (
     <>
-      <section className="bg-white md:mt-[-80px] py-16 md:py-24 md:ml-10  min-h-screen flex items-center overflow-hidden">
+      <section className="bg-white md:mt-[-60px] py-16 mt-[-20px] md:py-24 md:ml-10  min-h-screen flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* Image for Mobile First */}
         
-
-          {/* Text Content */}
+<h1 className="text-2xl md:text-3xl font-semibold"> Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+</h1>
           <div data-aos="fade-right">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight text-center md:text-left">
-              Dr. Amarjeet Singh Chauhan
-            </h1>
+            
   <div
             data-aos="fade-up"
             className="md:hidden flex justify-center"
           >
+            
             <div className="relative w-72 h-80 rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white/50 backdrop-blur-md">
               <Image
                 src={photo}
@@ -52,12 +49,10 @@ export default function Hero() {
               />
             </div>
           </div>
-            <p className="text-xl mt-4 md:text-2xl text-blue-800 font-semibold mb-4 text-center md:text-left">
-              Ph.D. (CS) | M.Tech (CS) | Lecturer – Dept. of Physics & CS, DEI Agra
-            </p>
+           
 
             {/* Bio */}
-            <div className="text-gray-700 text-justify space-y-4 text-base sm:text-lg leading-relaxed mb-6">
+            <div className="text-gray-700 mt-4 text-justify space-y-4 text-base sm:text-lg leading-relaxed mb-6">
               <p>
                I am a dedicated academician and researcher with a Ph.D. in Computer Science, specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization, and over five years of teaching experience at both undergraduate and postgraduate levels.
 </p>
@@ -115,10 +110,10 @@ export default function Hero() {
 
           {/* Image for Desktop */}
           <div
-            data-aos="fade-top"
+            data-aos="fade-right"
             className="hidden md:flex justify-center"
           >
-            <div className="relative w-80 h-[440px] md:mt-[-780px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/50 backdrop-blur-md">
+            <div className="relative w-80 h-[440px] md:mt-[-720px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/50 backdrop-blur-md">
               <Image
                 src={photo}
                 alt="Dr. Amarjeet Singh Chauhan"
@@ -128,40 +123,6 @@ export default function Hero() {
               />
             </div>
           </div>
- <div className="space-y-4 max-w-md mx-auto md:mx-0">
-        <div className="flex items-center gap-3 justify-center md:justify-start">
-          <FaEnvelope className="text-xl text-blue-700" />
-          <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
-            amarjeetsinghchauhan96@gmail.com
-          </a>
-        </div>
-
-        <div className="flex items-center gap-3 justify-center md:justify-start">
-          <FaEnvelope className="text-xl text-blue-700" />
-          <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
-            amarjeetsinghchauhan@dei.ac.in
-          </a>
-        </div>
-
-        <div className="flex items-center gap-3 justify-center md:justify-start">
-          <FaLinkedin className="text-xl text-blue-700" />
-          <Link
-            href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
-            className="hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn Profile
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-3 justify-center md:justify-start">
-          <FaPhoneAlt className="text-xl text-blue-700" />
-          <a href="tel:+917248132510" className="hover:underline">
-            +91 7248132510
-          </a>
-        </div>
-        </div>
         </div>
       </section>
     </>

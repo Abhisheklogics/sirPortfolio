@@ -3,7 +3,7 @@
 import {
   FaGraduationCap,
   FaAward,
-  FaMicrophone,
+ 
   FaStar,
 } from 'react-icons/fa';
 
@@ -27,16 +27,16 @@ const recognitions = [
 
 export default function ScholarshipsRecognitions() {
   return (
-    <section className="bg-white py-16 px-6 sm:px-10 md:px-20 rounded-xl shadow-2xl max-w-6xl mx-auto my-10">
+    <section className="bg-white py-16 px-6 sm:px-10 md:px-20 md:mt-2 rounded-xl shadow-2xl max-w-6xl mx-auto my-10">
       {/* Scholarships */}
       <div className="mb-16">
         <div className="flex items-center mb-6 space-x-4">
           <FaGraduationCap className="text-blue-600 text-3xl" />
-          <h2 className="text-3xl font-extrabold text-blue-900 font-serif tracking-wide">
+          <h2 className="text-3xl font-bold   tracking-wide">
             Scholarships & Fellowships
           </h2>
         </div>
-        <ul className="space-y-4 pl-5 list-disc text-gray-800 text-lg leading-relaxed">
+        <ul className="space-y-4 pl-5 list-disc text-gray-700 text-base leading-relaxed ">
           {scholarships.map((item, index) => (
             <li
               key={index}
@@ -52,7 +52,7 @@ export default function ScholarshipsRecognitions() {
       <div>
         <div className="flex items-center mb-6 space-x-3">
           <FaAward className="text-yellow-600 text-2xl" />
-          <h3 className="text-2xl font-semibold text-blue-900 font-serif tracking-wide">
+          <h3 className="text-3xl font-bold   tracking-wide">
             Professional Recognitions
           </h3>
         </div>
