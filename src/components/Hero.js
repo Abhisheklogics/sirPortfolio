@@ -52,37 +52,28 @@ export default function Hero() {
             {/* Bio */}
             <div className="text-gray-700 text-justify space-y-5 text-base sm:text-lg leading-relaxed max-w-3xl">
               <p>
-                I am a dedicated academician and researcher with a Ph.D. in Computer Science,
-                specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization,
-                and over five years of teaching experience at both undergraduate and postgraduate levels.
+               I am a dedicated academician and researcher with a Ph.D. in Computer Science, specializing in Resource Allocation in IoT Cloud Environments\
+                using Swarm Optimization, and over five years of teaching experience at both undergraduate and postgraduate levels.
+
               </p>
               <p>
-                As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT),
-                Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing.
-                I have authored multiple publications in reputed conferences, journals, and book chapters
-                with international publishers such as Springer, Wiley, and CRC Press. I have also filed
-                and been granted over 10 national and international patents, particularly in drone technology
-                and IoT-based smart systems, and have received several project grants under MHRD and university funding schemes.
-                I actively contribute to academia and industry-focused innovation by serving as a reviewer,
-                editor, keynote speaker, and mentor.
+                As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT), 
+                Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing. I have authored multiple publications in reputed conferences, journals, and book chapters with international publishers such as Springer, Wiley, and CRC Press. I have also filed and been granted over 10 national and international patents, particularly in drone technology and IoT-based smart systems, and have received several project grants under MHRD and university funding schemes. I actively contribute to academia and industry-focused innovation by serving as a reviewer, editor, keynote speaker, and mentor.
+
               </p>
               <p>
-                As a faculty member at DEI, I have independently taught a wide range of core and advanced subjects,
-                including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing,
-                and Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java),
-                web and mobile development, and hardware integration for IoT and drone-based systems.
+                As a faculty member at DEI, I have independently taught a wide range of core and advanced subjects, 
+                including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing, and 
+                Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java), web and mobile development, and hardware integration for IoT and drone-based systems.
+
               </p>
               <p>
-                Beyond my academic and research endeavors, I have successfully led and supervised student innovations
-                and projects in areas such as air quality monitoring, precision farming, mobile robotics,
-                and drone-assisted services. My skill set also includes technical writing, drone piloting,
-                embedded systems, full-stack web development, and mobile app development—areas I continuously
-                explore to stay aligned with emerging technological trends.
+                Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
+
               </p>
               <p>
-                This portfolio serves as a comprehensive reflection of my journey through research, teaching,
-                technological innovation, and academic contributions. It highlights not only my scholarly achievements
-                but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
+                This portfolio serves as a comprehensive reflection of my journey through research, teaching, technological innovation, and academic contributions. It highlights not only my scholarly achievements but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
+
               </p>
             </div>
 
@@ -129,7 +120,7 @@ export default function Hero() {
            
             className="hidden md:flex justify-center"
           >
-            <div className="relative w-80 h-[480px] md:mt-[-810px] rounded-3xl overflow-hidden shadow-2xl border border-gray-300 bg-white/60 backdrop-blur-lg hover:shadow-3xl transition-shadow duration-500">
+            <div className="relative w-80 h-[480px] md:mt-[-770px] rounded-3xl overflow-hidden shadow-2xl border border-gray-300 bg-white/60 backdrop-blur-lg hover:shadow-3xl transition-shadow duration-500">
               <Image
                data-aos="fade-left"
                 src={photo}
