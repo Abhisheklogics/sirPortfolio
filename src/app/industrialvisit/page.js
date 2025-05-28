@@ -24,9 +24,9 @@ export default function IndustrialVisits() {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto mt-12 px-6 md:px-12 py-14 bg-white rounded-3xl shadow-2xl border border-blue-100">
+    <section className="max-w-6xl mx-auto mt-10 px-6 md:px-12 py-14 bg-white rounded-3xl shadow-2xl border border-blue-100">
       {/* Header */}
-      <div className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-6" data-aos="fade-down">
+      <div className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-6  md:mt-2 mt-[-20px] " data-aos="fade-down">
         <FaUniversity className="text-blue-700 text-3xl shrink-0" />
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
           Industrial Visits & Expos
@@ -34,7 +34,7 @@ export default function IndustrialVisits() {
       </div>
 
       {/* Grid Items */}
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ul className=" mt-[-40px] md:mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {visits.map(({ place, location, year }, index) => (
           <li
             key={index}

@@ -29,12 +29,12 @@ export default function ScholarshipsRecognitions() {
   }, []);
 
   return (
-    <section className=" bg-white py-16 px-4 sm:px-6 lg:px-12 rounded-3xl shadow-2xl max-w-6xl mx-auto my-12">
+    <section className="  bg-white py-16 px-4 sm:px-6 lg:px-12 rounded-3xl shadow-2xl max-w-6xl mx-auto my-12">
       <div className="space-y-20">
 
         {/* Scholarships Section */}
         <div data-aos="fade-up">
-          <div className="  md:mt-[-20px] flex items-center gap-4 mb-6">
+          <div className="   mt-[-70px] md:mt-[-20px] flex items-center gap-4 mb-6">
             <FaGraduationCap className="text-blue-700 text-4xl" />
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
               Scholarships & Fellowships
