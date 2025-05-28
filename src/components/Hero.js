@@ -120,7 +120,7 @@ export default function Hero() {
            
             className="hidden md:flex justify-center"
           >
-            <div className="relative w-80 h-[480px] md:mt-[-750px] rounded-3xl overflow-hidden shadow-2xl border border-gray-300 bg-white/60 backdrop-blur-lg hover:shadow-3xl transition-shadow duration-500">
+            <div className="relative w-80 h-[480px] md:mt-[-730px] rounded-3xl overflow-hidden shadow-2xl border border-gray-300 bg-white/60 backdrop-blur-lg hover:shadow-3xl transition-shadow duration-500">
               <Image
                data-aos="fade-left"
                 src={photo}
