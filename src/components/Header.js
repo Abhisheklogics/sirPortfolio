@@ -26,7 +26,7 @@ export default function Header() {
     return (
       <Link
         href={href}
-        className={`relative px-2 py-2 font-medium whitespace-nowrap transition duration-300 ${
+        className={`relative px-2 py-1 font-medium whitespace-nowrap transition duration-300 ${
           isActive ? "text-blue-800 font-semibold" : "text-gray-700 hover:text-blue-700"
         }`}
         onClick={() => setIsOpen(false)}
@@ -42,56 +42,60 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md border-b border-gray-200">
+    <header className="sticky  top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white text-center py-6 px-4 animate-fadeInDown">
-        <h1 className="text-2xl md:text-3xl font-semibold"> Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
-</h1>
-        <p className="mt-1 text-sm md:text-base italic text-blue-200">
-          Lecturer, Department of Physics and Computer Science
-        </p>
-        <p className="text-xs md:text-sm text-blue-300 mt-1 font-light">
-          Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
-        </p>
-
-        <div className="mt-4 grid gap-2 sm:grid-cols-2 md:ml-20 lg:grid-cols-4 place-items-center md:place-items-start text-sm">
-          <div className="flex items-center gap-2">
-            <FaEnvelope className="text-white " />
-            <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
-              amarjeetsinghchauhan96@gmail.com
-            </a>
-          </div>
-          <div className="flex items-center gap-2 md:ml-12">
-            <FaEnvelope className="text-white" />
-            <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
-              amarjeetsinghchauhan@dei.ac.in
-            </a>
-          </div>
-          <div className="flex items-center gap-2 md:ml-24">
-            <FaLinkedin className="text-white" />
-            <Link
-              href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
-              className="hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn Profile
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 md:ml-10">
-            <FaPhoneAlt className="text-white" />
-            <a href="tel:+917248132510" className="hover:underline">
-              +91 7248132510
-            </a>
+      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white px-4 py-4 animate-fadeInDown">
+        <div className="max-w-7xl mx-auto ">
+          <h1 className="text-xl md:text-2xl font-semibold text-center">
+            Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+          </h1>
+          <p className="text-sm md:text-base italic text-blue-200 text-center">
+            Lecturer, Department of Physics and Computer Science
+          </p>
+          <p className="text-xs md:text-sm text-blue-300 mt-1 font-light text-center ">
+            Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
+          </p>
+ </div>
+          {/* Contact Info */}
+          <div className="flex flex-wrap gap-4 justify-center  items-center mt-4 text-sm">
+            <div className="flex items-center gap-2">
+              <FaEnvelope className="text-white" />
+              <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
+                amarjeetsinghchauhan96@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaEnvelope className="text-white" />
+              <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
+                amarjeetsinghchauhan@dei.ac.in
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaLinkedin className="text-white" />
+              <Link
+                href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
+                className="hover:underline"
+                target="_blank"
+              >
+                LinkedIn
+              </Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-white" />
+              <a href="tel:+917248132510" className="hover:underline">
+                +91 7248132510
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+     
 
       {/* Navigation */}
       <nav className="bg-white/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
-          {/* Logo or Name */}
-         
+          {/* Name/Logo (optional) */}
+          
+
           {/* Desktop Nav */}
           <ul className="hidden md:flex space-x-6 items-center font-medium">
             {navLinks.map((link) => (
@@ -109,7 +113,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu Items */}
+        {/* Mobile Menu */}
         {isOpen && (
           <ul className="md:hidden bg-white shadow-md animate-slideDownFade px-4 p-2 pb-4 space-y-2 font-medium">
             {navLinks.map((link) => (

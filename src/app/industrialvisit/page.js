@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { MdLocationOn } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
 
@@ -18,37 +19,36 @@ const visits = [
 ];
 
 export default function IndustrialVisits() {
- useEffect(() => {
-  AOS.init({
-    duration: 700,
-    once: true,
-  });
-}, []);
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
 
   return (
-    <section className="max-w-5xl mx-auto mt-8 px-4 md:px-8 py-10 bg-white rounded-3xl shadow-lg border border-blue-100">
-      <header className="flex items-center gap-4 mb-10" data-aos="fade-down">
+    <section className="max-w-6xl mx-auto mt-12 px-6 md:px-12 py-14 bg-white rounded-3xl shadow-2xl border border-blue-100">
+      {/* Header */}
+      <div className="flex items-center gap-4 mb-12 border-b border-gray-200 pb-6" data-aos="fade-down">
         <FaUniversity className="text-blue-700 text-3xl shrink-0" />
-        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 tracking-wide">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
           Industrial Visits & Expos
         </h2>
-      </header>
+      </div>
 
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid Items */}
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {visits.map(({ place, location, year }, index) => (
           <li
             key={index}
             data-aos="fade-up"
             data-aos-delay={index * 100}
-            className="flex items-start gap-3 p-5 rounded-xl bg-white shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200"
-            aria-label={`${place} visited in year ${year} at ${location}`}
+            className="group flex items-start gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow border border-gray-100 hover:border-blue-300"
           >
-            <MdLocationOn className="text-blue-600 text-2xl mt-1 shrink-0" />
+            <MdLocationOn className="text-blue-600 text-2xl mt-1 shrink-0 transition-transform group-hover:scale-110" />
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 leading-snug hover:text-blue-800">
-                {place} <span className="text-sm text-gray-500 font-normal">({year})</span>
+              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-800 transition-colors">
+                {place}{' '}
+                <span className="text-sm text-gray-500 font-normal">({year})</span>
               </h3>
-              <p className="text-sm text-gray-600">{location}</p>
+              <p className="text-sm text-gray-600 mt-1">{location}</p>
             </div>
           </li>
         ))}

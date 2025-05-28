@@ -61,16 +61,13 @@ export default function Page() {
   }, []);
 
   return (
-    <section
-      className="min-h-screen py-16 px-4 md:px-12 bg-white dark:from-slate-900 dark:to-gray-800 transition-colors"
-      data-aos="fade-in"
-    >
-      <div className="max-w-5xl mx-auto">
+  <section className="min-h-screen py-20 px-6 md:px-16 bg-gradient-to-br from-white to-gray-50 dark:from-slate-900 dark:to-gray-950 transition-colors">
+      <div className="max-w-6xl mx-auto">
+
         {/* Page Header */}
         <h1
           data-aos="fade-down"
-          data-aos-delay="200"
-          className="text-4xl md:text-5xl font-bold text-center mb-16  dark:text-white tracking-tight"
+          className="text-3xl sm:text-4xl md:mt-[-40px] text-center font-bold text-gray-900 tracking-wide"
         >
           <span className="">Funded Projects</span> &{' '}
           <span className="">Supervised Projects</span>
@@ -80,36 +77,32 @@ export default function Page() {
         <div>
           <h2
             data-aos="fade-up"
-            data-aos-delay={100}
-            className="text-2xl font-semibold  mb-8"
+            className="text-2xl md:text-3xl font-semibold mt-10 text-gray-800 dark:text-gray-100 mb-10"
           >
-            Funded Projects
+             Funded Projects
           </h2>
-          <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {fundedProjects.map((item, index) => (
               <article
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 150}
-                className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                className="relative bg-white/70 dark:bg-slate-800/80 border border-gray-300 dark:border-gray-700 rounded-3xl backdrop-blur-md shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
-                <div className="absolute inset-0 z-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500 transition duration-300"></div>
-                <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between">
+                <div className="relative z-10 p-6 md:p-8 flex flex-col h-full justify-between">
                   <div>
-                    <div className="flex items-center gap-3 text-blue-700 mb-4">
+                    <div className="flex items-center gap-3 text-blue-700 dark:text-blue-400 mb-4">
                       <FaFlask className="text-2xl" />
-                      <h2 className="text-md md:text-xl font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white tracking-wide">
                         {item.title}
                       </h2>
                     </div>
 
-                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                      <span className="font-semibold">Sanctioned By: </span>
-                      {item.sponsor}
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-1">
+                      <span className="font-semibold">Sanctioned By:</span> {item.sponsor}
                     </p>
                     <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-                      <span className="font-semibold">Amount Sanctioned: </span>
-                      {item.amount}
+                      <span className="font-semibold">Amount:</span> {item.amount}
                     </p>
 
                     <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
@@ -119,7 +112,7 @@ export default function Page() {
 
                   <div className="mt-6">
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="relative inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-700 hover:bg-blue-800 rounded-full shadow-md transition duration-200">
+                      <button className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-full shadow-md transition duration-200">
                         View Full Details
                       </button>
                     </a>
@@ -131,13 +124,12 @@ export default function Page() {
         </div>
 
         {/* Projects Supervised */}
-        <div className="mt-20">
+        <div className="mt-24">
           <h2
             data-aos="fade-up"
-            data-aos-delay={100}
-            className="text-2xl font-semibold  mb-8"
+            className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-100 mb-10"
           >
-            Projects Supervised
+             Projects Supervised
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {supervisedProjects.map((title, idx) => (
@@ -145,11 +137,11 @@ export default function Page() {
                 key={idx}
                 data-aos="fade-left"
                 data-aos-delay={idx * 60}
-                className="relative group bg-white/80 dark:bg-slate-800/70 border border-gray-200 dark:border-gray-700 rounded-2xl backdrop-blur-lg shadow-lg p-5 cursor-default transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                className="bg-white/70 dark:bg-slate-800/80 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 backdrop-blur-md"
               >
-                <div className="flex items-center gap-3 text-purple-700 mb-3">
+                <div className="flex items-center gap-3 text-purple-700 dark:text-purple-400 mb-2">
                   <FaProjectDiagram className="text-xl" />
-                  <h3 className="font-semi text-gray-900 dark:text-white text-base">
+                  <h3 className="text-sm md:text-base font-medium text-gray-900 dark:text-white tracking-tight">
                     {title}
                   </h3>
                 </div>
@@ -158,6 +150,5 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>  );
 }

@@ -1,6 +1,9 @@
 'use client';
 
 import { FaBook, FaPenFancy, FaFileAlt } from 'react-icons/fa';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const bookChapters = [
   "Mohit Yadav, Amarjeet Singh and Sanjay Saini, “Drone Swarms: Tactical Advancements with AI”, Medical and Surgical Drone & Artificial Intelligence: The New Face of Warfare, Wiley, 2024 (In Press).",
@@ -19,29 +22,35 @@ const proposedBooks = [
 ];
 
 export default function BooksPage() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gradient-to-br md:mt-[-40px] from-slate-50 to-white py-16 px-4 sm:px-6 lg:px-12">
-      <section className="max-w-6xl mx-auto bg-white border border-gray-200 shadow-xl rounded-3xl p-6 sm:p-10 md:p-14 space-y-16">
+    <main className=" md:mt-[-20px] min-h-screen bg-gradient-to-br from-[#f8fafc] to-white py-16 px-4 sm:px-6 lg:px-12">
+      <section className="max-w-6xl mx-auto bg-white border border-gray-200 shadow-2xl rounded-3xl p-6 sm:p-10 md:p-14 space-y-20">
 
         {/* Header */}
-        <header className="flex items-center gap-5 select-none">
-          <FaBook size={40} className="text-indigo-700" />
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+        <header className="flex items-center gap-5   select-none" data-aos="fade-up">
+          <FaBook size={42} className="text-indigo-700 drop-shadow-md" />
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
             Publications & Proposed Books
           </h1>
         </header>
 
+        <hr className="border-t border-gray-200 mt-[-50px]" />
+
         {/* Book Chapters */}
-        <section>
-          <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-6 select-none">
-            <FaPenFancy className="mr-3 text-indigo-600" />
+        <section data-aos="fade-up  ">
+          <h2 className=" mt-[-50px] flex items-center text-2xl font-semibold text-indigo-800 mb-6">
+            <FaPenFancy className=" mr-3 text-indigo-600" />
             Book Chapters
           </h2>
-          <ol className="list-decimal space-y-6 text-gray-900 text-[1.05rem] sm:text-lg leading-relaxed sm:pl-5">
+          <ol className=" list-decimal space-y-6 text-gray-800 text-[1.07rem] sm:text-lg leading-relaxed sm:pl-5">
             {bookChapters.map((chapter, idx) => (
               <li
                 key={idx}
-                className="bg-gray-50 rounded-xl px-4 py-3 hover:bg-indigo-50 hover:shadow transition-all duration-300 ease-in-out"
+                className="bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:bg-indigo-50"
               >
                 {chapter}
               </li>
@@ -49,17 +58,19 @@ export default function BooksPage() {
           </ol>
         </section>
 
+        <hr className="border-t border-gray-200" />
+
         {/* Proposed Books */}
-        <section>
-          <h2 className="flex items-center text-2xl font-semibold text-gray-800 mb-6 select-none">
+        <section data-aos="fade-up">
+          <h2 className="flex items-center text-2xl font-semibold text-indigo-800 mb-6">
             <FaFileAlt className="mr-3 text-indigo-600" />
             Proposed Books
           </h2>
-          <ul className="space-y-5 text-gray-900 text-[1.05rem] sm:text-lg leading-relaxed">
+          <ul className="space-y-5 text-gray-800 text-[1.07rem] sm:text-lg leading-relaxed">
             {proposedBooks.map((book, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 hover:bg-indigo-50 hover:shadow transition-all duration-300 ease-in-out"
+                className="flex items-start gap-3 bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:bg-indigo-50"
               >
                 <FaBook className="mt-1 text-indigo-600 flex-shrink-0" />
                 <p>{book}</p>

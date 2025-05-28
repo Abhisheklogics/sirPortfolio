@@ -156,98 +156,94 @@ export default function Page() {
       animation: "fade-right",
     },
   ];
+const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
+  <article
+    key={`${isPatent ? 'patent' : 'pub'}-${idx}`}
+    data-aos={item.animation}
+    className="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full max-w-4xl p-8 cursor-pointer hover:scale-[1.02]"
+    tabIndex={0}
+    role="region"
+    aria-labelledby={`entry-title-${isPatent ? 'patent' : 'pub'}-${idx}`}
+  >
+    <div className="flex items-start gap-4 mb-4">
+      <div className="text-4xl text-blue-600 dark:text-blue-400">{icon}</div>
+      <div>
+        <h3
+          id={`entry-title-${isPatent ? 'patent' : 'pub'}-${idx}`}
+          className="md:text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition"
+        >
+          {item.title}
+        </h3>
 
-  const renderEntry = (item, idx, icon, btnLabel) => (
-    <article
-      key={idx}
-      data-aos={item.animation}
-      className="bg-white dark:bg-gray-700 rounded-xl shadow-md w-full max-w-3xl p-6 hover:shadow-xl transition-transform hover:scale-[1.03] cursor-pointer"
-      tabIndex={0}
-      role="region"
-      aria-labelledby={`entry-title-${idx}`}
+        {item.designNumber && (
+          <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+            <strong>{item.type}:</strong> {item.designNumber} ({item.country})
+          </p>
+        )}
+
+        {item.applicationNumber && (
+          <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+            <strong>{item.type}:</strong> {item.applicationNumber} ({item.country}) — <em>{item.status}</em>
+          </p>
+        )}
+      </div>
+    </div>
+
+    {item.authors && (
+      <p className="flex flex-wrap gap-2 mb-4 text-sm text-blue-500 dark:text-blue-400 font-medium">
+        {item.authors.map((author, i) => (
+          <span key={i} className="hover:underline transition">{author}</span>
+        ))}
+      </p>
+    )}
+
+    {item.description && (
+      <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-6">
+        {item.description}
+      </p>
+    )}
+
+    <button
+      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-sm hover:shadow-md"
+      onClick={() => alert(`Viewing: ${item.title}`)}
+      aria-label={`${btnLabel} for ${item.title}`}
     >
-      {icon}
-      <h3
-        id={`entry-title-${idx}`}
-        className="text-lg font-semibold text-gray-800 dark:text-white mb-2 hover:text-blue-500 transition-colors"
-      >
-        {item.title}
-      </h3>
-      {/* For patents, show either designNumber or applicationNumber + status */}
-      {item.designNumber && (
-        <p className="text-gray-600 dark:text-gray-300 mb-1 text-sm">
-          <strong>{item.type}:</strong> {item.designNumber} ({item.country})
-        </p>
-      )}
-      {item.applicationNumber && (
-        <p className="text-gray-600 dark:text-gray-300 mb-1 text-sm">
-          <strong>{item.type}:</strong> {item.applicationNumber} ({item.country}) - <em>{item.status}</em>
-        </p>
-      )}
-      {/* For publications, show authors */}
-      {item.authors && (
-        <p className="flex flex-wrap gap-3 mb-3 text-blue-600 text-sm">
-          {item.authors.map((author, i) => (
-            <span
-              key={i}
-              className="hover:text-blue-400 cursor-pointer transition-colors"
-            >
-              {author}
-            </span>
-          ))}
-        </p>
-      )}
-      {item.description && (
-        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-          {item.description}
-        </p>
-      )}
-      <button
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-        onClick={() => alert(`Viewing: ${item.title}`)}
-        aria-label={`${btnLabel} for ${item.title}`}
-      >
-        {btnLabel}
-      </button>
-    </article>
-  );
+      {btnLabel}
+    </button>
+  </article>
+);
+
 
   return (
-    <section className="py-12 bg-white dark:bg-gray-900 min-h-screen">
-      <div className="container mx-auto px-6 md:px-12">
-        <h1
-          className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
-          data-aos="fade-down"
-        >
-          My <span className="">Patents & Publications</span>
-        </h1>
+    <section className="py-20 mt-[-40px] bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
+  <div className="container mx-auto px-6 md:px-12">
+    <h1
+      className=" text-2xl sm:text-4xl font-bold text-gray-900 tracking-wide text-center "
+      data-aos="fade-down"
+    >
+      My <span className="">Patents & Publications</span>
+    </h1>
 
-        {/* Patents */}
-        <h2
-          className="text-2xl font-semibold text-gray-800 dark:text-white mb-6"
-          data-aos="zoom-in"
-        >
-          🧪 Patents
-        </h2>
-        <div className="flex flex-col items-center gap-8 mb-14">
-          {patents.map((item, idx) =>
-            renderEntry(item, idx, <FaAtom className="text-indigo-500 text-2xl mb-4" />, "View Patent")
-          )}
-        </div>
+    {/* Patents Section */}
+    <h2 className="text-lg  md:text-2xl mt-10 font-bold text-gray-800 dark:text-white mb-8" data-aos="zoom-in">
+      🧪 Patents
+    </h2>
+    <div className="flex flex-col items-center gap-10 mb-20">
+      {patents.map((item, idx) =>
+        renderEntry(item, idx, <FaAtom />, "View Patent", true)
+      )}
+    </div>
 
-        {/* Publications */}
-        <h2
-          className="text-2xl font-semibold text-gray-800 dark:text-white mb-6"
-          data-aos="zoom-in"
-        >
-          📘 Research Publications
-        </h2>
-        <div className="flex flex-col items-center gap-8">
-          {publications.map((item, idx) =>
-            renderEntry(item, idx, <FaBook className="text-green-600 text-3xl mb-4" />, "Read Publication")
-          )}
-        </div>
-      </div>
-    </section>
-  );
+    {/* Publications Section */}
+    <h2 className="md:text-2xl text-lg font-bold text-gray-800 dark:text-white mb-8" data-aos="zoom-in">
+      📘 Publications
+    </h2>
+    <div className="flex flex-col items-center gap-10">
+      {publications.map((item, idx) =>
+        renderEntry(item, idx, <FaBook />, "View Publication", false)
+      )}
+    </div>
+  </div>
+</section>
+ );
 }
