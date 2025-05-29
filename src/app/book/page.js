@@ -23,34 +23,41 @@ const proposedBooks = [
 
 export default function BooksPage() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
   return (
-    <main className=" md:mt-[-20px] min-h-screen bg-gradient-to-br from-[#f8fafc] to-white py-16 px-4 sm:px-6 lg:px-12">
-      <section className="max-w-6xl mx-auto bg-white border border-gray-200 shadow-2xl rounded-3xl p-6 sm:p-10 md:p-14 space-y-20">
+    <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-indigo-100 py-24 px-6 sm:px-12 lg:px-20 font-sans">
+      <section className="max-w-7xl mx-auto bg-white/80 backdrop-blur-md border border-indigo-200 rounded-3xl shadow-2xl p-10 sm:p-16 space-y-20">
 
         {/* Header */}
-        <header className="flex items-center gap-5   select-none" data-aos="fade-up">
-          <FaBook size={42} className="text-indigo-700 drop-shadow-md" />
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
+        <header className="flex items-center gap-6 select-none" data-aos="fade-down">
+          <FaBook
+            size={52}
+            className="text-indigo-700 drop-shadow-md transition-transform duration-500 hover:scale-110 hover:text-indigo-900"
+            aria-hidden="true"
+          />
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-indigo-900 drop-shadow-sm leading-tight">
             Publications & Proposed Books
           </h1>
         </header>
 
-        <hr className="border-t border-gray-200 mt-[-50px]" />
-
         {/* Book Chapters */}
-        <section data-aos="fade-up  ">
-          <h2 className=" mt-[-50px] flex items-center text-2xl font-semibold text-indigo-800 mb-6">
-            <FaPenFancy className=" mr-3 text-indigo-600" />
+        <section data-aos="fade-up" aria-labelledby="book-chapters-title">
+          <h2
+            id="book-chapters-title"
+            className="flex items-center gap-4 text-3xl font-semibold text-indigo-800 mb-12 tracking-wide drop-shadow-sm"
+          >
+            <FaPenFancy className="text-indigo-600 animate-pulse" />
             Book Chapters
           </h2>
-          <ol className=" list-decimal space-y-6 text-gray-800 text-[1.07rem] sm:text-lg leading-relaxed sm:pl-5">
+          <ol className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-gray-900 text-lg leading-relaxed tracking-wide [&>li]:bg-white/95 [&>li]:backdrop-blur-sm [&>li]:border [&>li]:border-indigo-300 [&>li]:rounded-xl [&>li]:p-6 [&>li]:shadow-lg [&>li]:hover:shadow-indigo-400/50 [&>li]:hover:scale-[1.04] [&>li]:transform [&>li]:transition-all [&>li]:duration-300 cursor-default">
             {bookChapters.map((chapter, idx) => (
               <li
                 key={idx}
-                className="bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:bg-indigo-50"
+                tabIndex={0}
+                aria-label={`Book Chapter ${idx + 1}`}
+                className="text-gray-800 text-base sm:text-lg font-medium"
               >
                 {chapter}
               </li>
@@ -58,22 +65,25 @@ export default function BooksPage() {
           </ol>
         </section>
 
-        <hr className="border-t border-gray-200" />
-
         {/* Proposed Books */}
-        <section data-aos="fade-up">
-          <h2 className="flex items-center text-2xl font-semibold text-indigo-800 mb-6">
-            <FaFileAlt className="mr-3 text-indigo-600" />
+        <section data-aos="fade-up" aria-labelledby="proposed-books-title">
+          <h2
+            id="proposed-books-title"
+            className="flex items-center gap-4 text-3xl font-semibold text-indigo-800 mb-12 tracking-wide drop-shadow-sm"
+          >
+            <FaFileAlt className="text-indigo-600 animate-pulse" />
             Proposed Books
           </h2>
-          <ul className="space-y-5 text-gray-800 text-[1.07rem] sm:text-lg leading-relaxed">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-gray-900 text-lg leading-relaxed tracking-wide">
             {proposedBooks.map((book, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-3 bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:bg-indigo-50"
+                tabIndex={0}
+                aria-label={`Proposed Book ${idx + 1}`}
+                className="flex items-start gap-4 bg-white/95 backdrop-blur-sm border border-indigo-300 rounded-xl p-6 shadow-lg hover:shadow-indigo-400/50 hover:scale-[1.04] transform transition-all duration-300 cursor-default"
               >
-                <FaBook className="mt-1 text-indigo-600 flex-shrink-0" />
-                <p>{book}</p>
+                <FaBook className="mt-1 text-indigo-600 flex-shrink-0" aria-hidden="true" />
+                <p className="text-gray-800 text-base sm:text-lg font-medium">{book}</p>
               </li>
             ))}
           </ul>

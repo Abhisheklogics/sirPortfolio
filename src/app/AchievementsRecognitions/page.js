@@ -29,22 +29,22 @@ export default function ScholarshipsRecognitions() {
   }, []);
 
   return (
-    <section className="  bg-white py-16 px-4 sm:px-6 lg:px-12 rounded-3xl shadow-2xl max-w-6xl mx-auto my-12">
-      <div className="space-y-20">
+    <section className="bg-white dark:bg-gray-900 py-16 px-6 sm:px-12 lg:px-20 rounded-3xl shadow-2xl max-w-7xl mx-auto my-12 font-sans">
+      <div className="space-y-24">
 
         {/* Scholarships Section */}
         <div data-aos="fade-up">
-          <div className="   mt-[-70px] md:mt-[-20px] flex items-center gap-4 mb-6">
-            <FaGraduationCap className="text-blue-700 text-4xl" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
+          <div className="flex items-center gap-4 mb-8">
+            <FaGraduationCap className="text-blue-700 dark:text-blue-400 text-5xl sm:text-6xl" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
               Scholarships & Fellowships
             </h2>
           </div>
-          <ul className="list-disc pl-6 sm:pl-8 space-y-5 text-gray-800 text-[1.05rem] sm:text-lg leading-relaxed">
+          <ul className="list-disc pl-8 space-y-6 max-w-4xl mx-auto text-gray-800 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
             {scholarships.map((item, index) => (
               <li
                 key={index}
-                className="bg-white border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:bg-blue-50 hover:text-blue-800 transition-all duration-300 ease-in-out"
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-5 shadow-md hover:shadow-xl hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-800 dark:hover:text-blue-400 transition duration-300 ease-in-out"
               >
                 {item}
               </li>
@@ -52,24 +52,24 @@ export default function ScholarshipsRecognitions() {
           </ul>
         </div>
 
-        <hr className="border-t border-gray-300" />
+        <hr className="border-gray-300 dark:border-gray-700 max-w-4xl mx-auto" />
 
         {/* Recognitions Section */}
         <div data-aos="fade-up">
-          <div className="flex items-center gap-4 mb-6">
-            <FaAward className="text-yellow-500 text-3xl" />
-            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-wide">
+          <div className="flex items-center gap-4 mb-8">
+            <FaAward className="text-yellow-500 dark:text-yellow-400 text-4xl sm:text-5xl" />
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
               Professional Recognitions
             </h3>
           </div>
-          <ul className="space-y-6">
+          <ul className="space-y-8 max-w-4xl mx-auto">
             {recognitions.map((item, index) => (
               <li
                 key={index}
-                className="flex items-start gap-4 bg-white border border-gray-100 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:bg-blue-50 transition-all duration-300 ease-in-out"
+                className="flex items-start gap-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-5 shadow-md hover:shadow-xl hover:bg-blue-50 dark:hover:bg-blue-900 transition duration-300 ease-in-out"
               >
-                <FaStar className="text-blue-600 mt-1 shrink-0" />
-                <p className="text-gray-800 text-[1.05rem] sm:text-lg leading-relaxed">
+                <FaStar className="text-blue-600 dark:text-blue-400 mt-1 shrink-0 text-xl sm:text-2xl" />
+                <p className="text-gray-800 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
                   {item}
                 </p>
               </li>

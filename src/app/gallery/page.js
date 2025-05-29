@@ -21,10 +21,11 @@ export default function Page() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     swipeToSlide: true,
     arrows: true,
     dots: true,
+    adaptiveHeight: true,
   };
 
   const projects = [
@@ -58,40 +59,52 @@ export default function Page() {
   ];
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-12 px-4 md:mt-[-30px] md:px-8" data-aos="fade-up" id="projects">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-10">
+    <section
+      className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16 px-6 md:px-12 md:mt-[-30px]"
+      data-aos="fade-up"
+      id="projects"
+    >
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-14 tracking-tight">
         <span className="text-blue-600">Research</span> & Project Gallery
       </h2>
 
-      <div className="max-w-5xl mx-auto ">
+      <div className="max-w-5xl mx-auto">
         <Slider {...settings}>
           {projects.map((project, idx) => (
             <div key={idx} className="px-4">
-              <article className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden md:flex">
-                <div className="md:w-1/2">
+              <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden md:flex md:gap-6 hover:shadow-2xl transition-shadow duration-500">
+                {/* Image */}
+                <div className="md:w-1/2 relative min-h-[300px] md:min-h-[400px] flex-shrink-0 overflow-hidden rounded-l-2xl group">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full max-h-[300px]"
+                    fill
+                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                     priority={idx === 0}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
+                  {/* Overlay gradient on image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none rounded-l-2xl"></div>
                 </div>
-                <div className="p-6 md:w-1/2 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
+
+                {/* Text Content */}
+                <div className="p-8 md:w-1/2 flex flex-col justify-center space-y-5">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-blue-500 font-medium mb-1">{project.domain}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 italic mb-3">{project.lead}</p>
-                  <p className="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-relaxed text-justify">
+                  <p className="text-sm text-blue-600 font-semibold tracking-wide uppercase">
+                    {project.domain}
+                  </p>
+                  <p className="italic text-gray-600 dark:text-gray-400 text-sm">{project.lead}</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed text-justify">
                     {project.description}
                   </p>
                   <Link
                     href={project.link}
-                    className="mt-4 inline-block text-sm text-blue-600 hover:underline font-medium"
+                    className="inline-block mt-4 text-blue-600 font-semibold text-sm hover:underline transition-colors duration-300"
+                    aria-label={`View full details of ${project.title}`}
                   >
-                    View Full Details →
+                    View Full Details &rarr;
                   </Link>
                 </div>
               </article>

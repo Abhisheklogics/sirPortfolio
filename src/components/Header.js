@@ -5,10 +5,20 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import useTheme from "./contaxt/themeContaxt";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+let { ThemeMode,darkTheme,lightTheme}=useTheme()
+
+function changeTheme() {
+  if (ThemeMode == 'dark') {
+    lightTheme(); // switch to light
+  } else {
+    darkTheme(); // switch to dark
+  }
+}
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -44,7 +54,7 @@ export default function Header() {
   return (
     <header className="sticky  top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white px-4 py-4 animate-fadeInDown">
+      <div className=" dark:bg-white bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white px-4 py-4 animate-fadeInDown">
         <div className="max-w-7xl mx-auto ">
           <h1 className="text-xl md:text-2xl font-semibold text-center">
             Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
@@ -56,6 +66,8 @@ export default function Header() {
             Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
           </p>
  </div>
+
+
           {/* Contact Info */}
           <div className="flex flex-wrap gap-4 justify-center  items-center mt-4 text-sm">
             <div className="flex items-center gap-2">

@@ -111,7 +111,7 @@ export default function Page() {
   ];
 
   return (
-    <main className=" mt-[-30px] min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-100 px-6 py-16 font-sans text-gray-800">
+    <main className=" mt-[-30px] min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-100  py-10 text-justify text-gray-800">
       <section className="max-w-7xl mx-auto bg-white shadow-xl rounded-3xl p-12 border border-gray-200">
         <header className="mb-12 text-center">
           <h1
@@ -158,7 +158,7 @@ export default function Page() {
         </h2>
 
         <div
-          className="bg-yellow-50 border-l-8 border-yellow-400 p-10 rounded-3xl mb-14 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          className="bg-yellow-50 border-l-8 border-yellow-400 p-6 rounded-3xl mb-14 shadow-lg hover:shadow-xl transition-shadow duration-300"
           data-aos="fade-up"
         >
           <h3 className="md:text-4xl  text-2xl font-bold text-yellow-900 mb-3 leading-tight">
