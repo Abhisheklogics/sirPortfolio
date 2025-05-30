@@ -88,11 +88,12 @@ export default function Hero() {
               As a faculty member at DEI, I have taught a wide range of subjects like Big Data,
               Robotics, Machine Learning, Cloud, and Cryptography...
             </p>
-            <p>
-              I've supervised student innovations like air quality monitors, mobile robotics,
-              drone-assisted services, and I'm skilled in embedded systems, full-stack, and mobile
-              development.
-            </p>
+           <p>
+  I&#39;ve supervised student innovations like air quality monitors, mobile robotics,
+  drone-assisted services, and I&#39;m skilled in embedded systems, full-stack, and mobile
+  development.
+</p>
+
             <p>
               This portfolio reflects my journey in research, teaching, and real-world IoT & AI
               innovation for sustainable development.
