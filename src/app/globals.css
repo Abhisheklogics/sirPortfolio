@@ -99,3 +99,7 @@ body {
     transform: translate(-50%, -40%) scale(1);
   }
 }
+/* globals.css */
+body {
+  background: rgb(22, 22, 22);
+}

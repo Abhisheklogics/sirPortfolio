@@ -13,6 +13,7 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Page() {
   useEffect(() => {
@@ -111,8 +112,8 @@ export default function Page() {
   ];
 
   return (
-    <main className=" mt-[-30px] min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-100  py-10 text-justify text-gray-800">
-      <section className="max-w-7xl mx-auto bg-white shadow-xl rounded-3xl p-12 border border-gray-200">
+    <main className=" mt-[-30px] min-h-screen   py-10 text-justify text-white">
+      <section className="max-w-7xl mx-auto  shadow-xl rounded-3xl p-12 border border-gray-200">
         <header className="mb-12 text-center">
           <h1
             className="text-2xl md:text-5xl font-bold tracking-tight "
@@ -120,7 +121,7 @@ export default function Page() {
           >
             Skills & Expertise
           </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-lg text-gray-600" data-aos="fade-up" data-aos-delay={200}>
+          <p className="mt-3 max-w-2xl mx-auto text-lg text-white" data-aos="fade-up" data-aos-delay={200}>
             A comprehensive overview of my technical capabilities and domain knowledge.
           </p>
         </header>
@@ -146,7 +147,7 @@ export default function Page() {
       </section>
 
       <section
-        className="max-w-7xl mx-auto bg-white shadow-2xl rounded-3xl p-14 mt-16 border border-gray-200"
+        className="max-w-7xl mx-auto  shadow-2xl rounded-3xl p-14 mt-16 border border-gray-200"
         aria-labelledby="teaching-experience"
       >
         <h2
@@ -173,7 +174,7 @@ export default function Page() {
         </div>
 
         <h4
-          className="md:text-4xl  text-2xl font-semibold text-gray-900 mb-12 tracking-wide text-center"
+          className="md:text-4xl text-white text-2xl font-semibold  mb-12 tracking-wide text-center"
           data-aos="fade-up"
         >
           Courses Taught
@@ -211,6 +212,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+      <BackgroundBeams/>
     </main>
   );
 }

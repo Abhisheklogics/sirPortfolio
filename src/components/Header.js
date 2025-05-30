@@ -6,19 +6,20 @@ import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
 import useTheme from "./contaxt/themeContaxt";
+import { Vortex } from './ui/vortex';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-let { ThemeMode,darkTheme,lightTheme}=useTheme()
+  const { ThemeMode, darkTheme, lightTheme } = useTheme();
 
-function changeTheme() {
-  if (ThemeMode == 'dark') {
-    lightTheme(); // switch to light
-  } else {
-    darkTheme(); // switch to dark
+  function changeTheme() {
+    if (ThemeMode === 'dark') {
+      lightTheme();
+    } else {
+      darkTheme();
+    }
   }
-}
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -36,14 +37,14 @@ function changeTheme() {
     return (
       <Link
         href={href}
-        className={`relative px-2 py-1 font-medium whitespace-nowrap transition duration-300 ${
-          isActive ? "text-blue-800 font-semibold" : "text-gray-700 hover:text-blue-700"
+        className={`relative px-2 py-1 whitespace-nowrap font-medium transition duration-300 group ${
+          isActive ? "text-blue-300 font-semibold" : "text-white hover:text-blue-300"
         }`}
         onClick={() => setIsOpen(false)}
       >
         {label}
         <span
-          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-blue-700 transform transition-transform duration-300 ${
+          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-blue-400 transform transition-transform duration-300 ${
             isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
           } origin-left`}
         />
@@ -52,24 +53,23 @@ function changeTheme() {
   };
 
   return (
-    <header className="sticky  top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200">
-      {/* Banner */}
-      <div className=" dark:bg-white bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white px-4 py-4 animate-fadeInDown">
-        <div className="max-w-7xl mx-auto ">
-          <h1 className="text-xl md:text-2xl font-semibold text-center">
-            Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
-          </h1>
-          <p className="text-sm md:text-base italic text-blue-200 text-center">
-            Lecturer, Department of Physics and Computer Science
-          </p>
-          <p className="text-xs md:text-sm text-blue-300 mt-1 font-light text-center ">
-            Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
-          </p>
- </div>
-
+    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-sm border-b border-gray-800">
+      <Vortex>
+        <div className="text-white px-4 py-4 animate-fadeInDown">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-xl md:text-2xl font-semibold text-center">
+              Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+            </h1>
+            <p className="text-sm md:text-base italic text-blue-300 text-center">
+              Lecturer, Department of Physics and Computer Science
+            </p>
+            <p className="text-xs md:text-sm text-blue-400 mt-1 font-light text-center">
+              Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
+            </p>
+          </div>
 
           {/* Contact Info */}
-          <div className="flex flex-wrap gap-4 justify-center  items-center mt-4 text-sm">
+          <div className="flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
             <div className="flex items-center gap-2">
               <FaEnvelope className="text-white" />
               <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
@@ -92,50 +92,42 @@ function changeTheme() {
                 LinkedIn
               </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <FaPhoneAlt className="text-white" />
-              <a href="tel:+917248132510" className="hover:underline">
-                +91 7248132510
-              </a>
+          
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <nav>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
+            {/* Desktop Nav */}
+            <ul className="hidden md:flex space-x-6 items-center font-medium">
+              {navLinks.map((link) => (
+                <li key={link.href} className="relative group">
+                  <NavLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
+
+            {/* Mobile Toggle */}
+            <div className="md:hidden text-white">
+              <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+                {isOpen ? <X size={26} /> : <Menu size={26} />}
+              </button>
             </div>
           </div>
-        </div>
-     
 
-      {/* Navigation */}
-      <nav className="bg-white/95 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
-          {/* Name/Logo (optional) */}
-          
-
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-6 items-center font-medium">
-            {navLinks.map((link) => (
-              <li key={link.href} className="relative group">
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Toggle */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 focus:outline-none">
-              {isOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <ul className="md:hidden bg-white shadow-md animate-slideDownFade px-4 p-2 pb-4 space-y-2 font-medium">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
+          {/* Mobile Menu */}
+          {isOpen && (
+            <ul className="md:hidden bg-black text-white shadow-md animate-slideDownFade px-4 p-2 pb-4 space-y-2 font-medium">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <NavLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </nav>
+      </Vortex>
 
       {/* Animations */}
       <style jsx>{`

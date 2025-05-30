@@ -9,7 +9,6 @@ import photo from '../../public/as.jpg';
 
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 import { Spotlight } from './ui/Spotlight';
-import { Vortex } from './ui/vortex';
 
 import {
   FaEnvelope,
@@ -28,17 +27,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <Vortex
-      backgroundColor="black"
-      rangeY={800}
-      particleCount={500}
-      baseHue={120}
-      className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-10 "
-    >
+    <div className="w-full md:mt-10 mt-[70px] md:relative absolute overflow-hidden">
       <Spotlight />
 
-      <div className="w-full text-white flex flex-col items-center justify-center gap-10 px-4">
-        <div className="w-full mt-md:w-2/3 space-y-6 text-sm md:text-base text-center md:text-left">
+      <div className="w-full text-white px-4 flex flex-col md:flex-row items-center justify-center gap-10">
+        {/* Left: Text Content */}
+        <div className="md:w-1/2 w-full space-y-6 text-sm md:text-base text-center md:text-left">
           <h1
             data-aos="fade-right"
             className="text-3xl md:text-5xl font-bold leading-tight drop-shadow-md"
@@ -50,16 +44,11 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Photo */}
-          <div className="flex justify-center md:justify-start">
-            <CardContainer className="inter-var mt-28 w-full max-w-xs">
-              <CardBody className="relative group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
-                <CardItem
-                  translateZ="100"
-                  rotateX={20}
-                  rotateZ={-10}
-                  className="w-full"
-                >
+          {/* Image (only visible on small screens under name) */}
+          <div className="block md:hidden">
+            <CardContainer className="inter-var w-full max-w-xs mx-auto mt-4">
+              <CardBody className="relative mt-[-90px] group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
+                <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
                   <Image
                     src={photo}
                     alt="Dr. Amarjeet Singh Chauhan"
@@ -72,35 +61,27 @@ export default function Hero() {
             </CardContainer>
           </div>
 
-          {/* Bio Paragraphs */}
-          <div data-aos="fade-up" className="space-y-4 text-justify">
+          <div data-aos="fade-up" className="space-y-6 mt-[-50px] md:mt-0 text-justify">
             <p>
-              I am a dedicated academician and researcher with a Ph.D. in Computer Science,
-              specializing in Resource Allocation in IoT Cloud Environments using Swarm
-              Optimization, and over five years of teaching experience at both undergraduate and
-              postgraduate levels.
-            </p>
-            <p>
-              As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT),
-              Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing...
-            </p>
-            <p>
-              As a faculty member at DEI, I have taught a wide range of subjects like Big Data,
-              Robotics, Machine Learning, Cloud, and Cryptography...
-            </p>
-           <p>
-  I&#39;ve supervised student innovations like air quality monitors, mobile robotics,
-  drone-assisted services, and I&#39;m skilled in embedded systems, full-stack, and mobile
-  development.
+             I am a dedicated academician and researcher with a Ph.D. in Computer Science, specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization, and over five years of teaching experience at both undergraduate and postgraduate levels.
 </p>
-
             <p>
-              This portfolio reflects my journey in research, teaching, and real-world IoT & AI
-              innovation for sustainable development.
+              As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT), Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing. I have authored multiple publications in reputed conferences, journals, and book chapters with international publishers such as Springer, Wiley, and CRC Press. I have also filed and been granted over 10 national and international patents, particularly in drone technology and IoT-based smart systems, and have received several project grants under MHRD and university funding schemes. I actively contribute to academia and industry-focused innovation by serving as a reviewer, editor, keynote speaker, and mentor.
+</p>
+            <p>
+             As a faculty member at DEI, I have independently taught a wide range of core and advanced subjects, including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing, and Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java), web and mobile development, and hardware integration for IoT and drone-based systems.
+
+            </p>
+            <p>
+             Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
+
+            </p>
+            <p>
+              This portfolio serves as a comprehensive reflection of my journey through research, teaching, technological innovation, and academic contributions. It highlights not only my scholarly achievements but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
+
             </p>
           </div>
 
-          {/* Research Interests */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
             {[
               { icon: <FaBrain />, text: 'Swarm Intelligence' },
@@ -121,7 +102,6 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* CTA Buttons */}
           <div className="flex flex-wrap gap-6 justify-center md:justify-start mt-6">
             <Link
               href="/publication"
@@ -137,7 +117,25 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+
+        {/* Right: Image on md+ screens */}
+        <div className="hidden md:block md:w-1/2">
+         <CardContainer className="inter-var w-full max-w-sm mx-auto">
+  <CardBody className="relative group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
+    <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
+      <Image
+        src={photo}
+        alt="Dr. Amarjeet Singh Chauhan"
+        height={1000}
+        width={1000}
+        className="rounded-xl object-cover shadow-xl"
+      />
+    </CardItem>
+  </CardBody>
+</CardContainer>
+
+        </div>
       </div>
-    </Vortex>
+    </div>
   );
 }

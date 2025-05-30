@@ -4,6 +4,8 @@ import { FaGraduationCap, FaAward, FaStar } from 'react-icons/fa';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ShootingStars } from '@/components/ui/shooting-stars';
+import { StarsBackground } from '@/components/ui/stars-background';
 
 const scholarships = [
   'Undergraduate research fellowship in BTech, 2015-2017.',
@@ -29,22 +31,26 @@ export default function ScholarshipsRecognitions() {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16 px-6 sm:px-12 lg:px-20 rounded-3xl shadow-2xl max-w-7xl mx-auto my-12 font-sans">
-      <div className="space-y-24">
+    <section className="relative py-20 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto font-sans z-10">
+      <StarsBackground />
+      <ShootingStars />
+      <div className="space-y-24 relative z-10">
 
         {/* Scholarships Section */}
-        <div data-aos="fade-up">
-          <div className="flex items-center gap-4 mb-8">
-            <FaGraduationCap className="text-blue-700 dark:text-blue-400 text-5xl sm:text-6xl" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <div data-aos="fade-up" className="space-y-10">
+          <div className="flex items-center gap-4">
+            <div className="p-4 bg-blue-700 text-white rounded-full shadow-lg">
+              <FaGraduationCap className="text-3xl" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
               Scholarships & Fellowships
             </h2>
           </div>
-          <ul className="list-disc pl-8 space-y-6 max-w-4xl mx-auto text-gray-800 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
+          <ul className="space-y-6">
             {scholarships.map((item, index) => (
               <li
                 key={index}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-5 shadow-md hover:shadow-xl hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-800 dark:hover:text-blue-400 transition duration-300 ease-in-out"
+                className="bg-white/10 border border-white/20 rounded-xl px-6 py-5 text-white backdrop-blur-sm shadow hover:scale-[1.02] transition duration-300"
               >
                 {item}
               </li>
@@ -52,26 +58,26 @@ export default function ScholarshipsRecognitions() {
           </ul>
         </div>
 
-        <hr className="border-gray-300 dark:border-gray-700 max-w-4xl mx-auto" />
+        <hr className="border-gray-400 dark:border-gray-600 opacity-30" />
 
         {/* Recognitions Section */}
-        <div data-aos="fade-up">
-          <div className="flex items-center gap-4 mb-8">
-            <FaAward className="text-yellow-500 dark:text-yellow-400 text-4xl sm:text-5xl" />
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <div data-aos="fade-up" className="space-y-10">
+          <div className="flex items-center gap-4">
+            <div className="p-4 bg-yellow-500 text-white rounded-full shadow-lg">
+              <FaAward className="text-3xl" />
+            </div>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
               Professional Recognitions
             </h3>
           </div>
-          <ul className="space-y-8 max-w-4xl mx-auto">
+          <ul className="space-y-6">
             {recognitions.map((item, index) => (
               <li
                 key={index}
-                className="flex items-start gap-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-5 shadow-md hover:shadow-xl hover:bg-blue-50 dark:hover:bg-blue-900 transition duration-300 ease-in-out"
+                className="flex items-start gap-4 bg-white/10 border border-white/20 text-white backdrop-blur-sm px-6 py-5 rounded-xl shadow hover:scale-[1.02] transition duration-300"
               >
-                <FaStar className="text-blue-600 dark:text-blue-400 mt-1 shrink-0 text-xl sm:text-2xl" />
-                <p className="text-gray-800 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-                  {item}
-                </p>
+                <FaStar className="mt-1 text-blue-400 text-xl shrink-0" />
+                <p className="text-sm sm:text-base leading-relaxed">{item}</p>
               </li>
             ))}
           </ul>

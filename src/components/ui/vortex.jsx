@@ -170,18 +170,19 @@ export const Vortex = (props) => {
     return x > canvas.width || x < 0 || y > canvas.height || y < 0;
   };
 
-  const resize = (
-    canvas,
-    ctx
-  ) => {
-    const { innerWidth, innerHeight } = window;
+  const resize = (canvas, ctx) => {
+  const container = containerRef.current;
+  if (!container) return;
 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+  const { width, height } = container.getBoundingClientRect();
 
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
-  };
+  canvas.width = width;
+  canvas.height = height;
+
+  center[0] = 0.5 * width;
+  center[1] = 0.5 * height;
+};
+
 
   const renderGlow = (
     canvas,
@@ -213,30 +214,29 @@ export const Vortex = (props) => {
   useEffect(() => {
     setup();
     window.addEventListener("resize", () => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (canvas && ctx) {
-        resize(canvas, ctx);
-      }
-    });
+  const canvas = canvasRef.current;
+  const ctx = canvas?.getContext("2d");
+  if (canvas && ctx) {
+    resize(canvas, ctx);
+  }
+});
+
   }, []);
 
-return (
-  <div className={cn("fixed inset-0 w-screen h-screen", props.containerClassName)}>
+ return (
+  <div className={cn("relative w-full", props.containerClassName)}>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       ref={containerRef}
-      className="absolute inset-0 z-0 flex items-center justify-center">
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full"
-      ></canvas>
+      className="relative h-52 w-full inset-0 z-0 bg-transparent flex items-center justify-center"
+    >
+      <canvas ref={canvasRef} className="h-full w-full" />
     </motion.div>
-    <div className={cn("relative z-10", props.className)}>
+    <div className={cn("absolute inset-0 z-10", props.className)}>
       {props.children}
     </div>
   </div>
 );
-;
+
 };
