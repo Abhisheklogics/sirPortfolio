@@ -14,7 +14,7 @@ export default function Header() {
   const { ThemeMode, darkTheme, lightTheme } = useTheme();
 
   const toggleTheme = () => ThemeMode === 'dark' ? lightTheme() : darkTheme();
-  const toggleMenu = () => setIsOpen(!isOpen);
+ 
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
@@ -102,14 +102,7 @@ export default function Header() {
                   <NavLink href={link.href} label={link.label} />
                 </li>
               ))}
-              <li>
-                <button
-                  onClick={toggleTheme}
-                  className="text-white border border-gray-600 px-2 py-1 rounded hover:bg-gray-700 transition"
-                >
-                  {ThemeMode === 'dark' ? "Light Mode" : "Dark Mode"}
-                </button>
-              </li>
+             
             </ul>
 
               {/* Mobile Toggle */}

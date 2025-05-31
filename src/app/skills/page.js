@@ -113,7 +113,8 @@ export default function Page() {
 
   return (
     <main className=" mt-6 min-h-screen   py-10 text-justify text-white">
-      <section className="max-w-7xl mx-auto  shadow-xl rounded-3xl p-12 border border-gray-200">
+      <section className="max-w-7xl mx-auto  shadow-xl rounded-3xl p-12">
+         <BackgroundBeams/>
         <header className="mb-12 text-center">
           <h1
             className="text-2xl md:text-5xl font-bold tracking-tight "
@@ -212,7 +213,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <BackgroundBeams/>
+     
     </main>
   );
 }

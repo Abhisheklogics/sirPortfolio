@@ -21,11 +21,15 @@ const visits = [
 
 export default function IndustrialVisits() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+     AOS.init({
+       duration: 800,      
+       easing: 'ease-in-out',
+       once: true           
+     });
+   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto mt-12 px-6 sm:px-10 lg:px-16 py-16 text-white rounded-3xl shadow-xl border border-blue-100">
+    <section className="max-w-7xl mx-auto mt-8 px-6 sm:px-10 lg:px-16 py-16 text-white rounded-3xl shadow-xl ">
       <StarsBackground />
       <ShootingStars />
       <div

@@ -24,9 +24,9 @@ import {
 export default function Hero() {
   useEffect(() => {
     AOS.init({
-      duration: 800,       // Slightly shorter
+      duration: 800,      
       easing: 'ease-in-out',
-      once: true           // Only animate once
+      once: true           
     });
   }, []);
 

@@ -26,8 +26,12 @@ const recognitions = [
 ];
 
 export default function ScholarshipsRecognitions() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+ useEffect(() => {
+    AOS.init({
+      duration: 800,      
+      easing: 'ease-in-out',
+      once: true           
+    });
   }, []);
 
   return (

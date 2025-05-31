@@ -7,9 +7,13 @@ import { FaAtom, FaBook } from 'react-icons/fa';
 import { Meteors } from "@/components/ui/meteors";
 import { Button } from "@/components/ui/moving-border";
 export default function Page() {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
+   useEffect(() => {
+     AOS.init({
+       duration: 800,      
+       easing: 'ease-in-out',
+       once: true           
+     });
+   }, []);
 
   const patents = [
     // International Design Patents
@@ -165,7 +169,9 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
     tabIndex={0}
     role="region"
     aria-labelledby={`entry-title-${isPatent ? 'patent' : 'pub'}-${idx}`}
-  >
+  > 
+ 
+
     <div className="flex items-start gap-4 mb-4">
       <div className="text-4xl text-blue-600 dark:text-blue-400">{icon}</div>
       <div>
@@ -213,16 +219,17 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
       {btnLabel}
      
     </Button>
-       <Meteors number={20} />
+      
   </article>
 );
 
 
   return (
     <section className="py-20 mt-[-40px] bg-black text-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
+      
   <div className="container mx-auto px-6 md:px-12">
     <h1
-      className=" text-2xl sm:text-4xl font-bold   text-white tracking-wide text-center "
+      className=" text-2xl mt-4 sm:text-4xl font-bold   text-white tracking-wide text-center "
       data-aos="fade-down"
     >
       My <span className="">Patents & Publications</span>
@@ -233,6 +240,7 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
       🧪 Patents
     </h2>
     <div className="flex flex-col items-center gap-10 mb-20">
+       <Meteors number={40} />
       {patents.map((item, idx) =>
         renderEntry(item, idx, <FaAtom />, "View Patent", true)
       )}
@@ -244,6 +252,7 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
       📘 Publications
     </h2>
     <div className="flex flex-col items-center gap-10">
+       <Meteors number={40} />
       {publications.map((item, idx) =>
         renderEntry(item, idx, <FaBook />, "View Publication", false)
       )}
