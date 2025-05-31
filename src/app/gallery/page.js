@@ -60,12 +60,12 @@ export default function Page() {
 
   return (
     <section
-      className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16 px-6 md:px-12 md:mt-[-30px]"
+      className="dark:from-gray-900 dark:to-gray-800 py-16 px-6 md:px-12 md:mt-[-30px]"
       data-aos="fade-up"
       id="projects"
     >
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-14 tracking-tight">
-        <span className="text-blue-600">Research</span> & Project Gallery
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center  text-white mb-14 tracking-tight">
+        <span className="">Research</span> & Project Gallery
       </h2>
 
       <div className="max-w-5xl mx-auto">
