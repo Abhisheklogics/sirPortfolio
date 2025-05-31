@@ -112,7 +112,7 @@ export default function Page() {
   ];
 
   return (
-    <main className=" mt-[-30px] min-h-screen   py-10 text-justify text-white">
+    <main className=" mt-6 min-h-screen   py-10 text-justify text-white">
       <section className="max-w-7xl mx-auto  shadow-xl rounded-3xl p-12 border border-gray-200">
         <header className="mb-12 text-center">
           <h1

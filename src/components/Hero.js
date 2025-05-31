@@ -8,8 +8,8 @@ import Link from 'next/link';
 import photo from '../../public/as.jpg';
 
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
-import { Spotlight } from './ui/Spotlight';
-
+import { Spotlight } from './ui/spotlight-new';
+ import { Button } from './ui/moving-border';
 import {
   FaEnvelope,
   FaBookOpen,
@@ -102,12 +102,17 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start mt-6">
+          <div className="flex flex-wrap gap-6  justify-center md:justify-start mt-6">
             <Link
               href="/publication"
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-lg transition transform hover:-translate-y-1"
             >
+                <Button
+                      borderRadius="1.75rem"
+                      className="bg-gray-900 dark:bg-slate-900 text-white dark:text-white border-neutral-200 dark:border-slate-800"
+                    >
               <FaBookOpen className="text-lg" /> View Publications
+              </Button>
             </Link>
             <Link
               href="/contact"

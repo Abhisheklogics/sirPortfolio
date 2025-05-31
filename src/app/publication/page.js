@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaAtom, FaBook } from 'react-icons/fa';
-
+import { Meteors } from "@/components/ui/meteors";
+import { Button } from "@/components/ui/moving-border";
 export default function Page() {
   useEffect(() => {
     AOS.init({ duration: 800 });
@@ -160,7 +161,7 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
   <article
     key={`${isPatent ? 'patent' : 'pub'}-${idx}`}
     data-aos={item.animation}
-    className="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full max-w-4xl p-8 cursor-pointer hover:scale-[1.02]"
+    className="group relative text-white bg-gray-900 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full max-w-4xl p-8 cursor-pointer hover:scale-[1.02]"
     tabIndex={0}
     role="region"
     aria-labelledby={`entry-title-${isPatent ? 'patent' : 'pub'}-${idx}`}
@@ -170,13 +171,13 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
       <div>
         <h3
           id={`entry-title-${isPatent ? 'patent' : 'pub'}-${idx}`}
-          className="md:text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 transition"
+          className="md:text-2xl font-semibold text-white dark:text-white group-hover:text-blue-600 transition"
         >
           {item.title}
         </h3>
 
         {item.designNumber && (
-          <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+          <p className="text-white dark:text-gray-300 text-sm mt-1">
             <strong>{item.type}:</strong> {item.designNumber} ({item.country})
           </p>
         )}
@@ -203,45 +204,50 @@ const renderEntry = (item, idx, icon, btnLabel, isPatent = true) => (
       </p>
     )}
 
-    <button
-      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-sm hover:shadow-md"
-      onClick={() => alert(`Viewing: ${item.title}`)}
-      aria-label={`${btnLabel} for ${item.title}`}
-    >
+    <Button
+        borderRadius="1.75rem"
+        className="bg-gray-900 dark:bg-slate-900 text-white dark:text-white border-neutral-200 dark:border-slate-800"
+      >
+     
+ 
       {btnLabel}
-    </button>
+     
+    </Button>
+       <Meteors number={20} />
   </article>
 );
 
 
   return (
-    <section className="py-20 mt-[-40px] bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
+    <section className="py-20 mt-[-40px] bg-black text-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen">
   <div className="container mx-auto px-6 md:px-12">
     <h1
-      className=" text-2xl sm:text-4xl font-bold text-gray-900 tracking-wide text-center "
+      className=" text-2xl sm:text-4xl font-bold   text-white tracking-wide text-center "
       data-aos="fade-down"
     >
       My <span className="">Patents & Publications</span>
     </h1>
 
     {/* Patents Section */}
-    <h2 className="text-lg  md:text-2xl mt-10 font-bold text-gray-800 dark:text-white mb-8" data-aos="zoom-in">
+    <h2 className="text-lg  md:text-2xl mt-10 font-bold text-white dark:text-white mb-8" data-aos="zoom-in">
       🧪 Patents
     </h2>
     <div className="flex flex-col items-center gap-10 mb-20">
       {patents.map((item, idx) =>
         renderEntry(item, idx, <FaAtom />, "View Patent", true)
       )}
+      
     </div>
 
     {/* Publications Section */}
-    <h2 className="md:text-2xl text-lg font-bold text-gray-800 dark:text-white mb-8" data-aos="zoom-in">
+    <h2 className="md:text-2xl text-lg font-bold text-white dark:text-white mb-8" data-aos="zoom-in">
       📘 Publications
     </h2>
     <div className="flex flex-col items-center gap-10">
       {publications.map((item, idx) =>
         renderEntry(item, idx, <FaBook />, "View Publication", false)
       )}
+      
     </div>
   </div>
 </section>
