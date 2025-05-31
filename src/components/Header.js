@@ -7,6 +7,10 @@ import { usePathname } from 'next/navigation';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import useTheme from "./contaxt/themeContaxt";
 
+
+// Inside your header JSX
+
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -19,10 +23,10 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/skills", label: "Skills & Expertise" },
     { href: "/projects", label: "Projects" },
-    { href: "/publication", label: "Patents & Publications" },
-    { href: "/book", label: "Book Chapters" },
+    { href: "/publication", label: "Patents" },
+    { href: "/book", label: "Publications" },
     { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
-    { href: "/industrialvisit", label: "Industrial Visits" },
+   
     { href: "/gallery", label: "Gallery" },
   ];
 
@@ -55,7 +59,7 @@ export default function Header() {
             Dr. Amarjeet Singh Chauhan 
           </h1>
           <p className="text-sm italic text-blue-300">
-            (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+            (Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS))
           </p>
           <p className="text-sm  text-blue-300">
             Lecturer, Department of Physics and Computer Science
@@ -96,7 +100,7 @@ export default function Header() {
       <nav className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
           {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-6 items-center font-medium">
+          <ul className="hidden md:flex space-x-12 md:ml-10 items-center font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <NavLink href={link.href} label={link.label} />

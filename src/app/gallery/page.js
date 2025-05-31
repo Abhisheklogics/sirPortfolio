@@ -6,112 +6,65 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from 'next/link';
-import Image from 'next/image';
-import projectImg from '../../../public/as.jpg'; // Replace with real images
+import { MdLocationOn } from 'react-icons/md';
 
-export default function Page() {
+
+const visits = [
+  { place: "IoT Expo", location: "Pragati Maidan, New Delhi", year: 2022 },
+  { place: "Bharat Drone Shakti", location: "Hindan Air Force Station, Ghaziabad", year: 2023 },
+  { place: "Two-day Akhil Bharatiya Shiksha Samagam", location: "Pragati Maidan, New Delhi", year: 2023 },
+  { place: "Traffic Infra Tech", location: "Pragati Maidan, New Delhi", year: 2023 },
+  { place: "IoT Expo", location: "Pragati Maidan, New Delhi", year: 2023 },
+  { place: "Narora Atomic Power Plant", location: "Narora, Uttar Pradesh", year: 2023 },
+  { place: "Yara Fertilizers", location: "Babrala, Uttar Pradesh", year: 2023 },
+  { place: "Aerial Delivery Research and Development Establishment", location: "Agra", year: 2023 },
+  { place: "IFFCO", location: "Aonla, Bareilly", year: 2022 },
+];
+
+export default function IndustrialVisitsGallery() {
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
 
   const settings = {
     infinite: true,
-    speed: 800,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 6000,
-    swipeToSlide: true,
     arrows: true,
     dots: true,
     adaptiveHeight: true,
+    fade: true,
+    swipeToSlide: true,
   };
-
-  const projects = [
-    {
-      title: "Autonomous Drone Navigation with AI & SLAM",
-      description:
-        "This project explores autonomous drone flight using real-time SLAM and AI-based decision-making with ROS, Python, and OpenCV. Focused on indoor navigation and disaster site mapping.",
-      lead: "By Dr. Amarjeet Singh Chauhan & Team",
-      domain: "AI | Robotics | SLAM",
-      link: "/projects/drone-navigation",
-      image: projectImg,
-    },
-    {
-      title: "Smart IoT-Based Air Quality Dashboard",
-      description:
-        "An end-to-end air quality monitoring system using ESP32, sensors, Node.js backend, and Grafana dashboard. Supports MQTT-based real-time data transmission and analytics.",
-      lead: "By Dr. Sanjay Saini, Amarjeet Singh Chauhan",
-      domain: "IoT | Environment | Cloud",
-      link: "/projects/air-quality-dashboard",
-      image: projectImg,
-    },
-    {
-      title: "Distributed Blockchain Voting System",
-      description:
-        "Developed a secure and transparent e-voting platform using Ethereum Smart Contracts, IPFS for file storage, and React for frontend visualization.",
-      lead: "By Aditya Vardhan & Blockchain Lab",
-      domain: "Blockchain | Cybersecurity",
-      link: "/projects/blockchain-voting",
-      image: projectImg,
-    },
-  ];
 
   return (
     <section
-      className="dark:from-gray-900 dark:to-gray-800 py-16 px-6 md:px-12 md:mt-[-30px]"
+      className="max-w-5xl mx-auto px-6 mt-10  py-16 rounded-3xl shadow-xl bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 text-white relative"
       data-aos="fade-up"
-      id="projects"
+      aria-label="Industrial Visits Gallery"
     >
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center  text-white mb-14 tracking-tight">
-        <span className="">Research</span> & Project Gallery
+      <h2 className="text-4xl font-extrabold mb-14 text-center border-b border-gray-700 pb-6 tracking-tight">
+        Industrial Visits & Expos Gallery
       </h2>
 
-      <div className="max-w-5xl mx-auto">
-        <Slider {...settings}>
-          {projects.map((project, idx) => (
-            <div key={idx} className="px-4">
-              <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden md:flex md:gap-6 hover:shadow-2xl transition-shadow duration-500">
-                {/* Image */}
-                <div className="md:w-1/2 relative min-h-[300px] md:min-h-[400px] flex-shrink-0 overflow-hidden rounded-l-2xl group">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-                    priority={idx === 0}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* Overlay gradient on image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none rounded-l-2xl"></div>
-                </div>
-
-                {/* Text Content */}
-                <div className="p-8 md:w-1/2 flex flex-col justify-center space-y-5">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white leading-snug">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-blue-600 font-semibold tracking-wide uppercase">
-                    {project.domain}
-                  </p>
-                  <p className="italic text-gray-600 dark:text-gray-400 text-sm">{project.lead}</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed text-justify">
-                    {project.description}
-                  </p>
-                  <Link
-                    href={project.link}
-                    className="inline-block mt-4 text-blue-600 font-semibold text-sm hover:underline transition-colors duration-300"
-                    aria-label={`View full details of ${project.title}`}
-                  >
-                    View Full Details &rarr;
-                  </Link>
-                </div>
-              </article>
-            </div>
-          ))}
-        </Slider>
-      </div>
+      <Slider {...settings} aria-live="polite" aria-relevant="all" aria-atomic="true">
+        {visits.map(({ place, location, year }, idx) => (
+          <article
+            key={idx}
+            className="p-10 bg-gray-800 rounded-2xl shadow-lg flex flex-col items-center text-center mx-4 sm:mx-6 md:mx-0 transition-transform duration-300 hover:scale-[1.03] focus-within:scale-[1.03]"
+            tabIndex={0}
+            aria-label={`${place}, visited in year ${year}, located at ${location}`}
+          >
+            <MdLocationOn className="text-blue-500 text-7xl mb-6" aria-hidden="true" />
+            <h3 className="text-3xl font-semibold mb-2">{place}</h3>
+            <p className="text-gray-300 max-w-xl text-lg leading-relaxed mb-4">{location}</p>
+            <p className="text-blue-400 font-semibold text-lg">{year}</p>
+          </article>
+        ))}
+      </Slider>
     </section>
   );
 }

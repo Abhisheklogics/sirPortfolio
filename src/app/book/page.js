@@ -1,9 +1,11 @@
 'use client';
 
-import { FaBook, FaPenFancy, FaFileAlt } from 'react-icons/fa';
+
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { CardSpotlight } from "@/components/ui/card-spotlight";
+
 
 const bookChapters = [
   "Mohit Yadav, Amarjeet Singh and Sanjay Saini, “Drone Swarms: Tactical Advancements with AI”, Medical and Surgical Drone & Artificial Intelligence: The New Face of Warfare, Wiley, 2024 (In Press).",
@@ -21,74 +23,158 @@ const proposedBooks = [
   "Mohit Yadav, Sanjay Saini and Amarjeet Singh Chauhan, “Nature’s Algorithms: Harnessing Swarm Intelligence for Complex Computational Paradigms”, Taylor and Francis, 2024 (Under Review)",
 ];
 
+ 
+export function CardSpotlightBooks() {
+  return (
+    <div className="space-y-8 ">
+      <h2 className="text-2xl font-bold text-white"> Book Chapters</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        {bookChapters.map((item, index) => (
+          <CardSpotlight
+            key={`book-${index}`}
+            className="min-h-[200px] p-6"
+            data-aos="zoom-in"
+          >
+           
+            <p className="text-neutral-300 text-sm z-20 relative">{item}</p>
+          </CardSpotlight>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold text-white mt-10">📝 Proposed Books</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        {proposedBooks.map((item, index) => (
+          <CardSpotlight
+            key={`proposed-${index}`}
+            className="min-h-[200px] p-6"
+            data-aos="fade-up"
+          >
+            
+            <p className="text-neutral-300 text-sm z-20 relative">{item}</p>
+          </CardSpotlight>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+
+const publications = [
+  {
+    title: "Appraisal Study and Analytics of Industrial 4.0 - A Rebellion Towards Existing Twins",
+    authors: ["Mohit Yadav", "Amarjeet Singh", "Aditya Vardhan", "Sanjay Saini"],
+    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
+    animation: "fade-right",
+  },
+  {
+    title: "IoT and IoE Transformations in Precision Farming Agriculture: Sensor Based Monitoring, Automated Irrigation and Livestock Monitoring",
+    authors: ["Mohit Yadav", "Amarjeet Singh", "Varun Shrivastav", "Sanjay Saini"],
+    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
+    animation: "fade-left",
+  },
+  {
+    title: "A Study on Creation of Industry 5.0: New Innovations using Big Data Through Artificial Intelligence, Internet of Things and Next-Origination Technology Policy",
+    authors: ["Mohit Yadav", "Amarjeet Singh", "Aditya Vardhan", "Sanjay Saini"],
+    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2023.",
+    animation: "fade-right",
+  },
+  {
+    title: "A Review Study of Industry 5.0: Integrating Human Creativity with Advanced Technologies, IoT, AI, Big Data",
+    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
+    animation: "fade-left",
+  },
+  {
+    title: "A Survey on Aerial Swarm Robotics",
+    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
+    animation: "fade-right",
+  },
+  {
+    title: "Unmanned Aerial Vehicles (UAVs): A Step Towards Industry 5.0",
+    authors: ["Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
+    animation: "fade-left",
+  },
+  {
+    title: "Integration of Smart Irrigation System and Water Quality Monitoring for Sustainable Management System",
+    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
+    animation: "fade-right",
+  },
+  {
+    title: "IoT based Smart Residence System",
+    authors: ["Mohit Yadav", "Aditya Vardhan", "Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
+    animation: "fade-left",
+  },
+  {
+    title: "IoT based Health Monitoring System",
+    authors: ["Mohit Yadav", "Aditya Vardhan", "Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
+    animation: "fade-right",
+  },
+  {
+    title: "IoT based Smart Electricity Meter with Energy Prediction and Consumption",
+    authors: ["Amarjeet Singh Chauhan", "Mohit Yadav", "Aditya Vardhan", "Sanjay Saini"],
+    description: "Journal of Emerging Technologies and Innovative Research (JETIR), ISSN: 2349-5162, Volume 9, Issue 1, pp. 554-561, January 2022.",
+    animation: "fade-left",
+  },
+  {
+    title: "IoT based Smart Agriculture Using LoRa Technology",
+    authors: ["Amarjeet Singh Chauhan", "Sanjay Saini"],
+    description: "Intelligent Computing and Technologies Conference, ASTU, Assam & Central Institute of Technology, Kokrajhar, Assam, 2021.",
+    animation: "fade-right",
+  },
+];
+
+ function CardSpotlightPublications() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      {publications.map((pub, index) => (
+        <CardSpotlight
+          key={index}
+          className="p-4 sm:p-6 rounded-2xl min-h-[240px] sm:min-h-[260px]"
+          data-aos={pub.animation}
+        >
+          <div className="z-20 relative flex flex-col h-full">
+            <p className="text-white text-base sm:text-lg font-semibold mb-2">
+              {pub.title}
+            </p>
+
+            <p className="text-neutral-300 text-sm sm:text-base mb-2">
+              <span className="font-medium">Authors:</span>{" "}
+              {pub.authors.join(", ")}
+            </p>
+
+            <p className="text-neutral-400 text-sm sm:text-sm text-left sm:text-justify mt-auto">
+              {pub.description}
+            </p>
+          </div>
+        </CardSpotlight>
+      ))}
+    </div>
+  );
+}
+
 export default function BooksPage() {
   useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-indigo-100 py-24 px-6 sm:px-12 lg:px-20 font-sans">
-      <section className="max-w-7xl mx-auto bg-white/80 backdrop-blur-md border border-indigo-200 rounded-3xl shadow-2xl p-10 sm:p-16 space-y-20">
+    <main className="min-h-screen  bg-black py-24 px-6 mt-[-100px] sm:px-12 lg:px-20 font-sans">
+      <section className="max-w-7xl mx-auto  backdrop-blur-md  rounded-3xl shadow-2xl p-10 sm:p-16 space-y-20">
 
-        {/* Header */}
-        <header className="flex items-center gap-6 select-none" data-aos="fade-down">
-          <FaBook
-            size={52}
-            className="text-indigo-700 drop-shadow-md transition-transform duration-500 hover:scale-110 hover:text-indigo-900"
-            aria-hidden="true"
-          />
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-indigo-900 drop-shadow-sm leading-tight">
-            Publications & Proposed Books
-          </h1>
-        </header>
-
-        {/* Book Chapters */}
-        <section data-aos="fade-up" aria-labelledby="book-chapters-title">
-          <h2
-            id="book-chapters-title"
-            className="flex items-center gap-4 text-3xl font-semibold text-indigo-800 mb-12 tracking-wide drop-shadow-sm"
-          >
-            <FaPenFancy className="text-indigo-600 animate-pulse" />
-            Book Chapters
-          </h2>
-          <ol className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-gray-900 text-lg leading-relaxed tracking-wide [&>li]:bg-white/95 [&>li]:backdrop-blur-sm [&>li]:border [&>li]:border-indigo-300 [&>li]:rounded-xl [&>li]:p-6 [&>li]:shadow-lg [&>li]:hover:shadow-indigo-400/50 [&>li]:hover:scale-[1.04] [&>li]:transform [&>li]:transition-all [&>li]:duration-300 cursor-default">
-            {bookChapters.map((chapter, idx) => (
-              <li
-                key={idx}
-                tabIndex={0}
-                aria-label={`Book Chapter ${idx + 1}`}
-                className="text-gray-800 text-base sm:text-lg font-medium"
-              >
-                {chapter}
-              </li>
-            ))}
-          </ol>
+        
+       <CardSpotlightBooks/>
+        <div className=" bg-black min-h-screen">
+      <h2 className="text-2xl md:text-3xl text-white font-bold mb-4">Research Publications</h2>
+      <CardSpotlightPublications />
+    </div>
         </section>
-
-        {/* Proposed Books */}
-        <section data-aos="fade-up" aria-labelledby="proposed-books-title">
-          <h2
-            id="proposed-books-title"
-            className="flex items-center gap-4 text-3xl font-semibold text-indigo-800 mb-12 tracking-wide drop-shadow-sm"
-          >
-            <FaFileAlt className="text-indigo-600 animate-pulse" />
-            Proposed Books
-          </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-gray-900 text-lg leading-relaxed tracking-wide">
-            {proposedBooks.map((book, idx) => (
-              <li
-                key={idx}
-                tabIndex={0}
-                aria-label={`Proposed Book ${idx + 1}`}
-                className="flex items-start gap-4 bg-white/95 backdrop-blur-sm border border-indigo-300 rounded-xl p-6 shadow-lg hover:shadow-indigo-400/50 hover:scale-[1.04] transform transition-all duration-300 cursor-default"
-              >
-                <FaBook className="mt-1 text-indigo-600 flex-shrink-0" aria-hidden="true" />
-                <p className="text-gray-800 text-base sm:text-lg font-medium">{book}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </section>
+      
     </main>
   );
 }
