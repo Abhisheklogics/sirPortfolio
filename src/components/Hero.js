@@ -23,19 +23,23 @@ import {
 
 export default function Hero() {
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
+    AOS.init({
+      duration: 800,       // Slightly shorter
+      easing: 'ease-in-out',
+      once: true           // Only animate once
+    });
   }, []);
 
   return (
-    <div className="w-full md:mt-10 mt-[70px] md:relative absolute overflow-hidden">
+    <div className="w-full md:mt-10  mt-[70px] md:relative absolute overflow-hidden">
       <Spotlight />
 
-      <div className="w-full text-white px-4 flex flex-col md:flex-row items-center justify-center gap-10">
+      <div className="w-full md:ml-10 text-white px-4 flex flex-col md:flex-row items-center justify-center gap-10">
         {/* Left: Text Content */}
         <div className="md:w-1/2 w-full space-y-6 text-sm md:text-base text-center md:text-left">
           <h1
             data-aos="fade-right"
-            className="text-3xl md:text-5xl font-bold leading-tight drop-shadow-md"
+            className="text-3xl  mt-4 md:text-5xl font-bold leading-tight drop-shadow-md"
           >
             Dr. Amarjeet Singh Chauhan
             <br />
@@ -49,13 +53,15 @@ export default function Hero() {
             <CardContainer className="inter-var w-full max-w-xs mx-auto mt-4">
               <CardBody className="relative mt-[-90px] group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
                 <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
-                  <Image
-                    src={photo}
-                    alt="Dr. Amarjeet Singh Chauhan"
-                    height={500}
-                    width={500}
-                    className="rounded-xl object-cover shadow-xl"
-                  />
+                 <Image
+  src={photo}
+  alt="Dr. Amarjeet Singh Chauhan"
+  height={500}
+  width={500}
+  className="rounded-xl object-cover shadow-xl"
+  loading="lazy"
+/>
+
                 </CardItem>
               </CardBody>
             </CardContainer>
@@ -121,15 +127,17 @@ export default function Hero() {
         {/* Right: Image on md+ screens */}
         <div className="hidden md:block md:w-1/2">
          <CardContainer className="inter-var w-full max-w-sm mx-auto">
-  <CardBody className="relative group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
+  <CardBody className="relative group/card md:mt-[-800px] w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
     <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
-      <Image
-        src={photo}
-        alt="Dr. Amarjeet Singh Chauhan"
-        height={1000}
-        width={1000}
-        className="rounded-xl object-cover shadow-xl"
-      />
+     <Image
+  src={photo}
+  alt="Dr. Amarjeet Singh Chauhan"
+  height={1000}
+  width={1000}
+  className="rounded-xl object-cover shadow-xl"
+  loading="lazy"
+/>
+
     </CardItem>
   </CardBody>
 </CardContainer>

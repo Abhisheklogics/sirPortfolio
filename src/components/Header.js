@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
-import { FaEnvelope, FaLinkedin, FaPhoneAlt } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import useTheme from "./contaxt/themeContaxt";
 import { Vortex } from './ui/vortex';
 
@@ -13,13 +13,9 @@ export default function Header() {
   const pathname = usePathname();
   const { ThemeMode, darkTheme, lightTheme } = useTheme();
 
-  function changeTheme() {
-    if (ThemeMode === 'dark') {
-      lightTheme();
-    } else {
-      darkTheme();
-    }
-  }
+  const toggleTheme = () => ThemeMode === 'dark' ? lightTheme() : darkTheme();
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -38,9 +34,9 @@ export default function Header() {
       <Link
         href={href}
         className={`relative px-2 py-1 whitespace-nowrap font-medium transition duration-300 group ${
-          isActive ? "text-blue-300 font-semibold" : "text-white hover:text-blue-300"
+          isActive ? "text-blue-400 font-semibold" : "text-white hover:text-blue-300"
         }`}
-        onClick={() => setIsOpen(false)}
+        onClick={closeMenu}
       >
         {label}
         <span
@@ -55,35 +51,36 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-sm border-b border-gray-800">
       <Vortex>
+        {/* Header Info */}
         <div className="text-white px-4 py-4 animate-fadeInDown">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-xl md:text-2xl font-semibold text-center">
-              Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+          <div className="max-w-7xl mx-auto text-center space-y-1">
+            <h1 className="text-xl md:text-2xl font-semibold">
+              Dr. Amarjeet Singh Chauhan (Ph.D | M.Tech | B.Tech)
             </h1>
-            <p className="text-sm md:text-base italic text-blue-300 text-center">
-              Lecturer, Department of Physics and Computer Science
+            <p className="text-sm md:text-base italic text-blue-300">
+              Lecturer, Dept. of Physics & Computer Science
             </p>
-            <p className="text-xs md:text-sm text-blue-400 mt-1 font-light text-center">
-              Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
+            <p className="text-xs md:text-sm text-blue-400 font-light">
+              Faculty of Science, DEI (Deemed University), Agra
             </p>
           </div>
 
           {/* Contact Info */}
           <div className="flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
             <div className="flex items-center gap-2">
-              <FaEnvelope className="text-white" />
+              <FaEnvelope />
               <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
                 amarjeetsinghchauhan96@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <FaEnvelope className="text-white" />
+              <FaEnvelope />
               <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
                 amarjeetsinghchauhan@dei.ac.in
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <FaLinkedin className="text-white" />
+              <FaLinkedin />
               <Link
                 href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
                 className="hover:underline"
@@ -92,7 +89,6 @@ export default function Header() {
                 LinkedIn
               </Link>
             </div>
-          
           </div>
         </div>
 
@@ -102,13 +98,21 @@ export default function Header() {
             {/* Desktop Nav */}
             <ul className="hidden md:flex space-x-6 items-center font-medium">
               {navLinks.map((link) => (
-                <li key={link.href} className="relative group">
+                <li key={link.href}>
                   <NavLink href={link.href} label={link.label} />
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={toggleTheme}
+                  className="text-white border border-gray-600 px-2 py-1 rounded hover:bg-gray-700 transition"
+                >
+                  {ThemeMode === 'dark' ? "Light Mode" : "Dark Mode"}
+                </button>
+              </li>
             </ul>
 
-            {/* Mobile Toggle */}
+              {/* Mobile Toggle */}
             <div className="md:hidden text-white">
               <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
                 {isOpen ? <X size={26} /> : <Menu size={26} />}
@@ -129,6 +133,8 @@ export default function Header() {
         </nav>
       </Vortex>
 
+
+
       {/* Animations */}
       <style jsx>{`
         @keyframes fadeInDown {
@@ -143,7 +149,7 @@ export default function Header() {
         }
 
         .animate-fadeInDown {
-          animation: fadeInDown 0.6s ease forwards;
+          animation: fadeInDown 0.6s ease-out forwards;
         }
 
         @keyframes slideDownFade {
@@ -158,7 +164,7 @@ export default function Header() {
         }
 
         .animate-slideDownFade {
-          animation: slideDownFade 0.3s ease forwards;
+          animation: slideDownFade 0.3s ease-out forwards;
         }
       `}</style>
     </header>
