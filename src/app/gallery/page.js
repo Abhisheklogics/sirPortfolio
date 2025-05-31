@@ -7,7 +7,9 @@ import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdLocationOn } from 'react-icons/md';
-
+import Image from "next/image";
+import photo from '../../../public/as.jpg';
+import { Meteors } from "@/components/ui/meteors";
 
 const visits = [
   { place: "IoT Expo", location: "Pragati Maidan, New Delhi", year: 2022 },
@@ -42,26 +44,41 @@ export default function IndustrialVisitsGallery() {
 
   return (
     <section
-      className="max-w-5xl mx-auto px-6 mt-10  py-16 rounded-3xl shadow-xl bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 text-white relative"
+      className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl shadow-xl bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white relative"
       data-aos="fade-up"
       aria-label="Industrial Visits Gallery"
     >
-      <h2 className="text-4xl font-extrabold mb-14 text-center border-b border-gray-700 pb-6 tracking-tight">
+      <Meteors number={40} />
+      <h2 className="text-3xl sm:text-4xl font-extrabold mb-14 text-center border-b border-gray-700 pb-6 tracking-tight">
         Industrial Visits & Expos Gallery
       </h2>
 
-      <Slider {...settings} aria-live="polite" aria-relevant="all" aria-atomic="true">
+      <Slider {...settings}>
         {visits.map(({ place, location, year }, idx) => (
           <article
             key={idx}
-            className="p-10 bg-gray-800 rounded-2xl shadow-lg flex flex-col items-center text-center mx-4 sm:mx-6 md:mx-0 transition-transform duration-300 hover:scale-[1.03] focus-within:scale-[1.03]"
+            className="bg-gray-800 rounded-2xl md:ml-[250px] shadow-lg p-5 sm:p-8 mx-2 sm:mx-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] focus-within:scale-[1.02] max-w-md mx-auto"
             tabIndex={0}
             aria-label={`${place}, visited in year ${year}, located at ${location}`}
           >
-            <MdLocationOn className="text-blue-500 text-7xl mb-6" aria-hidden="true" />
-            <h3 className="text-3xl font-semibold mb-2">{place}</h3>
-            <p className="text-gray-300 max-w-xl text-lg leading-relaxed mb-4">{location}</p>
-            <p className="text-blue-400 font-semibold text-lg">{year}</p>
+            <div className="relative w-full h-56  sm:h-64 mb-4 rounded-xl overflow-hidden">
+              <Image
+                src={photo}
+                alt={`${place} visit image`}
+                fill
+                className="object-cover rounded-xl"
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2">{place}</h3>
+
+            <div className="flex items-center justify-center text-gray-300 mb-2 text-sm sm:text-base">
+              <MdLocationOn className="text-blue-500 mr-1 text-lg sm:text-xl" />
+              <span className="max-w-xs">{location}</span>
+            </div>
+
+            <p className="text-blue-400 font-medium text-sm sm:text-base">{year}</p>
           </article>
         ))}
       </Slider>

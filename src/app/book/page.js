@@ -7,153 +7,256 @@ import 'aos/dist/aos.css';
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 
-const bookChapters = [
-  "Mohit Yadav, Amarjeet Singh and Sanjay Saini, “Drone Swarms: Tactical Advancements with AI”, Medical and Surgical Drone & Artificial Intelligence: The New Face of Warfare, Wiley, 2024 (In Press).",
-  "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Artificial Intelligence for monitoring and forecasting of air quality using IoT”, Frontiers of IoT Excellence: Connecting Tomorrow with the power of AI and ML, CRC Press, 2024 (In Press).",
-  "Amarjeet Singh and Sanjay Saini, “IoT based Smart indoor agriculture system using LoRa Technology and Cloud Computing”, Frontiers of IoT Excellence: Connecting Tomorrow with the power of AI and ML, CRC Press, 2024 (In Press).",
-  "Amarjeet Singh, Mohit Yadav, Aditya Vardhan and Sanjay Saini, “Precision Agriculture Techniques with Drone”, Drones in Farming: Innovation & Future Prospects, Springer Nature, 2023.",
-  "Amarjeet Singh and Sanjay Saini, “Artificial intelligence for sustainable agriculture”, Agriculture 5.0: Smart Farming based on Industries 4.0, CRC Press, 2023.",
-  "Amarjeet Singh and Mohit Yadav “Sustainability and Environmental Impact of Drone Technology in Agriculture”, Drones in Farming: Innovation & Future Prospects, Springer Nature, 2023",
-];
 
-const proposedBooks = [
-  "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Smart Forestry: Integration of IoT and AI in Ecosystem, Taylor and Francis, 2024 (Under Editing)”",
-  "Amarjeet Singh, Mohit Yadav and Sanjay Saini, “Internet of Agriculture Drones”, Springer Nature, 2024 (In Press)",
-  "Amarjeet Singh and Sanjay Saini, “Smart Justice: Modern Law with Integration of IoT and Blockchain”, Springer Nature, 2024 (Proposal Submitted)",
-  "Mohit Yadav, Sanjay Saini and Amarjeet Singh Chauhan, “Nature’s Algorithms: Harnessing Swarm Intelligence for Complex Computational Paradigms”, Taylor and Francis, 2024 (Under Review)",
-];
+ export function CardSpotlightBooks() {
+  const bookChaptersData = [
+    {
+      no: 1,
+      title: "Drone Swarms: Tactical Advancements with AI",
+      coAuthors: "Mohit Yadav, Amarjeet Singh, Sanjay Saini",
+      publisher: "Wiley",
+      year: "2024",
+      status: "In Press",
+    },
+    {
+      no: 2,
+      title: "Artificial Intelligence for monitoring and forecasting of air quality using IoT",
+      coAuthors: "Amarjeet Singh, Mohit Yadav, Sanjay Saini",
+      publisher: "CRC Press",
+      year: "2024",
+      status: "In Press",
+    },
+    {
+      no: 3,
+      title: "IoT based Smart indoor agriculture system using LoRa Technology and Cloud Computing",
+      coAuthors: "Amarjeet Singh, Sanjay Saini",
+      publisher: "CRC Press",
+      year: "2024",
+      status: "In Press",
+    },
+    {
+      no: 4,
+      title: "Precision Agriculture Techniques with Drone",
+      coAuthors: "Amarjeet Singh, Mohit Yadav, Aditya Vardhan, Sanjay Saini",
+      publisher: "Springer Nature",
+      year: "2023",
+      status: "Published",
+    },
+    {
+      no: 5,
+      title: "Artificial intelligence for sustainable agriculture",
+      coAuthors: "Amarjeet Singh, Sanjay Saini",
+      publisher: "CRC Press",
+      year: "2023",
+      status: "Published",
+    },
+    {
+      no: 6,
+      title: "Sustainability and Environmental Impact of Drone Technology in Agriculture",
+      coAuthors: "Amarjeet Singh, Mohit Yadav",
+      publisher: "Springer Nature",
+      year: "2023",
+      status: "Published",
+    },
+  ];
 
- 
-export function CardSpotlightBooks() {
+  const proposedBooksData = [
+    {
+      no: 1,
+      title: "Smart Forestry: Integration of IoT and AI in Ecosystem",
+      coAuthors: "Amarjeet Singh, Mohit Yadav, Sanjay Saini",
+      publisher: "Taylor and Francis",
+      year: "2024",
+      status: "Under Editing",
+    },
+    {
+      no: 2,
+      title: "Internet of Agriculture Drones",
+      coAuthors: "Amarjeet Singh, Mohit Yadav, Sanjay Saini",
+      publisher: "Springer Nature",
+      year: "2024",
+      status: "In Press",
+    },
+    {
+      no: 3,
+      title: "Smart Justice: Modern Law with Integration of IoT and Blockchain",
+      coAuthors: "Amarjeet Singh, Sanjay Saini",
+      publisher: "Springer Nature",
+      year: "2024",
+      status: "Proposal Submitted",
+    },
+    {
+      no: 4,
+      title: "Nature’s Algorithms: Harnessing Swarm Intelligence for Complex Computational Paradigms",
+      coAuthors: "Mohit Yadav, Sanjay Saini, Amarjeet Singh Chauhan",
+      publisher: "Taylor and Francis",
+      year: "2024",
+      status: "Under Review",
+    },
+  ];
+
+  const CardContent = ({ item }) => (
+    <CardSpotlight className="min-h-[220px] p-5 sm:p-6" data-aos="zoom-in">
+      <div className="text-sm text-neutral-200 space-y-1">
+        <p><span className="font-semibold text-neutral-400">S.No:</span> {item.no}</p>
+        <p><span className="font-semibold text-neutral-400">Title:</span> {item.title}</p>
+        <p><span className="font-semibold text-neutral-400">Co-authors:</span> {item.coAuthors}</p>
+        <p><span className="font-semibold text-neutral-400">Publisher:</span> {item.publisher}</p>
+        <p><span className="font-semibold text-neutral-400">Year:</span> {item.year}</p>
+        <p><span className="font-semibold text-neutral-400">Status:</span> {item.status}</p>
+      </div>
+    </CardSpotlight>
+  );
+
   return (
-    <div className="space-y-8 ">
-      <h2 className="text-2xl font-bold text-white"> Book Chapters</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-        {bookChapters.map((item, index) => (
-          <CardSpotlight
-            key={`book-${index}`}
-            className="min-h-[200px] p-6"
-            data-aos="zoom-in"
-          >
-           
-            <p className="text-neutral-300 text-sm z-20 relative">{item}</p>
-          </CardSpotlight>
-        ))}
-      </div>
+    <div className="space-y-12 px-4 sm:px-6 lg:px-8">
+      <section>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📘 Book Chapters</h2>
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+          {bookChaptersData.map((item) => (
+            <CardContent key={`book-${item.no}`} item={item} />
+          ))}
+        </div>
+      </section>
 
-      <h2 className="text-2xl font-bold text-white mt-10">📝 Proposed Books</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-        {proposedBooks.map((item, index) => (
-          <CardSpotlight
-            key={`proposed-${index}`}
-            className="min-h-[200px] p-6"
-            data-aos="fade-up"
-          >
-            
-            <p className="text-neutral-300 text-sm z-20 relative">{item}</p>
-          </CardSpotlight>
-        ))}
-      </div>
+      <section>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📝 Proposed Books</h2>
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+          {proposedBooksData.map((item) => (
+            <CardContent key={`proposed-${item.no}`} item={item} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
 
 
 
-const publications = [
-  {
-    title: "Appraisal Study and Analytics of Industrial 4.0 - A Rebellion Towards Existing Twins",
-    authors: ["Mohit Yadav", "Amarjeet Singh", "Aditya Vardhan", "Sanjay Saini"],
-    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
-    animation: "fade-right",
-  },
-  {
-    title: "IoT and IoE Transformations in Precision Farming Agriculture: Sensor Based Monitoring, Automated Irrigation and Livestock Monitoring",
-    authors: ["Mohit Yadav", "Amarjeet Singh", "Varun Shrivastav", "Sanjay Saini"],
-    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
-    animation: "fade-left",
-  },
-  {
-    title: "A Study on Creation of Industry 5.0: New Innovations using Big Data Through Artificial Intelligence, Internet of Things and Next-Origination Technology Policy",
-    authors: ["Mohit Yadav", "Amarjeet Singh", "Aditya Vardhan", "Sanjay Saini"],
-    description: "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2023.",
-    animation: "fade-right",
-  },
-  {
-    title: "A Review Study of Industry 5.0: Integrating Human Creativity with Advanced Technologies, IoT, AI, Big Data",
-    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
-    animation: "fade-left",
-  },
-  {
-    title: "A Survey on Aerial Swarm Robotics",
-    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
-    animation: "fade-right",
-  },
-  {
-    title: "Unmanned Aerial Vehicles (UAVs): A Step Towards Industry 5.0",
-    authors: ["Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
-    animation: "fade-left",
-  },
-  {
-    title: "Integration of Smart Irrigation System and Water Quality Monitoring for Sustainable Management System",
-    authors: ["Mohit Yadav", "Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
-    animation: "fade-right",
-  },
-  {
-    title: "IoT based Smart Residence System",
-    authors: ["Mohit Yadav", "Aditya Vardhan", "Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
-    animation: "fade-left",
-  },
-  {
-    title: "IoT based Health Monitoring System",
-    authors: ["Mohit Yadav", "Aditya Vardhan", "Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
-    animation: "fade-right",
-  },
-  {
-    title: "IoT based Smart Electricity Meter with Energy Prediction and Consumption",
-    authors: ["Amarjeet Singh Chauhan", "Mohit Yadav", "Aditya Vardhan", "Sanjay Saini"],
-    description: "Journal of Emerging Technologies and Innovative Research (JETIR), ISSN: 2349-5162, Volume 9, Issue 1, pp. 554-561, January 2022.",
-    animation: "fade-left",
-  },
-  {
-    title: "IoT based Smart Agriculture Using LoRa Technology",
-    authors: ["Amarjeet Singh Chauhan", "Sanjay Saini"],
-    description: "Intelligent Computing and Technologies Conference, ASTU, Assam & Central Institute of Technology, Kokrajhar, Assam, 2021.",
-    animation: "fade-right",
-  },
-];
 
- function CardSpotlightPublications() {
+
+export function CardSpotlightPublications() {
+  const publications = [
+    {
+      no: 1,
+      title: "Appraisal Study and Analytics of Industrial 4.0 - A Rebellion Towards Existing Twins",
+      authors: "Mohit Yadav, Amarjeet Singh, Aditya Vardhan, Sanjay Saini",
+      description:
+        "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
+      animation: "fade-right",
+    },
+    {
+      no: 2,
+      title:
+        "IoT and IoE Transformations in Precision Farming Agriculture: Sensor Based Monitoring, Automated Irrigation and Livestock Monitoring",
+      authors: "Mohit Yadav, Amarjeet Singh, Varun Shrivastav, Sanjay Saini",
+      description:
+        "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
+      animation: "fade-left",
+    },
+    {
+      no: 3,
+      title:
+        "A Study on Creation of Industry 5.0: New Innovations using Big Data Through Artificial Intelligence, Internet of Things and Next-Origination Technology Policy",
+      authors: "Mohit Yadav, Amarjeet Singh, Aditya Vardhan, Sanjay Saini",
+      description:
+        "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2023.",
+      animation: "fade-right",
+    },
+    {
+      no: 4,
+      title:
+        "A Review Study of Industry 5.0: Integrating Human Creativity with Advanced Technologies, IoT, AI, Big Data",
+      authors: "Mohit Yadav, Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
+      animation: "fade-left",
+    },
+    {
+      no: 5,
+      title: "A Survey on Aerial Swarm Robotics",
+      authors: "Mohit Yadav, Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
+      animation: "fade-right",
+    },
+    {
+      no: 6,
+      title: "Unmanned Aerial Vehicles (UAVs): A Step Towards Industry 5.0",
+      authors: "Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
+      animation: "fade-left",
+    },
+    {
+      no: 7,
+      title:
+        "Integration of Smart Irrigation System and Water Quality Monitoring for Sustainable Management System",
+      authors: "Mohit Yadav, Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
+      animation: "fade-right",
+    },
+    {
+      no: 8,
+      title: "IoT based Smart Residence System",
+      authors:
+        "Mohit Yadav, Aditya Vardhan, Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
+      animation: "fade-left",
+    },
+    {
+      no: 9,
+      title: "IoT based Health Monitoring System",
+      authors:
+        "Mohit Yadav, Aditya Vardhan, Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
+      animation: "fade-right",
+    },
+    {
+      no: 10,
+      title:
+        "IoT based Smart Electricity Meter with Energy Prediction and Consumption",
+      authors:
+        "Amarjeet Singh Chauhan, Mohit Yadav, Aditya Vardhan, Sanjay Saini",
+      description:
+        "Journal of Emerging Technologies and Innovative Research (JETIR), ISSN: 2349-5162, Volume 9, Issue 1, pp. 554-561, January 2022.",
+      animation: "fade-left",
+    },
+    {
+      no: 11,
+      title: "IoT based Smart Agriculture Using LoRa Technology",
+      authors: "Amarjeet Singh Chauhan, Sanjay Saini",
+      description:
+        "Intelligent Computing and Technologies Conference, ASTU, Assam & Central Institute of Technology, Kokrajhar, Assam, 2021.",
+      animation: "fade-right",
+    },
+  ];
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-      {publications.map((pub, index) => (
-        <CardSpotlight
-          key={index}
-          className="p-4 sm:p-6 rounded-2xl min-h-[240px] sm:min-h-[260px]"
-          data-aos={pub.animation}
-        >
-          <div className="z-20 relative flex flex-col h-full">
-            <p className="text-white text-base sm:text-lg font-semibold mb-2">
-              {pub.title}
+    <div className="space-y-8">
+   
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        {publications.map((item) => (
+          <CardSpotlight
+            key={`pub-${item.no}`}
+            className="min-h-[200px] p-6"
+            data-aos={item.animation}
+          >
+            <p className="text-neutral-300 text-sm z-20 relative">
+              <strong>S.No:</strong> {item.no}
+              <br />
+              <strong>Title:</strong> {item.title}
+              <br />
+              <strong>Authors:</strong> {item.authors}
+              <br />
+              <strong>Details:</strong> {item.description}
             </p>
-
-            <p className="text-neutral-300 text-sm sm:text-base mb-2">
-              <span className="font-medium">Authors:</span>{" "}
-              {pub.authors.join(", ")}
-            </p>
-
-            <p className="text-neutral-400 text-sm sm:text-sm text-left sm:text-justify mt-auto">
-              {pub.description}
-            </p>
-          </div>
-        </CardSpotlight>
-      ))}
+          </CardSpotlight>
+        ))}
+      </div>
     </div>
   );
 }
