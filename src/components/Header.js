@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import useTheme from "./contaxt/themeContaxt";
-import { Vortex } from './ui/vortex';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +13,6 @@ export default function Header() {
   const { ThemeMode, darkTheme, lightTheme } = useTheme();
 
   const toggleTheme = () => ThemeMode === 'dark' ? lightTheme() : darkTheme();
- 
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
@@ -33,10 +31,10 @@ export default function Header() {
     return (
       <Link
         href={href}
-        className={`relative px-2 py-1 whitespace-nowrap font-medium transition duration-300 group ${
+        onClick={closeMenu}
+        className={`relative px-3 py-2 text-sm font-medium transition duration-300 group ${
           isActive ? "text-blue-400 font-semibold" : "text-white hover:text-blue-300"
         }`}
-        onClick={closeMenu}
       >
         {label}
         <span
@@ -49,87 +47,82 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-sm border-b border-gray-800">
-      <Vortex>
-        {/* Header Info */}
-        <div className="text-white px-4 py-4 animate-fadeInDown">
-          <div className="max-w-7xl mx-auto text-center space-y-1">
-            <h1 className="text-xl md:text-2xl font-semibold">
-             Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-900 via-black to-gray-900 backdrop-blur-md shadow-md border-b border-gray-800">
+      {/* Header Info */}
+      <div className="text-white px-4 py-4 animate-fadeInDown">
+        <div className="max-w-7xl mx-auto text-center space-y-1">
+          <h1 className="text-xl md:text-3xl font-semibold">
+            Dr. Amarjeet Singh Chauhan 
+          </h1>
+          <p className="text-sm italic text-blue-300">
+            (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+          </p>
+          <p className="text-sm  text-blue-300">
+            Lecturer, Department of Physics and Computer Science
+          </p>
+          <p className="text-xs md:text-sm text-blue-400 font-light">
+            Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
+          </p>
+        </div>
 
-            </h1>
-            <p className="text-sm md:text-base italic text-blue-300">
-              Lecturer, Department of Physics and Computer Science
-
-            </p>
-            <p className="text-xs md:text-sm text-blue-400 font-light">
-              Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
-
-            </p>
+        {/* Contact Info */}
+        <div className="flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
+          <div className="flex items-center gap-2">
+            <FaEnvelope />
+            <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
+              amarjeetsinghchauhan96@gmail.com
+            </a>
           </div>
+          <div className="flex items-center gap-2">
+            <FaEnvelope />
+            <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
+              amarjeetsinghchauhan@dei.ac.in
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <FaLinkedin />
+            <Link
+              href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
+              className="hover:underline"
+              target="_blank"
+            >
+              LinkedIn
+            </Link>
+          </div>
+        </div>
+      </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
-            <div className="flex items-center gap-2">
-              <FaEnvelope />
-              <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
-                amarjeetsinghchauhan96@gmail.com
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaEnvelope />
-              <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
-                amarjeetsinghchauhan@dei.ac.in
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaLinkedin />
-              <Link
-                href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
-                className="hover:underline"
-                target="_blank"
-              >
-                LinkedIn
-              </Link>
-            </div>
+      {/* Navigation */}
+      <nav className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex space-x-6 items-center font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <NavLink href={link.href} label={link.label} />
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Toggle */}
+          <div className="md:hidden text-white">
+            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
-            {/* Desktop Nav */}
-            <ul className="hidden md:flex space-x-6 items-center font-medium">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <NavLink href={link.href} label={link.label} />
-                </li>
-              ))}
-             
-            </ul>
-
-              {/* Mobile Toggle */}
-            <div className="md:hidden text-white">
-              <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-                {isOpen ? <X size={26} /> : <Menu size={26} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Menu */}
-          {isOpen && (
-            <ul className="md:hidden bg-black text-white shadow-md animate-slideDownFade px-4 p-2 pb-4 space-y-2 font-medium">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <NavLink href={link.href} label={link.label} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </nav>
-      </Vortex>
-
-
+        {/* Mobile Menu */}
+        {isOpen && (
+          <ul className="md:hidden bg-black/95 backdrop-blur-md text-white shadow-md animate-slideDownFade px-4 py-3 space-y-2 font-medium">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <NavLink href={link.href} label={link.label} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </nav>
 
       {/* Animations */}
       <style jsx>{`
@@ -143,11 +136,9 @@ export default function Header() {
             transform: translateY(0);
           }
         }
-
         .animate-fadeInDown {
           animation: fadeInDown 0.6s ease-out forwards;
         }
-
         @keyframes slideDownFade {
           0% {
             opacity: 0;
@@ -158,7 +149,6 @@ export default function Header() {
             transform: translateY(0);
           }
         }
-
         .animate-slideDownFade {
           animation: slideDownFade 0.3s ease-out forwards;
         }
