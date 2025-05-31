@@ -148,7 +148,7 @@ export default function Page() {
       </section>
 
       <section
-        className="max-w-7xl mx-auto  shadow-2xl rounded-3xl p-14 mt-16 border border-gray-200"
+        className="max-w-7xl mx-auto  shadow-2xl rounded-3xl p-14 mt-16"
         aria-labelledby="teaching-experience"
       >
         <h2

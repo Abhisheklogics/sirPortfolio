@@ -55,13 +55,16 @@ export default function Header() {
         <div className="text-white px-4 py-4 animate-fadeInDown">
           <div className="max-w-7xl mx-auto text-center space-y-1">
             <h1 className="text-xl md:text-2xl font-semibold">
-              Dr. Amarjeet Singh Chauhan (Ph.D | M.Tech | B.Tech)
+             Dr. Amarjeet Singh Chauhan (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+
             </h1>
             <p className="text-sm md:text-base italic text-blue-300">
-              Lecturer, Dept. of Physics & Computer Science
+              Lecturer, Department of Physics and Computer Science
+
             </p>
             <p className="text-xs md:text-sm text-blue-400 font-light">
-              Faculty of Science, DEI (Deemed University), Agra
+              Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
+
             </p>
           </div>
 
