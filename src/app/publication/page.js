@@ -4,21 +4,13 @@ import { Meteors } from "@/components/ui/meteors";
 import CardSpotlightPatents from "@/components/NewCom/Petents";
 
 
-// app/patents/page.tsx or layout.tsx (if using app directory structure)
+
 
 export const metadata = {
   title: "Patents by Dr. Amarjeet Singh Chauhan | IoT, AI & VTOL Innovations",
   description:
     "Explore groundbreaking patents by Dr. Amarjeet Singh Chauhan, including smart air quality monitoring systems using IoT and AI, and VTOL drone technologies for advanced UAV solutions.",
-  keywords: [
-    "Amarjeet Singh Chauhan patents",
-    "VTOL drone patent India",
-    "IoT air monitoring patent",
-    "AI UAV patent",
-    "Smart drone inventions",
-    "DEI Agra patents",
-    "High-speed VTOL UAV",
-  ],
+ 
   authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
   creator: "Dr. Amarjeet Singh Chauhan",
   publisher: "Dayalbagh Educational Institute",
@@ -26,7 +18,7 @@ export const metadata = {
     title: "Patents by Dr. Amarjeet Singh Chauhan | IoT, AI & UAV Innovations",
     description:
       "A collection of patents in IoT, AI, and drone technology by Dr. Amarjeet Singh Chauhan from DEI Agra. Explore smart UAV and air monitoring systems.",
-    url: "https://yourdomain.com/patents",
+    url: "https://www.amarjeetsinghchauhan.com/book",
     siteName: "Amarjeet Singh Chauhan - DEI Agra",
     type: "article",
   },
