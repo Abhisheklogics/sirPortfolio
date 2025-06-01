@@ -20,7 +20,7 @@ export const metadata = {
   authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
   creator: "Dr. Amarjeet Singh Chauhan",
   publisher: "Dayalbagh Educational Institute",
-  robots: "index, follow",
+
 };
 
 
