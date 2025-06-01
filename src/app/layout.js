@@ -37,7 +37,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="">
-      
+    
+       <meta name="google-site-verification" content="q74cqb8_1rbbIDl01X6TFZBxOvbAxBpn9_6ueKfCfPM"/>
+     
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased `}
       >
