@@ -25,8 +25,8 @@ const visits = [
 
 export default function IndustrialVisitsGallery() {
   useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
+      AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+    }, []);
 
   const settings = {
     infinite: true,

@@ -106,44 +106,50 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
           {bookChaptersData.map((item) => (
             <CardSpotlight
             key={`pub-${item.no}`}
-            className="min-h-[260px] p-6">
+            className="min-h-[260px] p-4"
+              data-aos='fade-right'
+            
+            >
              <p className="text-neutral-300 text-sm z-20 relative">
-              <strong className='text-blue-600'>S.No:</strong> {item.no}
+              <strong className='text-blue-400'>S.No:</strong> {item.no}
               <br />
-              <strong className='text-blue-600'>Title:</strong> {item.title}
+              <strong className='text-blue-400'>Title:</strong> {item.title}
               <br />
-              <strong className='text-blue-600'>coAuthors:</strong> {item.coAuthors}
+              <strong className='text-blue-400'>coAuthors:</strong> {item.coAuthors}
               <br />
-              <strong className='text-blue-600'>Publisher:</strong> {item.publisher}
+              <strong className='text-blue-400'>Publisher:</strong> {item.publisher}
                 <br />
-                      <strong className='text-blue-600'>year:</strong> {item.year}
+                      <strong className='text-blue-400'>year:</strong> {item.year}
                         <br />
-                              <strong className='text-blue-600'>Status:</strong> {item.status}
+                              <strong className='text-blue-400'>Status:</strong> {item.status}
             </p>
              </CardSpotlight>
           ))}
         </div>
       </section>
 
-      <section>
+      <section >
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📝 Proposed Books</h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {proposedBooksData.map((item) => (
                <CardSpotlight
             key={`pub-${item.no}`}
-            className="min-h-[260px] p-6">
+            className="min-h-[260px] p-4"
+             data-aos='fade-right'
+            
+            >
               <p className="text-neutral-300 text-sm z-20 relative">
-              <strong className='text-blue-600'>S.No:</strong> {item.no}
+              <strong className='text-blue-400'>S.No:</strong> {item.no}
               <br />
-              <strong className='text-blue-600'>Title:</strong> {item.title}
+              <strong className='text-blue-400'>Title:</strong> {item.title}
               <br />
-              <strong className='text-blue-600'>coAuthors:</strong> {item.coAuthors}
+              <strong className='text-blue-400'>coAuthors:</strong> {item.coAuthors}
               <br />
-              <strong className='text-blue-600'>Publisher:</strong> {item.publisher}
+              <strong className='text-blue-400'>Publisher:</strong> {item.publisher}
                 <br />
-                      <strong className='text-blue-600'>year:</strong> {item.year}
+                      <strong className='text-blue-400'>year:</strong> {item.year}
                         <br />
-                              <strong className='text-blue-600'>Status:</strong> {item.status}
+                              <strong className='text-blue-400'>Status:</strong> {item.status}
             </p>
              </CardSpotlight>
           ))}
@@ -165,7 +171,7 @@ export function CardSpotlightPublications() {
       authors: "Mohit Yadav, Amarjeet Singh, Aditya Vardhan, Sanjay Saini",
       description:
         "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
-      animation: "fade-right",
+       animation: "fade-right",
     },
     {
       no: 2,
@@ -174,7 +180,7 @@ export function CardSpotlightPublications() {
       authors: "Mohit Yadav, Amarjeet Singh, Varun Shrivastav, Sanjay Saini",
       description:
         "IEEE International Students' Conference on Electrical, Electronics and Computer Science (SCEECS), MANIT, Bhopal, 2024.",
-      animation: "fade-left",
+      animation: "fade-right",
     },
     {
       no: 3,
@@ -192,7 +198,7 @@ export function CardSpotlightPublications() {
       authors: "Mohit Yadav, Amarjeet Singh Chauhan, Sanjay Saini",
       description:
         "45th National Systems Conference, September 26 – 30, 2022, SSI and DEI.",
-      animation: "fade-left",
+       animation: "fade-right",
     },
     {
       no: 5,
@@ -208,7 +214,7 @@ export function CardSpotlightPublications() {
       authors: "Amarjeet Singh Chauhan, Sanjay Saini",
       description:
         "44th National Systems Conference, May 22 – 23, 2021, SSI and DEI.",
-      animation: "fade-left",
+       animation: "fade-right",
     },
     {
       no: 7,
@@ -226,7 +232,7 @@ export function CardSpotlightPublications() {
         "Mohit Yadav, Aditya Vardhan, Amarjeet Singh Chauhan, Sanjay Saini",
       description:
         "International Journal of Creative Research Thoughts, ISSN: 2320-2882, Volume 10, Issue 1, January 2022.",
-      animation: "fade-left",
+      animation: "fade-right",
     },
     {
       no: 9,
@@ -245,7 +251,7 @@ export function CardSpotlightPublications() {
         "Amarjeet Singh Chauhan, Mohit Yadav, Aditya Vardhan, Sanjay Saini",
       description:
         "Journal of Emerging Technologies and Innovative Research (JETIR), ISSN: 2349-5162, Volume 9, Issue 1, pp. 554-561, January 2022.",
-      animation: "fade-left",
+       animation: "fade-right",
     },
     {
       no: 11,
@@ -260,21 +266,21 @@ export function CardSpotlightPublications() {
   return (
     <div className="space-y-8">
    
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 p-2 sm:grid-cols-2 xl:grid-cols-3 gap-6">
         {publications.map((item) => (
           <CardSpotlight
             key={`pub-${item.no}`}
             className="min-h-[260px] p-6"
             data-aos={item.animation}
           >
-            <p className="text-neutral-300 text-sm z-20 relative">
-              <strong className='text-blue-600'>S.No:</strong> {item.no}
+            <p className="text-neutral-300 p-2 text-sm z-20 relative">
+              <strong className='text-blue-400'>S.No:</strong> {item.no}
               <br />
-              <strong className='text-blue-600'>Title:</strong> {item.title}
+              <strong className='text-blue-400'>Title:</strong> {item.title}
               <br />
-              <strong className='text-blue-600'>Authors:</strong> {item.authors}
+              <strong className='text-blue-400'>Authors:</strong> {item.authors}
               <br />
-              <strong className='text-blue-600'>Details:</strong> {item.description}
+              <strong className='text-blue-400'>Details:</strong> {item.description}
             </p>
           </CardSpotlight>
         ))}
@@ -284,9 +290,9 @@ export function CardSpotlightPublications() {
 }
 
 export default function BooksPage() {
-  useEffect(() => {
-    AOS.init({ duration: 1100 }); // corrected duration
-  }, []);
+   useEffect(() => {
+       AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+     }, []);
 
   return (
     <main className="space-y-16 px-4 sm:px-6 lg:px-8 py-8">
