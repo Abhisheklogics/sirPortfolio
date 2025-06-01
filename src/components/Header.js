@@ -55,7 +55,7 @@ export default function Header() {
       {/* Header Info */}
       <div className="text-white px-4 py-4 animate-fadeInDown">
         <div className="max-w-7xl mx-auto text-center space-y-1">
-          <h1 className="text-xl md:text-3xl font-semibold">
+          <h1 className="text-2xl md:text-3xl font-bold">
             Dr. Amarjeet Singh Chauhan 
           </h1>
           <p className="text-sm italic text-blue-300">
@@ -70,16 +70,16 @@ export default function Header() {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
+        <div className="hidden flex flex-wrap gap-4 justify-center items-center mt-4 text-sm text-white">
           <div className="flex items-center gap-2">
             <FaEnvelope />
-            <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline">
+            <a href="mailto:amarjeetsinghchauhan96@gmail.com" className="hover:underline text-sm">
               amarjeetsinghchauhan96@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">
             <FaEnvelope />
-            <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline">
+            <a href="mailto:amarjeetsinghchauhan@dei.ac.in" className="hover:underline text-sm">
               amarjeetsinghchauhan@dei.ac.in
             </a>
           </div>
@@ -87,7 +87,7 @@ export default function Header() {
             <FaLinkedin />
             <Link
               href="https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130"
-              className="hover:underline"
+              className="hover:underline text-sm"
               target="_blank"
             >
               LinkedIn

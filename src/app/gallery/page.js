@@ -44,20 +44,20 @@ export default function IndustrialVisitsGallery() {
 
   return (
     <section
-      className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 rounded-3xl shadow-xl bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white relative"
+      className="max-w-5xl mx-auto px-4 sm:px-6 mt-4 lg:px-8 py-16 rounded-3xl shadow-xl bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white relative"
       data-aos="fade-up"
       aria-label="Industrial Visits Gallery"
     >
       <Meteors number={40} />
       <h2 className="text-3xl sm:text-4xl font-extrabold mb-14 text-center border-b border-gray-700 pb-6 tracking-tight">
-        Industrial Visits & Expos Gallery
+        Industrial Visits & Projects Gallery
       </h2>
 
       <Slider {...settings}>
         {visits.map(({ place, location, year }, idx) => (
           <article
             key={idx}
-            className="bg-gray-800 rounded-2xl md:ml-[250px] shadow-lg p-5 sm:p-8 mx-2 sm:mx-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] focus-within:scale-[1.02] max-w-md mx-auto"
+            className="bg-gray-800  rounded-2xl md:ml-[250px] shadow-lg p-5 sm:p-8 mx-2 sm:mx-6 flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] focus-within:scale-[1.02] max-w-md mx-auto"
             tabIndex={0}
             aria-label={`${place}, visited in year ${year}, located at ${location}`}
           >
