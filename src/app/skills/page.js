@@ -1,4 +1,5 @@
 'use client'
+
 import {
   FaCloud,
   FaMicrochip,
@@ -13,7 +14,7 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+
 
 export default function Page() {
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function Page() {
       easing: 'ease-in-out',
     });
   }, []);
-  
+
   const skills = [
     {
       name: "Internet of Things (IoT)",
@@ -112,76 +113,61 @@ export default function Page() {
   ];
 
   return (
-    <main className=" mt-6 min-h-screen   py-10 text-justify text-white">
-      <section className="max-w-7xl mx-auto  shadow-xl rounded-3xl p-12">
-         <BackgroundBeams/>
+  <>
+    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-950 py-12 px-4 sm:px-6 lg:px-8 text-white relative">
+      
+
+      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-12 bg-black/30 backdrop-blur-md border border-white/10 shadow-xl">
         <header className="mb-12 text-center">
-          <h1
-            className="text-2xl md:text-5xl font-bold tracking-tight "
-            data-aos="fade-down"
-          >
+          <h1 className="text-2xl md:text-5xl font-bold tracking-tight" data-aos="fade-down">
             Skills & Expertise
           </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-lg text-white" data-aos="fade-up" data-aos-delay={200}>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80" data-aos="fade-up" data-aos-delay={200}>
             A comprehensive overview of my technical capabilities and domain knowledge.
           </p>
         </header>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <article
               key={index}
-              className="flex flex-col bg-indigo-50 border border-indigo-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default"
+              className="bg-white/90 text-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition duration-300 cursor-default"
               data-aos="fade-up"
-              data-aos-delay={index * 120}
-              aria-label={skill.name}
+              data-aos-delay={index * 100}
             >
-              <div className="flex items-center space-x-4 mb-5">
-                <div className="p-3 bg-indigo-100 rounded-full shadow-inner">
-                  {skill.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-indigo-900">{skill.name}</h3>
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="p-3 bg-indigo-100 rounded-full shadow-inner">{skill.icon}</div>
+                <h3 className="text-lg font-bold">{skill.name}</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed tracking-wide select-text">{skill.description}</p>
+              <p className="text-sm text-gray-800">{skill.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section
-        className="max-w-7xl mx-auto  shadow-2xl rounded-3xl p-14 mt-16"
-        aria-labelledby="teaching-experience"
-      >
+      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-14 mt-20 bg-black/30 backdrop-blur-md border border-white/10 shadow-2xl">
         <h2
           id="teaching-experience"
-          className="md:text-4xl  text-2xl font-extrabold text-yellow-600 mb-10 border-b-4 border-yellow-400 pb-4 tracking-wide text-center"
+          className="text-2xl md:text-4xl font-bold text-yellow-400 border-b-4 border-yellow-500 pb-3 mb-12 text-center"
           data-aos="fade-up"
         >
           Teaching Experience
         </h2>
 
         <div
-          className="bg-yellow-50 border-l-8 border-yellow-400 p-6 rounded-3xl mb-14 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          className="bg-yellow-100 text-yellow-900 border-l-8 border-yellow-500 p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 mb-10"
           data-aos="fade-up"
         >
-          <h3 className="md:text-4xl  text-2xl font-bold text-yellow-900 mb-3 leading-tight">
-            Lecturer, Department of Physics and Computer Science
-          </h3>
-          <p className="text-gray-800 text-lg mb-3 font-semibold tracking-wide">
-            Faculty of Science, Dayalbagh Educational Institute, Agra
-          </p>
-          <p className="text-yellow-800 italic font-semibold tracking-wide text-sm sm:text-base">
-            Duration: From 2019 to Present
-          </p>
+          <h3 className="text-xl md:text-3xl font-bold mb-2">Lecturer, Department of Physics and Computer Science</h3>
+          <p className="text-base font-semibold">Faculty of Science, Dayalbagh Educational Institute, Agra</p>
+          <p className="italic text-sm mt-1 font-medium">Duration: From 2019 to Present</p>
         </div>
 
-        <h4
-          className="md:text-4xl text-white text-2xl font-semibold  mb-12 tracking-wide text-center"
-          data-aos="fade-up"
-        >
+        <h4 className="text-xl md:text-3xl font-semibold text-white text-center mb-10" data-aos="fade-up">
           Courses Taught
         </h4>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             "Programming of IoT Principles",
             "Cognitive Robotics",
@@ -200,20 +186,16 @@ export default function Page() {
           ].map((course, idx) => (
             <div
               key={idx}
-              className="bg-white border border-gray-300 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 select-text cursor-default"
+              className="bg-white/90 text-gray-900 border border-gray-200 rounded-2xl p-4 shadow-md hover:shadow-lg transition"
               data-aos="fade-up"
               data-aos-delay={idx * 80}
-              role="listitem"
-              tabIndex={0}
             >
-              <p className="text-gray-900 font-medium leading-relaxed text-base">
-                {course}
-              </p>
+              <p className="text-sm font-medium">{course}</p>
             </div>
           ))}
         </div>
       </section>
-     
     </main>
+    </>
   );
 }

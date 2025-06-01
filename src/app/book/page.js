@@ -9,6 +9,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 
  export function CardSpotlightBooks() {
+  
   const bookChaptersData = [
     {
       no: 1,
@@ -95,18 +96,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
     },
   ];
 
-  const CardContent = ({ item }) => (
-    <CardSpotlight className="min-h-[220px] p-5 sm:p-6" data-aos="zoom-in">
-      <div className="text-sm text-neutral-200 space-y-1">
-        <p><span className="font-semibold text-neutral-400">S.No:</span> {item.no}</p>
-        <p><span className="font-semibold text-neutral-400">Title:</span> {item.title}</p>
-        <p><span className="font-semibold text-neutral-400">Co-authors:</span> {item.coAuthors}</p>
-        <p><span className="font-semibold text-neutral-400">Publisher:</span> {item.publisher}</p>
-        <p><span className="font-semibold text-neutral-400">Year:</span> {item.year}</p>
-        <p><span className="font-semibold text-neutral-400">Status:</span> {item.status}</p>
-      </div>
-    </CardSpotlight>
-  );
+ 
 
   return (
     <div className="space-y-12 px-4 sm:px-6 lg:px-8">
@@ -114,7 +104,23 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📘 Book Chapters</h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {bookChaptersData.map((item) => (
-            <CardContent key={`book-${item.no}`} item={item} />
+            <CardSpotlight
+            key={`pub-${item.no}`}
+            className="min-h-[260px] p-6">
+             <p className="text-neutral-300 text-sm z-20 relative">
+              <strong className='text-blue-600'>S.No:</strong> {item.no}
+              <br />
+              <strong className='text-blue-600'>Title:</strong> {item.title}
+              <br />
+              <strong className='text-blue-600'>coAuthors:</strong> {item.coAuthors}
+              <br />
+              <strong className='text-blue-600'>Publisher:</strong> {item.publisher}
+                <br />
+                      <strong className='text-blue-600'>year:</strong> {item.year}
+                        <br />
+                              <strong className='text-blue-600'>Status:</strong> {item.status}
+            </p>
+             </CardSpotlight>
           ))}
         </div>
       </section>
@@ -123,7 +129,23 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📝 Proposed Books</h2>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
           {proposedBooksData.map((item) => (
-            <CardContent key={`proposed-${item.no}`} item={item} />
+               <CardSpotlight
+            key={`pub-${item.no}`}
+            className="min-h-[260px] p-6">
+              <p className="text-neutral-300 text-sm z-20 relative">
+              <strong className='text-blue-600'>S.No:</strong> {item.no}
+              <br />
+              <strong className='text-blue-600'>Title:</strong> {item.title}
+              <br />
+              <strong className='text-blue-600'>coAuthors:</strong> {item.coAuthors}
+              <br />
+              <strong className='text-blue-600'>Publisher:</strong> {item.publisher}
+                <br />
+                      <strong className='text-blue-600'>year:</strong> {item.year}
+                        <br />
+                              <strong className='text-blue-600'>Status:</strong> {item.status}
+            </p>
+             </CardSpotlight>
           ))}
         </div>
       </section>
@@ -242,17 +264,17 @@ export function CardSpotlightPublications() {
         {publications.map((item) => (
           <CardSpotlight
             key={`pub-${item.no}`}
-            className="min-h-[200px] p-6"
+            className="min-h-[260px] p-6"
             data-aos={item.animation}
           >
             <p className="text-neutral-300 text-sm z-20 relative">
-              <strong>S.No:</strong> {item.no}
+              <strong className='text-blue-600'>S.No:</strong> {item.no}
               <br />
-              <strong>Title:</strong> {item.title}
+              <strong className='text-blue-600'>Title:</strong> {item.title}
               <br />
-              <strong>Authors:</strong> {item.authors}
+              <strong className='text-blue-600'>Authors:</strong> {item.authors}
               <br />
-              <strong>Details:</strong> {item.description}
+              <strong className='text-blue-600'>Details:</strong> {item.description}
             </p>
           </CardSpotlight>
         ))}
@@ -263,21 +285,19 @@ export function CardSpotlightPublications() {
 
 export default function BooksPage() {
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+    AOS.init({ duration: 1100 }); // corrected duration
   }, []);
 
   return (
-    <main className="min-h-screen  bg-black py-24 px-6 mt-[-100px] sm:px-12 lg:px-20 font-sans">
-      <section className="max-w-7xl mx-auto  backdrop-blur-md  rounded-3xl shadow-2xl p-10 sm:p-16 space-y-20">
-
-        
-       <CardSpotlightBooks/>
-        <div className=" bg-black min-h-screen">
-      <h2 className="text-2xl md:text-3xl text-white font-bold mb-4">Research Publications</h2>
-      <CardSpotlightPublications />
-    </div>
-        </section>
-      
+    <main className="space-y-16 px-4 sm:px-6 lg:px-8 py-8">
+      <section>
+        <CardSpotlightBooks />
+      </section>
+      <section>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📄 Research Publications</h2>
+        <CardSpotlightPublications />
+      </section>
     </main>
   );
 }
+
