@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        
         <meta name="author" content="Dr. Amarjeet Singh Chauhan" />
         <meta name="creator" content="Dr. Amarjeet Singh Chauhan" />
         <meta name="publisher" content="Dayalbagh Educational Institute" />
