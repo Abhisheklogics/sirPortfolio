@@ -14,24 +14,15 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "Dr. Amarjeet Singh Chauhan | DEI Agra | Lecturer - Physics & Computer Science",
+  title: "Amarjeet Singh Chauhan - Lecturer at DEI Agra | Physics & Computer Science",
   description:
-    "Official profile of Dr. Amarjeet Singh Chauhan, Lecturer in Physics and Computer Science at Dayalbagh Educational Institute (DEI), Agra. Ph.D. in Computer Science, Ex-TCS Systems Engineer, expert in teaching, research, and innovation.",
-  keywords: [
-    "Dr. Amarjeet Singh Chauhan",
-    "Amarjeet Singh DEI",
-    "Physics Lecturer DEI",
-    "Computer Science DEI",
-    "Dayalbagh Educational Institute Faculty",
-    "Top Lecturer in Agra",
-    "PhD Computer Science Lecturer",
-    "DEI Agra Amarjeet",
-    "Systems Engineer TCS turned Lecturer",
-    "Amarjeet Chauhan Physics CS Educator"
-  ],
+    "Dr. Amarjeet Singh Chauhan is a distinguished Lecturer in the Department of Physics and Computer Science at Dayalbagh Educational Institute (DEI), Agra. With a Ph.D. and M.Tech in Computer Science from DEI, and industry experience as a Systems Engineer at TCS, he combines academic excellence with real-world expertise.",
   authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
   creator: "Dr. Amarjeet Singh Chauhan",
+  publisher: "Dayalbagh Educational Institute",
+  robots: "index, follow",
 };
+
 
 export default function RootLayout({ children }) {
   return (
@@ -46,7 +37,8 @@ export default function RootLayout({ children }) {
         <meta name="google-site-verification" content="q74cqb8_1rbbIDl01X6TFZBxOvbAxBpn9_6ueKfCfPM" />
  <link rel="shortcut icon" href="/favicon.ico" />
       
-       
+       <meta name="robots" content="index, follow" />
+
 
         {/* Structured Data */}
         <script
