@@ -113,19 +113,14 @@ export default function Hero() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start ">
+          <div className="flex flex-wrap gap-6 md:mt-[-60px] md:ml-[210px] justify-center md:justify-start ">
             <Link
               href="/publication"
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-lg transition hover:-translate-y-1"
             >
               <FaBookOpen className="text-lg" /> View Publications
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 border-2 border-blue-700 text-blue-700 hover:bg-blue-100 px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-sm transition hover:-translate-y-1"
-            >
-              <FaEnvelope className="text-lg" /> Contact Me
-            </Link>
+           
           </div>
         </div>
 

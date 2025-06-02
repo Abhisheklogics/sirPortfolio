@@ -28,6 +28,7 @@ export default function Header() {
     { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
    
     { href: "/gallery", label: "Gallery" },
+      { href: "/contact", label: "Contact" },
   ];
 
   const NavLink = ({ href, label }) => {
@@ -36,7 +37,7 @@ export default function Header() {
       <Link
         href={href}
         onClick={closeMenu}
-        className={`relative px-3 py-2 text-md font-medium transition duration-300 group ${
+        className={`relative px-3 py-2 text-sm font-medium transition duration-300 group ${
           isActive ? "text-blue-400 font-semibold" : " text-white hover:text-blue-300"
         }`}
       >
@@ -97,36 +98,36 @@ export default function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="border-t border-gray-300 bg-gradient-to-r from-gray-500 via-gray-700 to-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-12 md:ml-10 items-center font-medium">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
+      <nav className="border-t border-white/20 bg-gradient-to-r from-[#1f2937] via-[#374151] to-[#1e293b] shadow-lg backdrop-blur-md transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-10 md:ml-10 items-center font-medium text-white">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <NavLink href={link.href} label={link.label} />
+            </li>
+          ))}
+        </ul>
 
-          {/* Mobile Toggle */}
-          <div className="md:hidden text-white">
-            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-              {isOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
+        {/* Mobile Toggle */}
+        <div className="md:hidden text-white">
+          <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <ul className="md:hidden bg-black/95 backdrop-blur-md text-white shadow-md animate-slideDownFade px-4 py-3 space-y-2 font-medium">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <NavLink href={link.href} label={link.label} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul className="md:hidden bg-black/90 backdrop-blur-xl text-white shadow-lg rounded-b-xl animate-slideDownFade px-6 py-4 space-y-3 font-semibold">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <NavLink href={link.href} label={link.label} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </nav>
 
       {/* Animations */}
       <style jsx>{`
