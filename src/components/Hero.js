@@ -9,7 +9,7 @@ import photo from '../../public/as.jpg';
 
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 import { Spotlight } from './ui/spotlight-new';
- 
+
 import {
   FaEnvelope,
   FaBookOpen,
@@ -24,70 +24,74 @@ import {
 export default function Hero() {
   useEffect(() => {
     AOS.init({
-      duration: 800,      
+      duration: 800,
       easing: 'ease-in-out',
-      once: true           
+      once: true,
     });
   }, []);
 
   return (
-    <div className="w-full md:mt-10  mt-[70px] md:relative absolute overflow-hidden">
+    <div className="relative w-full md:h-[930px] p-4 mt-[70px] md:mt-10 overflow-hidden">
       <Spotlight />
 
-      <div className="w-full md:ml-10 text-white px-4 flex flex-col md:flex-row items-center justify-center gap-10">
-        {/* Left: Text Content */}
-        <div className="md:w-1/2 w-full space-y-6 text-sm md:text-base text-center md:text-left">
+      <div className="flex flex-col md:flex-row items-center justify-center px-4 gap-10 text-white">
+        {/* Left Content */}
+        <div className="w-full md:w-1/2 space-y-6 text-sm md:text-base text-center md:text-left">
           <h1
             data-aos="fade-right"
-            className="text-3xl  mt-4 md:text-5xl font-bold leading-tight drop-shadow-md"
+            className="text-3xl md:text-5xl font-bold leading-tight drop-shadow-md"
           >
             Dr. Amarjeet Singh Chauhan
             <br />
-            <span className="text-lg md:text-2xl text-blue-400 font-semibold block mt-2">
-              (Ph.D (CS) | M.Tech (CS) | B.Tech (CS))
+            <span className="text-lg md:text-2xl text-blue-400 font-semibold mt-2 block">
+              Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS)
             </span>
           </h1>
 
-          {/* Image (only visible on small screens under name) */}
+          {/* Mobile Image */}
           <div className="block md:hidden">
             <CardContainer className="inter-var w-full max-w-xs mx-auto mt-4">
-              <CardBody className="relative mt-[-90px] group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
+              <CardBody className="relative mt-[-70px] group/card w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
                 <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
-                 <Image
-  src={photo}
-  alt="Dr. Amarjeet Singh Chauhan"
-  height={500}
-  width={500}
-  className="rounded-xl object-cover shadow-xl"
-  loading="lazy"
-/>
-
+                  <Image
+                    src={photo}
+                    alt="Dr. Amarjeet Singh Chauhan"
+                    height={500}
+                    width={500}
+                    className="rounded-xl object-cover shadow-xl"
+                    loading="lazy"
+                  />
                 </CardItem>
               </CardBody>
             </CardContainer>
           </div>
 
-          <div data-aos="fade-up" className="space-y-6 mt-[-50px] md:mt-0 text-justify">
+          {/* Description */}
+          <div data-aos="fade-up" className=" mt-[-60px]  md:mt-0 space-y-4 text-justify">
             <p>
-             I am a dedicated academician and researcher with a Ph.D. in Computer Science, specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization, and over five years of teaching experience at both undergraduate and postgraduate levels.
-</p>
-            <p>
-              As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT), Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing. I have authored multiple publications in reputed conferences, journals, and book chapters with international publishers such as Springer, Wiley, and CRC Press. I have also filed and been granted over 10 national and international patents, particularly in drone technology and IoT-based smart systems, and have received several project grants under MHRD and university funding schemes. I actively contribute to academia and industry-focused innovation by serving as a reviewer, editor, keynote speaker, and mentor.
-</p>
-            <p className=''>
-             As a faculty member at DEI, I have independently taught a wide range of core and advanced subjects, including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing, and Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java), web and mobile development, and hardware integration for IoT and drone-based systems.
-
+              I am a dedicated academician and researcher with a Ph.D. in Computer Science,
+              specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization,
+              and over five years of teaching experience at both undergraduate and postgraduate levels.
             </p>
             <p>
-             Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
-
+              As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT), Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing. I have authored multiple publications in reputed conferences, journals, and book chapters with international publishers such as Springer, Wiley, and CRC Press. I have also filed and been granted over 10 national and international patents.
             </p>
             <p>
-              This portfolio serves as a comprehensive reflection of my journey through research, teaching, technological innovation, and academic contributions. It highlights not only my scholarly achievements but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
-
+              As a faculty member at DEI, I have independently taught a wide range of subjects, including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing, and Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java), web and mobile development, and hardware integration for IoT and drone-based systems.
             </p>
+
+            {/* Mobile Extended Text */}
+            <div className="md:hidden space-y-4">
+              <p>
+                Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
+              </p>
+              <p>
+                This portfolio serves as a comprehensive reflection of my journey through research, teaching, technological innovation, and academic contributions. It highlights not only my scholarly achievements but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
+              </p>
+            </div>
           </div>
 
+          {/* Expertise Tags */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
             {[
               { icon: <FaBrain />, text: 'Swarm Intelligence' },
@@ -100,7 +104,7 @@ export default function Hero() {
             ].map(({ icon, text }) => (
               <div
                 key={text}
-                className="flex items-center gap-3 bg-gradient-to-tr from-blue-100 to-blue-200 rounded-lg px-4 py-2 text-blue-900 shadow-md transition-transform transform hover:scale-105"
+                className="flex items-center gap-3 bg-gradient-to-tr from-blue-100 to-blue-200 rounded-lg px-4 py-2 text-blue-900 shadow-md transition-transform hover:scale-105"
               >
                 <span className="text-blue-700 text-xl">{icon}</span>
                 <span className="text-sm font-semibold">{text}</span>
@@ -108,41 +112,50 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start mt-6">
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-6 justify-center md:justify-start ">
             <Link
               href="/publication"
-              className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-lg transition transform hover:-translate-y-1"
+              className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-lg transition hover:-translate-y-1"
             >
               <FaBookOpen className="text-lg" /> View Publications
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 border-2 border-blue-700 text-blue-700 hover:bg-blue-100 px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-sm transition transform hover:-translate-y-1"
+              className="inline-flex items-center gap-3 border-2 border-blue-700 text-blue-700 hover:bg-blue-100 px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-sm transition hover:-translate-y-1"
             >
               <FaEnvelope className="text-lg" /> Contact Me
             </Link>
           </div>
         </div>
 
-        {/* Right: Image on md+ screens */}
-        <div className="hidden md:block md:w-1/2">
-         <CardContainer className="inter-var w-full max-w-sm mx-auto">
-  <CardBody className="relative group/card md:mt-[-800px] w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
-    <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
-     <Image
-  src={photo}
-  alt="Dr. Amarjeet Singh Chauhan"
-  height={1000}
-  width={1000}
-  className="rounded-xl object-cover shadow-xl"
-  loading="lazy"
-/>
-
-    </CardItem>
-  </CardBody>
-</CardContainer>
-
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full md:w-1/2">
+          <CardContainer className="inter-var w-full max-w-sm mx-auto">
+            <CardBody className="relative group/card mt-[-450px] w-full h-auto rounded-xl p-4 border bg-white/10 backdrop-blur-md border-white/10">
+              <CardItem translateZ="100" rotateX={20} rotateZ={-10} className="w-full">
+                <Image
+                  src={photo}
+                  alt="Dr. Amarjeet Singh Chauhan"
+                  height={1000}
+                  width={1000}
+                  className="rounded-xl object-cover shadow-xl"
+                  loading="lazy"
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
         </div>
+      </div>
+
+      {/* Desktop Extended Description */}
+      <div className="hidden md:block w-full mt-[-400px] px-4 md:px-0 md:ml-[670px] max-w-[500px] text-white text-justify space-y-4 text-sm md:text-base">
+        <p>
+          Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
+        </p>
+        <p>
+          This portfolio serves as a comprehensive reflection of my journey through research, teaching, technological innovation, and academic contributions. It highlights not only my scholarly achievements but also my commitment to developing impactful, real-world IoT and AI solutions for sustainable development.
+        </p>
       </div>
     </div>
   );

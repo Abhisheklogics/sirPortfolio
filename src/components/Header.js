@@ -59,7 +59,7 @@ export default function Header() {
             Dr. Amarjeet Singh Chauhan 
           </h1>
           <p className="text-sm italic text-blue-300">
-            (Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS))
+            Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS)
           </p>
           <p className="text-sm  text-blue-300">
             Lecturer, Department of Physics and Computer Science
