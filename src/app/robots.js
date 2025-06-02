@@ -13,6 +13,6 @@ export default function robots() {
         ],
       },
     ],
-    sitemap: 'https://www.amarjeetsinghchauhan.com/',
+    sitemap: 'https://www.amarjeetsinghchauhan.com/sitemap.xml',
   };
 }
