@@ -74,7 +74,7 @@ export default function Hero() {
             <p>
               As a multidisciplinary researcher, my interests lie in the Internet of Things (IoT), Drone Technologies, AI-Driven Agriculture, Embedded Systems, and Cloud Computing. I have authored multiple publications in reputed conferences, journals, and book chapters with international publishers such as Springer, Wiley, and CRC Press. I have also filed and been granted over 10 national and international patents, particularly in drone technology and IoT-based smart systems, and have received several project grants under MHRD and university funding schemes. I actively contribute to academia and industry-focused innovation by serving as a reviewer, editor, keynote speaker, and mentor.
 </p>
-            <p>
+            <p className=''>
              As a faculty member at DEI, I have independently taught a wide range of core and advanced subjects, including Big Data Technologies, Cognitive Robotics, Applied Machine Learning, Cloud Computing, and Cryptography and Network Security. I also possess hands-on expertise in programming (Python, C/C++, Java), web and mobile development, and hardware integration for IoT and drone-based systems.
 
             </p>
