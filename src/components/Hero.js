@@ -144,7 +144,7 @@ export default function Hero() {
       </div>
 
       {/* Desktop Extended Description */}
-      <div className="hidden md:block w-full mt-[-370px] px-4 md:px-0 md:ml-[700px] max-w-[500px] text-white text-justify space-y-4 text-sm md:text-base">
+      <div className="hidden md:block w-full mt-[-370px] px-4 md:px-0 md:ml-[730px] max-w-[500px] text-white text-justify space-y-4 md:text-base">
         <p>
           Beyond my academic and research endeavors, I have successfully led and supervised student innovations and projects in areas such as air quality monitoring, precision farming, mobile robotics, and drone-assisted services. My skill set also includes technical writing, drone piloting, embedded systems, full-stack web development, and mobile app development—areas I continuously explore to stay aligned with emerging technological trends.
         </p>

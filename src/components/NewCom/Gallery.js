@@ -131,7 +131,7 @@ export default function IndustrialVisitsGallery() {
       {projectPhotos.map((src, idx) => (
         <div
           key={idx}
-          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
+          className="relative w-full h-[440px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
           tabIndex={0}
           aria-label={` Dr. Amarjeet Singh Chauhan  Project photos ${idx + 1}`}
         >
@@ -139,9 +139,9 @@ export default function IndustrialVisitsGallery() {
             src={src}
             alt={`  Dr. Amarjeet Singh Chauhan  Project photos ${idx + 1}`}
             fill
-            className="object-contain rounded-xl transition-transform duration-300 "
+            className="object-contain  rounded-xl transition-transform duration-300 "
             priority={idx === 0}
-           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 70vw"
+           sizes="(max-width: 890px) 100vw, (max-width: 1024px) 100vw, 100vw"
 
           />
         </div>
