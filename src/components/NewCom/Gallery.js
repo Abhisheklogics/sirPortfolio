@@ -109,7 +109,7 @@ export default function IndustrialVisitsGallery() {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
-    dots: true,
+    
     fade: true,
     swipeToSlide: true,
   };
