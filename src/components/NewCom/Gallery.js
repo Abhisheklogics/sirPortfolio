@@ -22,11 +22,10 @@ const projectPhotos = [
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic1.JPG?updatedAt=1748898961766',
 'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203340.jpg?updatedAt=1748898954923',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic2.JPG?updatedAt=1748898941427',
-'https://ik.imagekit.io/vtbtnuxcb/Website/pic2.JPG?updatedAt=1748898941427',
+'https://ik.imagekit.io/vtbtnuxcb/Website/pic7.jpg?updatedAt=1748898937616',
 'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221130_183255.jpg?updatedAt=1748898905014',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic8.jpg?updatedAt=1748898884075',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic6.jpeg?updatedAt=1748898878960',
-'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20231012_122958.jpg?updatedAt=1748898867472',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20231012_122958.jpg?updatedAt=1748898867472',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20250130_190120.jpg?updatedAt=1748898867298',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic11.jpg?updatedAt=1748898866614',
@@ -58,8 +57,28 @@ const projectPhotos = [
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0028.jpg?updatedAt=1748898806657',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0063.jpg?updatedAt=1748898805051',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0023.jpg?updatedAt=1748898804836',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0012.jpg?updatedAt=1748898786585',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0043.jpg?updatedAt=1748898783150',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0030.jpg?updatedAt=1748898781372',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0000.jpg?updatedAt=1748898769440',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0011.jpg?updatedAt=1748898769112',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230815-WA0068.jpg?updatedAt=1748898768298',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0065.jpg?updatedAt=1748898760612',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0242.jpg?updatedAt=1748898760289',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0038.jpg?updatedAt=1748898756572',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20220625-WA0018.jpg?updatedAt=1748898751887',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20220625-WA0019.jpg?updatedAt=1748898751233',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0035.jpg?updatedAt=1748898748653',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124908.jpg?updatedAt=1748898740114',
 
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124491.jpg?updatedAt=1748898739065',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139125100.jpg?updatedAt=1748898739043',
 
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124537.jpg?updatedAt=1748898738881',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG20231012130539.jpg?updatedAt=1748898856530',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5023.JPG?updatedAt=1748898802185',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_4828.JPG?updatedAt=1748898795040',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0045.jpg?updatedAt=1748898795447'
 ];
 
 const visits = [
@@ -78,7 +97,7 @@ const visits = [
 // ... keep imports and AOS.init same ...
 
 export default function IndustrialVisitsGallery() {
-  useEffect(() => {
+   useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
@@ -101,7 +120,7 @@ export default function IndustrialVisitsGallery() {
 <div
   className="bg-gradient-to-r from-gray-900 via-black to-gray-900 mt-[-100px] rounded-3xl shadow-xl text-white p-8"
   data-aos="fade-up"
-  aria-label="Projects Gallery Photos"
+  aria-label=" Dr. Amarjeet Singh Chauhan  Projects Gallery Photos"
 >
   <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
     Projects Gallery
@@ -114,13 +133,13 @@ export default function IndustrialVisitsGallery() {
           key={idx}
           className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
           tabIndex={0}
-          aria-label={`Project photo ${idx + 1}`}
+          aria-label={` Dr. Amarjeet Singh Chauhan  Project photos ${idx + 1}`}
         >
           <Image
             src={src}
-            alt={`Project photo ${idx + 1}`}
+            alt={`  Dr. Amarjeet Singh Chauhan  Project photos ${idx + 1}`}
             fill
-            className="object-contain rounded-xl transition-transform duration-300 hover:scale-105"
+            className="object-contain rounded-xl transition-transform duration-300 "
             priority={idx === 0}
            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 70vw"
 
