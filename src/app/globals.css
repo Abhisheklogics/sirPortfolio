@@ -120,3 +120,22 @@ body {
     }
   }
 }
+
+
+/* styles/slick-custom.css or in globals.css */
+@media (max-width: 767px) {
+  .slick-prev,
+  .slick-next {
+    top: unset !important;
+    bottom: -40px !important; /* Move below image */
+    z-index: 10;
+  }
+
+  .slick-prev {
+    left: 25% !important;
+  }
+
+  .slick-next {
+    right: 25% !important;
+  }
+}

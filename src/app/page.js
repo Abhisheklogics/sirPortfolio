@@ -3,37 +3,40 @@
 import Hero from '@/components/Hero'
 import Head from "next/head";
 export const metadata = {
-  title: "Amarjeet Singh Chauhan - Lecturer at DEI Agra | Physics & Computer Science",
+  title: "Dr. Amarjeet Singh Chauhan - Lecturer at DEI Agra | IoT, AI & Computer Science Expert",
   description:
-    "Dr. Amarjeet Singh Chauhan is a distinguished Lecturer in the Department of Physics and Computer Science at Dayalbagh Educational Institute (DEI), Agra. With a Ph.D. and M.Tech in Computer Science from DEI, and industry experience as a Systems Engineer at TCS, he combines academic excellence with real-world expertise.",
+    "Dr. Amarjeet Singh Chauhan, Ph.D. in Computer Science from DEI Agra, is a distinguished lecturer and multidisciplinary researcher specializing in IoT, Drone Technologies, AI-driven Agriculture, Embedded Systems, and Cloud Computing. With multiple international publications and over 10 patents, he excels in teaching Big Data, Cognitive Robotics, Machine Learning, and more.",
   authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
   creator: "Dr. Amarjeet Singh Chauhan",
-  publisher: "Dayalbagh Educational Institute",
+  publisher: "Dayalbagh Educational Institute (DEI), Agra",
 
   openGraph: {
-    title: "Amarjeet Singh Chauhan - Lecturer at DEI Agra | Physics & Computer Science",
+    title: "Dr. Amarjeet Singh Chauhan - Lecturer & Researcher at DEI Agra",
     description:
-      "Meet Dr. Amarjeet Singh Chauhan, expert in IoT, AI, and Physics at DEI Agra. Explore his research, patents, and teaching excellence.",
-    url: "https://amarjeetsinghchauhan.com/", 
+      "Discover the research, patents, and academic expertise of Dr. Amarjeet Singh Chauhan, an IoT, AI, and Embedded Systems specialist at Dayalbagh Educational Institute, Agra.",
+    url: "https://amarjeetsinghchauhan.com/",
+    siteName: "Dr. Amarjeet Singh Chauhan | DEI Agra",
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png", 
+        url: "/opengraph-image.png", // Replace with your actual OG image path or full URL
         width: 1200,
         height: 630,
-        alt: "Dr. Amarjeet Singh Chauhan - DEI Agra",
+        alt: "Dr. Amarjeet Singh Chauhan - Lecturer and Researcher at DEI Agra",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Amarjeet Singh Chauhan - DEI Agra",
+    title: "Dr. Amarjeet Singh Chauhan - DEI Agra Lecturer & Researcher",
     description:
-      "Explore the academic and research contributions of Dr. Amarjeet Singh Chauhan at DEI Agra.",
+      "Explore Dr. Amarjeet Singh Chauhan’s contributions to IoT, AI, drone tech, and computer science education at DEI Agra.",
     images: ["/opengraph-image.png"],
+    creator: "@amarjeetmentor", 
   },
 };
+
 
 export default function Home() {
   

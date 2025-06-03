@@ -33,6 +33,32 @@ const projectPhotos = [
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5512.JPG?updatedAt=1748898865478',
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5514.JPG?updatedAt=1748898864314',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_1441.JPG?updatedAt=1748898856974',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230813_003218.jpg?updatedAt=1748898855493',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_170221.jpg?updatedAt=1748898854581',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_091010.jpg?updatedAt=1748898852269',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_090909.jpg?updatedAt=1748898850960',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5513.JPG?updatedAt=1748898847267',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5510.JPG?updatedAt=1748898845024',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0052.jpg?updatedAt=1748898835582',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0053.jpg?updatedAt=1748898835447',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0012.jpg?updatedAt=1748898835414',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0014.jpg?updatedAt=1748898834825',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0051.jpg?updatedAt=1748898834811',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250130-WA0019.jpg?updatedAt=1748898828632',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5480.JPG?updatedAt=1748898827876',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0011.jpg?updatedAt=1748898825440',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250122-WA0026.jpg?updatedAt=1748898824373',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250131-WA0016.jpg?updatedAt=1748898824466',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240815-WA0023.jpg?updatedAt=1748898816644',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240815-WA0022.jpg?updatedAt=1748898815710',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240802-WA0011.jpg?updatedAt=1748898815508',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250122-WA0024.jpg?updatedAt=1748898815280',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240509-WA0011.jpg?updatedAt=1748898811648',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0044.jpg?updatedAt=1748898807122',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0028.jpg?updatedAt=1748898806657',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0063.jpg?updatedAt=1748898805051',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0023.jpg?updatedAt=1748898804836',
+
 
 ];
 
@@ -72,46 +98,46 @@ export default function IndustrialVisitsGallery() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
       <Meteors number={40} />
+<div
+  className="bg-gradient-to-r from-gray-900 via-black to-gray-900 mt-[-100px] rounded-3xl shadow-xl text-white p-8"
+  data-aos="fade-up"
+  aria-label="Projects Gallery Photos"
+>
+  <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
+    Projects Gallery
+  </h2>
 
-      {/* 🔼 FIRST: Projects Gallery Section - moved to top and changed to slider */}
-      <div
-        className="bg-gradient-to-r from-gray-900 via-black to-gray-900  mt-[-100px] rounded-3xl shadow-xl text-white p-8"
-        data-aos="fade-up"
-        aria-label="Projects Gallery Photos"
-      >
-        <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
-          Projects Gallery
-        </h2>
+  <div className="max-w-5xl mx-auto">
+    <Slider {...settings}>
+      {projectPhotos.map((src, idx) => (
+        <div
+          key={idx}
+          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
+          tabIndex={0}
+          aria-label={`Project photo ${idx + 1}`}
+        >
+          <Image
+            src={src}
+            alt={`Project photo ${idx + 1}`}
+            fill
+            className="object-contain rounded-xl transition-transform duration-300 hover:scale-105"
+            priority={idx === 0}
+           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 70vw"
 
-        <div className="max-w-5xl mx-auto">
-          <Slider {...settings}>
-  {projectPhotos.map((src, idx) => (
-    <div
-      key={idx}
-      className="relative aspect-video rounded-xl overflow-hidden shadow-lg cursor-pointer"
-      tabIndex={0}
-      aria-label={`Project photo ${idx + 1}`}
-    >
-      <Image
-        src={src}
-        alt={`Project photo ${idx + 1}`}
-        fill
-
-        className="object-cover rounded-xl mt-8"
-        priority={idx === 0}
-      />
-    </div>
-  ))}
-</Slider>
+          />
         </div>
-      </div>
-
+      ))}
+    </Slider>
+  </div>
+</div>
+   <Meteors number={40} />
       {/* 🔽 THEN: Industrial Visits Section */}
       <div
         className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl text-white p-8"
         data-aos="fade-up"
         aria-label="Industrial Visits Details"
       >
+        
         <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
           Industrial Visits
         </h2>

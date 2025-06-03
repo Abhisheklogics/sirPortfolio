@@ -1,39 +1,42 @@
 import IndustrialVisitsGallery from "@/components/NewCom/Gallery";
 export const metadata = {
-  title: "Industrial & Educational Visits | My Organization",
+  title: "Projects Gallery & Educational Visits | Dr. Amarjeet Singh Chauhan",
   description:
-    "Explore key industrial and educational visits from 2022 to 2023 including IoT Expo, Bharat Drone Shakti, Narora Atomic Power Plant, and more, reflecting technological and academic exposure.",
-  
-  authors: [{ name: "My Organization" }],
-  creator: "My Organization",
-  publisher: "My Organization",
-  
+    "Explore a comprehensive gallery of innovative student projects and academic-industrial visits guided by Dr. Amarjeet Singh Chauhan, including IoT Expo, Bharat Drone Shakti, Narora Atomic Power Plant, and more.",
+
+  authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
+  creator: "Dr. Amarjeet Singh Chauhan",
+  publisher: "Dr. Amarjeet Singh Chauhan",
+
   openGraph: {
-    title: "Industrial & Educational Visits | My Organization",
+    title: "Projects Gallery & Educational Visits | Dr. Amarjeet Singh Chauhan",
     description:
-      "Discover notable visits including IoT Expo, Drone Shakti, Narora Atomic Plant, and more, offering insights into advanced technology and education in India.",
-    url: "https://www.amarjeetsinghchauhan.com/gallery", // Replace with actual page URL
-    siteName: "My Organization",
+      "Browse through featured student innovations and major educational visits, including IoT Expo, Drone Shakti, Narora Atomic Plant, and more—reflecting practical learning under the guidance of Dr. Amarjeet Singh Chauhan.",
+    url: "https://www.amarjeetsinghchauhan.com/gallery",
+    siteName: "Dr. Amarjeet Singh Chauhan",
     type: "article",
     images: [
       {
-        url: "https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420", // Replace with actual OG image
+        url: "https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420",
         width: 1200,
         height: 630,
-        alt: "Industrial and Educational Visits",
+        alt: "Projects and Visits by Dr. Amarjeet Singh Chauhan",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Industrial & Educational Visits | My Organization",
+    title: "Projects Gallery & Educational Visits | Dr. Amarjeet Singh Chauhan",
     description:
-      "A timeline of visits to leading expos, research centers, and industrial sites like IoT Expo, Drone Shakti, and more between 2022–2023.",
-    images: ["https://yourdomain.com/images/visits-banner.jpg"], // Same or custom image
-    creator: "@YourTwitterHandle", // Optional
+      "Discover student projects and academic-industrial visits curated by Dr. Amarjeet Singh Chauhan, including major expos, power plants, and innovation showcases.",
+    images: [
+      "https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420",
+    ],
+    creator: "Dr. Amarjeet Singh Chauhan", // Replace with actual handle
   },
 };
+
 
 export default function Page()
 {
