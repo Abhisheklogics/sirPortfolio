@@ -10,7 +10,7 @@ import { MdLocationOn } from 'react-icons/md';
 import Image from "next/image";
 import { Meteors } from "@/components/ui/meteors";
 
-// Match number of images with visits (1-to-1)
+
 const projectPhotos = [
   'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420',
   'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203144.jpg?updatedAt=1748899033776',
