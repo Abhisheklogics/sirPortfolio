@@ -89,7 +89,7 @@ export default function CardSpotlightPatents() {
 
   return (
     <div className="space-y-12 px-4 sm:px-6 lg:px-8 py-8">
-      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">🛡️ Patents</h2>
+     
       
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
         {patents.map((patent, index) => (
