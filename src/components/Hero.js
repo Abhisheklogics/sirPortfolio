@@ -117,7 +117,7 @@ export default function Hero() {
           {/* Action Button */}
           <div className="mt-8">
             <Link
-              href="/publication"
+              href="/book"
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl text-sm md:text-md font-semibold shadow-lg transition hover:-translate-y-1"
             >
               <FaBookOpen className="text-lg" /> View Publications
