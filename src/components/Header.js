@@ -23,7 +23,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/skills", label: "Skills & Expertise" },
     { href: "/projects", label: "Projects" },
-    { href: "/publication", label: "Patents" },
+    { href: "/patents", label: "Patents" },
     { href: "/book", label: "Publications" },
     { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
    

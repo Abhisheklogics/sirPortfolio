@@ -1,94 +1,50 @@
-'use client';
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { FaFlask } from 'react-icons/fa';
-import Link from 'next/link';
-const patentList = [
-  {
-    title: 'Smart Air: Transforming Air Quality Monitoring with IoT, AI and Drone Technology',
-    inventors: ['Dr. Sanjay Saini', 'Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav'],
+
+
+import CardSpotlightPatents from "@/components/NewCom/Petents";
+
+
+
+
+export const metadata = {
+  title: "Patents by Dr. Amarjeet Singh Chauhan | IoT, AI & VTOL Innovations",
+  description:
+    "Explore groundbreaking patents by Dr. Amarjeet Singh Chauhan, including smart air quality monitoring systems using IoT and AI, and VTOL drone technologies for advanced UAV solutions.",
+ 
+  authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
+  creator: "Dr. Amarjeet Singh Chauhan",
+  publisher: "Dayalbagh Educational Institute",
+  openGraph: {
+    title: "Patents by Dr. Amarjeet Singh Chauhan | IoT, AI & UAV Innovations",
     description:
-      'This book presents an interdisciplinary exploration of how IoT, AI, and drone technologies are revolutionizing air quality monitoring. It also explores how big data and cloud infrastructure support scalable, intelligent environmental analysis.',
-    link: '#',
-    aos: 'fade-up',
+      "A collection of patents in IoT, AI, and drone technology by Dr. Amarjeet Singh Chauhan from DEI Agra. Explore smart UAV and air monitoring systems.",
+    url: "https://www.amarjeetsinghchauhan.com/book",
+    siteName: "Amarjeet Singh Chauhan - DEI Agra",
+    type: "article",
   },
-  {
-    title: 'High-Speed VTOL Remote-Controlled Drone',
-    inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
-    description:
-      'Filed under class 12-07, this innovation in UAV design integrates VTOL capabilities with high-speed propulsion to enhance drone agility, making it highly effective in urban and tactical applications.',
-    link: '#',
-    aos: 'fade-up',
-  },
-  {
-    title: 'VTOL Patent Copy',
-    inventors: ['Dr. Amarjeet Singh Chauhan', 'Dr. Mohit Yadav', 'Aditya Vardhan', 'Sukdev Roy'],
-    description:
-      'This official patent outlines a modular VTOL UAV system with improved aerodynamic efficiency and customizable configurations for research and industrial use.',
-    link: '#',
-    aos: 'fade-up',
-  },
-];
+};
 
 export default function Page() {
-  useEffect(() => {
-    AOS.init({ duration: 700, once: true });
-  }, []);
-
   return (
-    <section className="bg-gray-50 dark:bg-[#0f172a] min-h-screen py-14 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-center text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-12">
-          <span className="bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">
-            Research &amp; Patents
-          </span>
+    <main className="bg-black text-white min-h-screen py-20 mt-[-40px] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+   
+      <section className="container mx-auto px-6 md:px-12">
+        <h1
+          className="text-2xl sm:text-4xl font-bold text-white tracking-wide text-center"
+          data-aos="fade-down"
+        >
+          Patents by Dr. Amarjeet Singh Chauhan
         </h1>
 
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          {patentList.map((patent, index) => (
-            <article
-              key={index}
-              data-aos={patent.aos}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6"
-            >
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="text-blue-600 text-3xl">
-                  <FaFlask />
-                </div>
-                <div className="flex-1">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-blue-600 transition duration-200">
-                    {patent.title}
-                  </h2>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 leading-relaxed">
-                    <strong>Inventors:</strong>{' '}
-                    {patent.inventors.map((inv, i) => (
-                      <span key={i} className="hover:text-blue-600">
-                        {inv}
-                        {i < patent.inventors.length - 1 ? ', ' : ''}
-                      </span>
-                    ))}
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 text-justify text-sm leading-relaxed">
-                    {patent.description}
-                  </p>
-                  <Link
-                    href={patent.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4"
-                  >
-                    <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition-all">
-                      View Details
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+        {/* Descriptive paragraph (optional but helpful for SEO) */}
+        <p className="text-center mt-4 text-sm text-gray-300 max-w-3xl mx-auto">
+          Discover cutting-edge innovations in IoT, AI, and UAVs including VTOL drone technology and smart environmental monitoring by Dr. Amarjeet Singh Chauhan.
+        </p>
+
+        {/* Patents Component */}
+        <CardSpotlightPatents />
+      </section>
+    </main>
   );
 }
+

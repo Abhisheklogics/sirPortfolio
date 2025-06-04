@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { CardSpotlight } from "../ui/card-spotlight";
  const publications = [
     {
       no: 1,
@@ -190,101 +189,63 @@ import { CardSpotlight } from "../ui/card-spotlight";
     },
   ];
 
-
 export function CardSpotlightPublications() {
   useEffect(() => {
-       AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
-     }, []);
+    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+  }, []);
 
   return (
-    <div className="space-y-8">
-   
-      <div className="grid grid-cols-1 p-2 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-        {publications.map((item) => (
-          <CardSpotlight
-            key={`pub-${item.no}`}
-            className="min-h-[260px] p-6"
-            data-aos={item.animation}
-          >
-            <p className="text-neutral-300 p-2 text-sm z-20 relative">
-              <strong className='text-blue-400'>S.No:</strong> {item.no}
-              <br />
-              <strong className='text-blue-400'>Title:</strong> {item.title}
-              <br />
-              <strong className='text-blue-400'>Authors:</strong> {item.authors}
-              <br />
-              <strong className='text-blue-400'>Details:</strong> {item.description}
-            </p>
-          </CardSpotlight>
+    <section className="px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    
+      <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        {publications.map((item, idx) => (
+          <div key={idx} className="bg-neutral-900 text-sm border border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
+            <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
+            <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
+            <p><strong className="text-blue-400">Authors:</strong> {item.authors}</p>
+            <p><strong className="text-blue-400">Details:</strong> {item.description}</p>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
-
 export function CardSpotlightBooks() {
-  
-   useEffect(() => {
-       AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
-     }, []);
-
- 
+  useEffect(() => {
+    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+  }, []);
 
   return (
-    <div className="space-y-12 px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       <section>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📘 Book Chapters</h2>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-          {bookChaptersData.map((item) => (
-            <CardSpotlight
-            key={`pub-${item.no}`}
-            className="min-h-[260px] p-4"
-              data-aos='fade-right'
-            
-            >
-             <p className="text-neutral-300 text-sm z-20 relative">
-              <strong className='text-blue-400'>S.No:</strong> {item.no}
-              <br />
-              <strong className='text-blue-400'>Title:</strong> {item.title}
-              <br />
-              <strong className='text-blue-400'>coAuthors:</strong> {item.coAuthors}
-              <br />
-              <strong className='text-blue-400'>Publisher:</strong> {item.publisher}
-                <br />
-                      <strong className='text-blue-400'>year:</strong> {item.year}
-                        <br />
-                              <strong className='text-blue-400'>Status:</strong> {item.status}
-            </p>
-             </CardSpotlight>
+        <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          {bookChaptersData.map((item, idx) => (
+            <div key={idx} className="bg-neutral-900 border text-sm border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
+              <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
+              <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
+              <p><strong className="text-blue-400">Co-Authors:</strong> {item.coAuthors}</p>
+              <p><strong className="text-blue-400">Publisher:</strong> {item.publisher}</p>
+              <p><strong className="text-blue-400">Year:</strong> {item.year}</p>
+              <p><strong className="text-blue-400">Status:</strong> {item.status}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      <section >
+      <section>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📝 Proposed Books</h2>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-          {proposedBooksData.map((item) => (
-               <CardSpotlight
-            key={`pub-${item.no}`}
-            className="min-h-[260px] p-4"
-             data-aos='fade-right'
-            
-            >
-              <p className="text-neutral-300 text-sm z-20 relative">
-              <strong className='text-blue-400'>S.No:</strong> {item.no}
-              <br />
-              <strong className='text-blue-400'>Title:</strong> {item.title}
-              <br />
-              <strong className='text-blue-400'>coAuthors:</strong> {item.coAuthors}
-              <br />
-              <strong className='text-blue-400'>Publisher:</strong> {item.publisher}
-                <br />
-                      <strong className='text-blue-400'>year:</strong> {item.year}
-                        <br />
-                              <strong className='text-blue-400'>Status:</strong> {item.status}
-            </p>
-             </CardSpotlight>
+        <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          {proposedBooksData.map((item, idx) => (
+            <div key={idx} className="bg-neutral-900 border text-sm  border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
+              <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
+              <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
+              <p><strong className="text-blue-400">Co-Authors:</strong> {item.coAuthors}</p>
+              <p><strong className="text-blue-400">Publisher:</strong> {item.publisher}</p>
+              <p><strong className="text-blue-400">Year:</strong> {item.year}</p>
+              <p><strong className="text-blue-400">Status:</strong> {item.status}</p>
+            </div>
           ))}
         </div>
       </section>

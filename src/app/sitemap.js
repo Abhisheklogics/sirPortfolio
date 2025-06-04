@@ -1,12 +1,14 @@
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/skills", label: "Skills & Expertise" },
-  { href: "/projects", label: "Projects" },
-  { href: "/publication", label: "Patents" },
-  { href: "/book", label: "Publications" },
-  { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
-  { href: "/gallery", label: "Gallery" },
-];
+ const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/skills", label: "Skills & Expertise" },
+    { href: "/projects", label: "Projects" },
+    { href: "/patents", label: "Patents" },
+    { href: "/book", label: "Publications" },
+    { href: "/AchievementsRecognitions", label: "Achievements & Recognitions" },
+   
+    { href: "/gallery", label: "Gallery" },
+      { href: "/contact", label: "Contact" },
+  ];;
 
 const baseUrl = "https://www.amarjeetsinghchauhan.com";
 
