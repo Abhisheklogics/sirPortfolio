@@ -35,7 +35,8 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative w-full md:mt-[-80px] overflow-hidden px-4 py-16 md:py-24 text-white bg-gradient-to-b from-black via-gray-900 to-black">
+    <section className="relative w-full overflow-hidden px-4 py-16 md:py-24 text-white bg-gradient-to-b from-black via-gray-900 to-black">
+
       <Spotlight />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
@@ -126,10 +127,11 @@ export default function Hero() {
 
         {/* Desktop Image */}
         <div className="hidden md:block  w-full md:w-[400px] relative">
-          <div
-            data-aos="fade-left"
-            className="rounded-xl  md:mt-[-280px] border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
-          >
+        <div
+  data-aos="fade-left"
+  className="absolute top-[-200px] md:top-[-280px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
+>
+
             <Image
               src={photo}
               alt="Dr. Amarjeet Singh Chauhan"
