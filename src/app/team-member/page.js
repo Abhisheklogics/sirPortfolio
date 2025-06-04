@@ -5,7 +5,7 @@ export default function OurTeam()
 {
     return(
     <>
-    <div className="bg-white py-24 md:mt-[-100px] sm:py-32">
+    <div className="bg-white py-24  sm:py-32">
   <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
     <div className="max-w-xl">
       <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">Meet our leadership</h2>
