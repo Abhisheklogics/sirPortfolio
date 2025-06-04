@@ -13,7 +13,7 @@ export default function OurTeam()
     </div>
     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
       <li>
-        <div className=" md:mt-[-40px] flex items-center gap-x-6">
+        <div className=" flex items-center gap-x-6">
           <Image className="size-16 rounded-full" height={100} width={100} src={Photo} alt=""/>
           <div>
             <h3 className="text-base/7 font-semibold tracking-tight text-gray-900"> Dr. Amarjeet Singh Chauhan</h3>
