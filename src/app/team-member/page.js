@@ -40,6 +40,18 @@ const teamMembers = [
     linkedin: 'https://linkedin.com/in/aman-raj',
   },
   {
+    name: 'Hariom Singh',
+    role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
+    image: Photo9,
+    linkedin: 'https://www.linkedin.com/in/hariom-singh-3318532bb/',
+  },
+  {
+    name: 'Mohit Sharma',
+    role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
+    image: Photo10,
+    linkedin: 'https://www.linkedin.com/in/mohit-sharma-232780328/',
+  },
+  {
     name: 'Varun Shrivastav',
     role: 'Ex-Raspberry pi Engineer',
     image: Photo4,
@@ -63,18 +75,8 @@ const teamMembers = [
     image: Photo7,
     linkedin: 'https://www.linkedin.com/in/aman-sharma-b83a82222/',
   },
-  {
-    name: 'Hariom Singh',
-    role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
-    image: Photo9,
-    linkedin: 'https://www.linkedin.com/in/hariom-singh-3318532bb/',
-  },
-  {
-    name: 'Mohit Sharma',
-    role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
-    image: Photo10,
-    linkedin: 'https://www.linkedin.com/in/mohit-sharma-232780328/',
-  },
+  
+  
 ];
 
 export default function OurTeam() {
