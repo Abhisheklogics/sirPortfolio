@@ -1,14 +1,15 @@
 'use client';
 
-import { useEffect } from "react";
-import Slider from "react-slick";
+import { useEffect,useState } from "react";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdLocationOn ,FaLinkedin } from 'react-icons/md';
+import { MdLocationOn } from 'react-icons/md';
+import { FaLinkedin } from 'react-icons/fa';
 import Image from "next/image";
-import { Meteors } from "@/components/ui/meteors";
+
 
 
 const projectPhotos = [
@@ -97,55 +98,80 @@ const visits = [
 // ... keep imports and AOS.init same ...
 
 export default function IndustrialVisitsGallery() {
-   useEffect(() => {
+   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
-  const settings = {
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: true,
-    
-    fade: true,
-    swipeToSlide: true,
-  };
+  const closeModal = () => setSelectedImage(null);
+
+
+
 
  return (
     <section className="bg-gradient-to-t from-blue-900 to-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
       
-      {/* Project Gallery */}
-      <div data-aos="fade-up" aria-label="Project Gallery" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
-        <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
-          Project Gallery
-        </h2>
+<div data-aos="fade-up" aria-label="Project Gallery" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
+      <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
+        Project Gallery
+      </h2>
 
-        <div className="max-w-5xl mx-auto">
-          <Slider {...settings}>
-            {projectPhotos.map((src, idx) => (
-              <div
-                key={idx}
-                className="relative w-full h-[440px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl"
-                tabIndex={0}
-                aria-label={`Project photo ${idx + 1}`}
-              >
-                <Image
-                  src={src}
-                  alt={`Project photo ${idx + 1}`}
-                  fill
-                  className="object-contain rounded-xl transition-transform duration-300"
-                  priority={idx === 0}
-                  sizes="(max-width: 890px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {projectPhotos.map((src, idx) => (
+          <div
+            key={idx}
+            onClick={() => setSelectedImage(src)}
+            className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-pointer"
+            tabIndex={0}
+            aria-label={`Project photo ${idx + 1}`}
+          >
+            <Image
+              src={src}
+              alt={`Project photo ${idx + 1}`}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+            />
+          </div>
+        ))}
       </div>
 
+      {/* Modal */}
+      {selectedImage && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md transition-opacity duration-300"
+    onClick={closeModal}
+    onKeyDown={(e) => e.key === 'Escape' && closeModal()}
+    role="dialog"
+    aria-modal="true"
+    tabIndex={-1}
+  >
+    <div
+      className="relative max-w-5xl w-[90vw] max-h-[90vh] p-2 sm:p-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <Image
+        src={selectedImage}
+        alt="Enlarged project"
+        width={1200}
+        height={800}
+        className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 ease-in-out"
+        sizes="(max-width: 768px) 90vw, (max-width: 1280px) 70vw, 50vw"
+        priority
+      />
+      <button
+        className="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 text-2xl flex items-center justify-center"
+        onClick={closeModal}
+        aria-label="Close image modal"
+      >
+        &times;
+      </button>
+    </div>
+  </div>
+)}
+
+    </div>
       {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"

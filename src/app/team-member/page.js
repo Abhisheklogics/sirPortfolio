@@ -13,7 +13,8 @@ import Photo7 from '../../../public/aman.jpg';
 import Photo8 from '../../../public/amanraj.jpg';
 import Photo9 from '../../../public/hariom.jpg';
 import Photo10 from '../../../public/mohit1styear.jpg';
-
+import Photo11 from '../../../public/nitin.jpg';
+import Photo12 from '../../../public/Gaurav.jpg';
 const teamMembers = [
   {
     name: 'Dr. Amarjeet Singh Chauhan',
@@ -33,6 +34,12 @@ const teamMembers = [
     image: Photo3,
     linkedin: 'https://www.linkedin.com/in/mohit-yadav-280233153/',
   },
+   {
+    name: 'Nitin Parmar',
+    role: 'Data Analyst | Internet of Things | Drones Technology',
+    image: Photo11,
+    linkedin: 'https://www.linkedin.com/in/nitin-parmar-da/',
+  },
   {
     name: 'Aman Raj',
     role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
@@ -44,6 +51,12 @@ const teamMembers = [
     role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
     image: Photo9,
     linkedin: 'https://www.linkedin.com/in/hariom-singh-3318532bb/',
+  },
+  {
+    name: 'Gaurav Chaudhary',
+    role: 'Data Science , ML, Python, SQL , Data Analytics , Data Visualisation, , Power-Bi , Tableau , Django ,Web Development',
+    image: Photo12,
+    linkedin: 'https://www.linkedin.com/in/gaurav-chaudhary-ds/',
   },
   {
     name: 'Mohit Sharma',
