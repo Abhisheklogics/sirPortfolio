@@ -4,8 +4,7 @@ import { useEffect,useState } from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { MdLocationOn } from 'react-icons/md';
 import { FaLinkedin } from 'react-icons/fa';
 import Image from "next/image";
