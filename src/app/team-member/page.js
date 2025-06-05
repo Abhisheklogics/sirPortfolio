@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 
-
 import Photo1 from '../../../public/as.jpg';
 import Photo2 from '../../../public/aditya.jpg';
 import Photo3 from '../../../public/mohit.jpg';
@@ -23,7 +22,7 @@ const teamMembers = [
     image: Photo2,
   },
   {
-    name: 'Mohit Kumar',
+    name: 'Mohit yadav',
     role: 'Research Scholar',
     image: Photo3,
   },
@@ -55,17 +54,40 @@ const teamMembers = [
 ];
 
 export default function OurTeam() {
+  const leader = teamMembers[0]; // Team Leader
+  const members = teamMembers.slice(1); // Other Members
+
   return (
     <section className="bg-gradient-to-t from-blue-800 to-slate-900 py-24 sm:py-32 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+        {/* Section Heading */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Meet Our Leadership</h2>
           <p className="mt-4 text-lg text-slate-300">
             A passionate team committed to excellence in education, research, and innovation.
           </p>
         </div>
+
+        {/* Team Leader Spotlight */}
+        <div className="mb-24 flex flex-col items-center text-center">
+          <Image
+            src={leader.image}
+            alt={leader.name}
+            className="rounded-full border-4 border-yellow-400 shadow-xl"
+            width={140}
+            height={140}
+          />
+          <h3 className="mt-6 text-2xl font-bold text-white">{leader.name}</h3>
+          <p className="mt-2 max-w-xl text-indigo-300">{leader.role}</p>
+          <span className="mt-3 inline-block rounded-full bg-yellow-400 px-4 py-1 text-sm font-semibold text-black shadow-md">
+            Team Leader
+          </span>
+        </div>
+
+        {/* Other Team Members */}
         <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {teamMembers.map((member, index) => (
+          {members.map((member, index) => (
             <li
               key={index}
               className="flex flex-col items-center bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-md transition hover:scale-105"
