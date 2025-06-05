@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 
+
 import Photo1 from '../../../public/as.jpg';
 import Photo2 from '../../../public/aditya.jpg';
 import Photo3 from '../../../public/mohit.jpg';
@@ -84,4 +85,5 @@ export default function OurTeam() {
       </div>
     </section>
   );
-}
+
+
