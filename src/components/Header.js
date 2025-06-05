@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 font-sans backdrop-blur-xl bg-gradient-to-b from-blue-900/70 to-slate-800/60 border-b border-white/10 shadow-md">
      
-      <div className="text-white px-4 py-1 animate-fadeInDown">
+      <div className="text-white px-4 py-2 animate-fadeInDown">
         <div className="max-w-7xl mx-auto text-center space-y-1">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Dr. Amarjeet Singh Chauhan</h1>
           <p className="text-sm italic">Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS)</p>
