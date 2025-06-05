@@ -101,7 +101,7 @@ body {
 }
 /* globals.css */
 body {
-  background: rgb(22, 22, 22);
+  background: rgb(26, 25, 25);
 }
 @theme inline {
   --animate-meteor-effect: meteor 5s linear infinite;

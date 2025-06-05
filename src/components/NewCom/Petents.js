@@ -96,6 +96,7 @@ const patents = [
 export default function CardSpotlightPatents() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [isImageLoading, setIsImageLoading] = useState(true);
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const closeModal = () => {
     setSelectedImages([]);
@@ -190,7 +191,7 @@ export default function CardSpotlightPatents() {
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
+        className="relative md:w-full w-fit ml-[-60px] max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
        
@@ -217,12 +218,18 @@ export default function CardSpotlightPatents() {
         >
           {selectedImages.map((img, i) => (
             <div key={i} className="w-full">
-              <iframe
-                src={img}
-                className="w-full h-[400px] sm:h-[450px] xl:h-[500px] md:ml-[340px] rounded-xl border"
-                onLoad={() => setIsImageLoading(false)}
-                title={`Patent PDF ${i + 1}`}
-              ></iframe>
+   <iframe
+  src={
+    isMobile
+      ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(img)}`
+      : img
+  }
+  className="md:w-full w-fit h-[400px] sm:h-[450px] xl:h-[500px] md:ml-[340px] rounded-xl border"
+  onLoad={() => setIsImageLoading(false)}
+  title={`Patent PDF ${i + 1}`}
+/>
+
+
             </div>
           ))}
         </div>
