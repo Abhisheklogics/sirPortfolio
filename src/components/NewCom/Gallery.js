@@ -99,12 +99,16 @@ const visits = [
 
 export default function IndustrialVisitsGallery() {
    const [selectedImage, setSelectedImage] = useState(null);
+   const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
-  const closeModal = () => setSelectedImage(null);
+const closeModal = () => {
+  setSelectedImage(null);
+  setIsImageLoading(true); // reset loading for next image
+}
 
 
 
@@ -137,8 +141,7 @@ export default function IndustrialVisitsGallery() {
         ))}
       </div>
 
-      {/* Modal */}
-      {selectedImage && (
+    {selectedImage && (
   <div
     className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md transition-opacity duration-300"
     onClick={closeModal}
@@ -151,17 +154,28 @@ export default function IndustrialVisitsGallery() {
       className="relative max-w-5xl w-[90vw] max-h-[90vh] p-2 sm:p-4"
       onClick={(e) => e.stopPropagation()}
     >
+      {/* Loader while image is loading */}
+      {isImageLoading && (
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40 rounded-xl">
+          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+
       <Image
         src={selectedImage}
         alt="Enlarged project"
         width={1200}
         height={800}
-        className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 ease-in-out"
+        className={`w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl transition-opacity duration-300 ease-in-out ${
+          isImageLoading ? 'opacity-0' : 'opacity-100'
+        }`}
+        onLoad={() => setIsImageLoading(false)}
         sizes="(max-width: 768px) 90vw, (max-width: 1280px) 70vw, 50vw"
         priority
       />
+
       <button
-        className="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 text-2xl flex items-center justify-center"
+        className="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 text-2xl flex items-center justify-center z-20"
         onClick={closeModal}
         aria-label="Close image modal"
       >
