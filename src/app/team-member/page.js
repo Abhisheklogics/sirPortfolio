@@ -102,23 +102,24 @@ export default function OurTeam() {
             height={140}
           />
           <h3 className="mt-6 text-2xl font-bold text-white">{leader.name}</h3>
+
           <Link
             href={leader.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`LinkedIn profile of ${leader.name}`}
-            className="mt-1 flex items-center gap-1 text-indigo-400 hover:text-indigo-300 text-sm"
+            className="mt-1 flex items-center gap-1 text-white hover:text-indigo-300 text-sm"
           >
             <FaLinkedin className="text-lg" />
             LinkedIn
           </Link>
-          <p className="mt-2 max-w-xl text-indigo-300">{leader.role}</p>
+
+         <p className="mt-2 max-w-xl text-indigo-300">{leader.role}</p>
           <span className="mt-3 inline-block rounded-full bg-yellow-400 px-4 py-1 text-sm font-semibold text-black shadow-md">
             Team Leader
           </span>
         </div>
 
-        {/* Other Members */}
         <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {members.map((member, index) => (
             <li
