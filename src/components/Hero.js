@@ -81,24 +81,25 @@ export default function Hero() {
               in programming (Python, C/C++, Java), web and mobile development, and hardware integration
               for IoT and drone-based systems.
             </p>
+              <p>
+             Beyond my academic and research endeavors, I have successfully led and supervised student
+          innovations and projects in areas such as air quality monitoring, precision farming,
+          mobile robotics, and drone-assisted services. My skill set also includes technical writing,
+          drone piloting, embedded systems, full-stack web development, and mobile app development—
+          areas I continuously explore to stay aligned with emerging technological trends.
+        </p>
+        <p>
+           This portfolio serves as a comprehensive reflection of my journey through research,
+          teaching, technological innovation, and academic contributions. It highlights not only my
+          scholarly achievements but also my commitment to developing impactful, real-world IoT and
+          AI solutions for sustainable development. </p>
           </div>
 
        
-          <div className="md:hidden space-y-4 text-justify leading-relaxed">
-            <p>
-                 Beyond my academic and research endeavors, I have successfully led and supervised student
-              innovations and projects in areas such as air quality monitoring, precision farming,
-              mobile robotics, and drone-assisted services. My skill set also includes technical writing,
-              drone piloting, embedded systems, full-stack web development, and mobile app development.
-            </p>
-            <p>
-                This portfolio reflects my journey through research, teaching, innovation, and impact—
-              highlighting my commitment to developing real-world IoT and AI solutions for sustainable development.
-            </p>
-          </div>
+        
 
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+          <div className="grid grid-cols-2  sm:grid-cols-3 gap-4 mt-6">
             {expertise.map(({ icon, text }) => (
               <div
                 key={text}
@@ -124,7 +125,7 @@ export default function Hero() {
         <div className="hidden md:block w-full md:w-[400px] relative">
           <div
             data-aos="fade-left"
-            className="absolute top-[-200px] md:top-[-280px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
+            className="absolute  md:top-[-400px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
           >
             <Image
               src={photo}
@@ -139,20 +140,7 @@ export default function Hero() {
       </div>
 
      
-      <div className="hidden md:block mt-16 max-w-4xl mx-auto text-justify space-y-4 text-sm md:text-base px-4 leading-relaxed">
-        <p>
-             Beyond my academic and research endeavors, I have successfully led and supervised student
-          innovations and projects in areas such as air quality monitoring, precision farming,
-          mobile robotics, and drone-assisted services. My skill set also includes technical writing,
-          drone piloting, embedded systems, full-stack web development, and mobile app development—
-          areas I continuously explore to stay aligned with emerging technological trends.
-        </p>
-        <p>
-           This portfolio serves as a comprehensive reflection of my journey through research,
-          teaching, technological innovation, and academic contributions. It highlights not only my
-          scholarly achievements but also my commitment to developing impactful, real-world IoT and
-          AI solutions for sustainable development. </p>
-      </div>
+     
     </section>
   );
 }
