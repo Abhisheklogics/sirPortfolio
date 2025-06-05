@@ -29,12 +29,12 @@ export const metadata = {
 
 export default function BooksPage() {
   return (
-    <main className="space-y-16 px-4 sm:px-6 lg:px-8 py-8">
+    <main className="space-y-16 bg-white px-4 sm:px-6 lg:px-8 py-8">
       <section>
         <CardSpotlightBooks />
       </section>
       <section>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📄 Research Publications</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold  mb-6">📄 Research Publications</h2>
         <CardSpotlightPublications />
       </section>
     </main>

@@ -115,10 +115,10 @@ export default function IndustrialVisitsGallery() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
-      <Meteors number={40} />
+    <section className="bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+     
 <div
-  className="bg-gradient-to-r from-gray-900 via-black to-gray-900 mt-[-100px] rounded-3xl shadow-xl text-white p-8"
+  className=" mt-[-100px] rounded-3xl shadow-xl  p-8"
   data-aos="fade-up"
   aria-label=" Dr. Amarjeet Singh Chauhan  Projects Gallery Photos"
 >
@@ -149,10 +149,10 @@ export default function IndustrialVisitsGallery() {
     </Slider>
   </div>
 </div>
-   <Meteors number={40} />
+  
       {/* 🔽 THEN: Industrial Visits Section */}
       <div
-        className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl shadow-xl text-white p-8"
+        className=" rounded-3xl shadow-xl p-8"
         data-aos="fade-up"
         aria-label="Industrial Visits Details"
       >
@@ -167,10 +167,10 @@ export default function IndustrialVisitsGallery() {
               key={idx}
               tabIndex={0}
               aria-label={`${place} visit in year ${year} at ${location}`}
-              className="bg-gray-800 rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:scale-105 transition-transform duration-300"
+              className=" rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:scale-105 transition-transform duration-300"
             >
               <h3 className="text-2xl font-semibold mb-3">{place}</h3>
-              <div className="flex items-center text-gray-300 mb-3">
+              <div className="flex items-center text-gray-800 mb-3">
                 <MdLocationOn className="text-blue-500 mr-2 text-2xl" />
                 <p className="text-lg">{location}</p>
               </div>

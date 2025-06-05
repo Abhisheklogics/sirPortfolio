@@ -26,18 +26,18 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="bg-black text-white min-h-screen py-20 mt-[-40px] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <main className="bg-white min-h-screen py-20 mt-[-40px] ">
    
       <section className="container mx-auto px-6 md:px-12">
         <h1
-          className="text-2xl sm:text-4xl font-bold text-white tracking-wide text-center"
+          className="text-2xl sm:text-4xl font-bold  text-black text-center"
           data-aos="fade-down"
         >
           Patents by Dr. Amarjeet Singh Chauhan
         </h1>
 
         {/* Descriptive paragraph (optional but helpful for SEO) */}
-        <p className="text-center mt-4 text-sm text-gray-300 max-w-3xl mx-auto">
+        <p className="text-center mt-4 text-sm text-gray-700 max-w-3xl mx-auto">
           Discover cutting-edge innovations in IoT, AI, and UAVs including VTOL drone technology and smart environmental monitoring by Dr. Amarjeet Singh Chauhan.
         </p>
 

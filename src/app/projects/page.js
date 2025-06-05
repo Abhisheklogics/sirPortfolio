@@ -61,13 +61,13 @@ export default function Page() {
   }, []);
 
   return (
-  <section className="min-h-screen py-20 px-6 md:px-16  dark:from-slate-900 dark:to-gray-950 transition-colors">
+  <section className="min-h-screen py-20 px-6 md:px-16  bg-white text-black transition-colors">
       <div className="max-w-6xl mx-auto mt-4 ">
 
         {/* Page Header */}
         <h1
           data-aos="fade-down"
-          className="text-3xl sm:text-4xl md:mt-[-40px] text-center font-bold text-white tracking-wide"
+          className="text-3xl sm:text-4xl md:mt-[-40px] text-center font-bold  tracking-wide"
         >
           <span className="">Funded Projects</span> &{' '}
           <span className="">Supervised Projects</span>
@@ -77,7 +77,7 @@ export default function Page() {
         <div>
           <h2
             data-aos="fade-up"
-            className="text-2xl md:text-3xl font-semibold mt-10 text-white dark:text-gray-100 mb-10"
+            className="text-2xl md:text-3xl font-semibold mt-10  dark:text-gray-100 mb-10"
           >
              Funded Projects
           </h2>
@@ -93,19 +93,19 @@ export default function Page() {
                   <div>
                     <div className="flex items-center gap-3 text-blue-700 dark:text-blue-400 mb-4">
                       <FaFlask className="text-2xl" />
-                      <h2 className="text-lg md:text-xl font-bold text-white dark:text-white tracking-wide">
+                      <h2 className="text-lg md:text-xl font-bold  dark:text-white tracking-wide">
                         {item.title}
                       </h2>
                     </div>
 
-                    <p className="text-sm text-white dark:text-gray-300 mb-1">
+                    <p className="text-sm  dark:text-gray-300 mb-1">
                       <span className="font-semibold">Sanctioned By:</span> {item.sponsor}
                     </p>
-                    <p className="text-sm text-white dark:text-gray-300 mb-4">
+                    <p className="text-sm  dark:text-gray-300 mb-4">
                       <span className="font-semibold">Amount:</span> {item.amount}
                     </p>
 
-                    <p className="text-sm md:text-base text-white dark:text-gray-300 text-justify leading-relaxed">
+                    <p className="text-sm md:text-base  dark:text-gray-300 text-justify leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -113,7 +113,7 @@ export default function Page() {
                   <div className="mt-6">
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
                       <Button borderRadius="1.75rem"
-        className="bg-gray-900 dark:bg-slate-900 text-white dark:text-white border-neutral-200 dark:border-slate-800">
+        className="bg-gray-900 dark:bg-slate-900  dark:text-white border-neutral-200 dark:border-slate-800">
                         View Full Details
                       </Button>
                     </a>
@@ -128,7 +128,7 @@ export default function Page() {
         <div className="mt-24">
           <h2
             data-aos="fade-up"
-            className="text-2xl md:text-3xl font-semibold text-white dark:text-gray-100 mb-10"
+            className="text-2xl md:text-3xl font-semibold  dark:text-gray-100 mb-10"
           >
              Projects Supervised
           </h2>
@@ -142,7 +142,7 @@ export default function Page() {
               >
                 <div className="flex items-center gap-3 text-purple-700 dark:text-purple-400 mb-2">
                   <FaProjectDiagram className="text-xl" />
-                  <h3 className="text-sm md:text-base font-medium text-white dark:text-white tracking-tight">
+                  <h3 className="text-sm md:text-base font-medium  dark:text-white tracking-tight">
                     {title}
                   </h3>
                 </div>

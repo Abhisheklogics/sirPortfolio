@@ -40,12 +40,12 @@ export default function Header() {
         href={href}
         onClick={closeMenu}
         className={`relative px-3 py-2 text-sm font-medium transition duration-300 group ${
-          isActive ? "text-blue-400 font-semibold" : " text-white hover:text-blue-300"
+          isActive ? "text-gray-900 font-semibold" : " text-white text-gray-900"
         }`}
       >
         {label}
         <span
-          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-blue-400 transform transition-transform duration-300 ${
+          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gray-900 transform transition-transform duration-300 ${
             isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
           } origin-left`}
         />
@@ -54,20 +54,20 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50  dark:bg-gradient-to-r from-gray-900 via-black to-gray-900 backdrop-blur-md shadow-md border-b border-gray-800">
+    <header className="sticky top-0 z-50  bg-gradient-to-t from-blue-800 to-slate-700  backdrop-blur-md shadow-md border-b border-gray-800">
       {/* Header Info */}
       <div className="text-white px-4 py-4 animate-fadeInDown">
         <div className="max-w-7xl mx-auto text-center space-y-1">
           <h1 className="text-2xl md:text-3xl font-bold">
             Dr. Amarjeet Singh Chauhan 
           </h1>
-          <p className="text-sm italic text-blue-300">
+          <p className="text-sm italic text-white">
             Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS)
           </p>
-          <p className="text-sm  text-blue-300">
+          <p className="text-sm  text-white">
             Lecturer, Department of Physics and Computer Science
           </p>
-          <p className="text-xs md:text-sm text-blue-400 font-light">
+          <p className="text-xs md:text-sm text-white font-light">
             Faculty of Science, Dayalbagh Educational Institute (Deemed University), Agra
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="border-t border-white/20 bg-gradient-to-r from-[#1f2937] via-[#374151] to-[#1e293b] shadow-lg backdrop-blur-md transition-all duration-300">
+      <nav className="border-t border-white/20 shadow-lg backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 md:ml-2 items-center font-medium text-white">

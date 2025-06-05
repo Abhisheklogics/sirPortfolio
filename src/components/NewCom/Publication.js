@@ -199,11 +199,11 @@ export function CardSpotlightPublications() {
     
       <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
         {publications.map((item, idx) => (
-          <div key={idx} className="bg-neutral-900 text-sm border border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
-            <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
-            <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
-            <p><strong className="text-blue-400">Authors:</strong> {item.authors}</p>
-            <p><strong className="text-blue-400">Details:</strong> {item.description}</p>
+          <div key={idx} className="bg-white text-sm border border-neutral-700 p-4 rounded-xl text-neutral-900 shadow hover:shadow-lg transition">
+            <p><strong className="text-blue-900">S.No:</strong> {item.no}</p>
+            <p><strong className="text-blue-900">Title:</strong> {item.title}</p>
+            <p><strong className="text-blue-900">Authors:</strong> {item.authors}</p>
+            <p><strong className="text-blue-900">Details:</strong> {item.description}</p>
           </div>
         ))}
       </div>
@@ -219,32 +219,32 @@ export function CardSpotlightBooks() {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       <section>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📘 Book Chapters</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold  mb-6">📘 Book Chapters</h2>
         <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {bookChaptersData.map((item, idx) => (
-            <div key={idx} className="bg-neutral-900 border text-sm border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
-              <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
-              <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
-              <p><strong className="text-blue-400">Co-Authors:</strong> {item.coAuthors}</p>
-              <p><strong className="text-blue-400">Publisher:</strong> {item.publisher}</p>
-              <p><strong className="text-blue-400">Year:</strong> {item.year}</p>
-              <p><strong className="text-blue-400">Status:</strong> {item.status}</p>
+            <div key={idx} className="bg-white border text-sm border-neutral-700 p-4 rounded-xl text-neutral-900 shadow hover:shadow-lg transition">
+              <p><strong className="text-blue-900">S.No:</strong> {item.no}</p>
+              <p><strong className="text-blue-900">Title:</strong> {item.title}</p>
+              <p><strong className="text-blue-900">Co-Authors:</strong> {item.coAuthors}</p>
+              <p><strong className="text-blue-900">Publisher:</strong> {item.publisher}</p>
+              <p><strong className="text-blue-900">Year:</strong> {item.year}</p>
+              <p><strong className="text-blue-900">Status:</strong> {item.status}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">📝 Proposed Books</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">📝 Proposed Books</h2>
         <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {proposedBooksData.map((item, idx) => (
-            <div key={idx} className="bg-neutral-900 border text-sm  border-neutral-700 p-4 rounded-xl text-neutral-200 shadow hover:shadow-lg transition">
-              <p><strong className="text-blue-400">S.No:</strong> {item.no}</p>
-              <p><strong className="text-blue-400">Title:</strong> {item.title}</p>
-              <p><strong className="text-blue-400">Co-Authors:</strong> {item.coAuthors}</p>
-              <p><strong className="text-blue-400">Publisher:</strong> {item.publisher}</p>
-              <p><strong className="text-blue-400">Year:</strong> {item.year}</p>
-              <p><strong className="text-blue-400">Status:</strong> {item.status}</p>
+            <div key={idx} className="bg-white border text-sm  border-neutral-700 p-4 rounded-xl text-neutral-900 shadow hover:shadow-lg transition">
+              <p><strong className="text-blue-900">S.No:</strong> {item.no}</p>
+              <p><strong className="text-blue-900">Title:</strong> {item.title}</p>
+              <p><strong className="text-blue-900">Co-Authors:</strong> {item.coAuthors}</p>
+              <p><strong className="text-blue-900">Publisher:</strong> {item.publisher}</p>
+              <p><strong className="text-blue-900">Year:</strong> {item.year}</p>
+              <p><strong className="text-blue-900">Status:</strong> {item.status}</p>
             </div>
           ))}
         </div>

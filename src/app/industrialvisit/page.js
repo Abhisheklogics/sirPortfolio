@@ -29,15 +29,14 @@ export default function IndustrialVisits() {
    }, []);
 
   return (
-    <section className="max-w-7xl mx-auto mt-8 px-6 sm:px-10 lg:px-16 py-16 text-white rounded-3xl shadow-xl ">
-      <StarsBackground />
-      <ShootingStars />
+    <section className="bg-white max-w-7xl mx-auto mt-8 px-6 sm:px-10 lg:px-16 py-16  rounded-3xl shadow-xl ">
+     
       <div
         className="flex items-center gap-4 mb-14 border-b border-gray-300 pb-5"
         data-aos="fade-down"
       >
         <FaUniversity className="text-blue-700 text-4xl shrink-0" />
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-wide">
+        <h2 className="text-3xl sm:text-4xl font-extrabold  tracking-wide">
           Industrial Visits & Expos
         </h2>
       </div>
@@ -53,11 +52,11 @@ export default function IndustrialVisits() {
           >
             <MdLocationOn className="text-blue-700 text-3xl mt-1 shrink-0 transition-transform group-hover:scale-110" />
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-blue-800 transition-colors">
+              <h3 className="text-lg sm:text-xl font-semibold  group-hover:text-blue-800 transition-colors">
                 {place}{' '}
-                <span className="text-sm sm:text-base text-white font-normal">({year})</span>
+                <span className="text-sm sm:text-base font-normal">({year})</span>
               </h3>
-              <p className="text-sm sm:text-base text-white mt-1 leading-relaxed">{location}</p>
+              <p className="text-sm sm:text-base  mt-1 leading-relaxed">{location}</p>
             </div>
           </li>
         ))}

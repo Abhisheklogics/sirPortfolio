@@ -96,35 +96,35 @@ export default function CardSpotlightPatents() {
           <div
             key={index}
             data-aos={patent.animation}
-            className="bg-[#1a1a1a] border border-neutral-800 rounded-2xl p-4 h-full flex flex-col shadow-lg"
+            className=" border border-neutral-800  rounded-2xl p-4 h-full flex flex-col shadow-lg"
           >
-            <h3 className="text-white text-base font-semibold mb-2">
+            <h3 className="text-black text-base font-semibold mb-2">
               {patent.title}
             </h3>
 
             {patent.designNumber && (
-              <p className="text-neutral-300 text-sm mb-1">
+              <p className="text-neutral-900 text-sm mb-1">
                 <span className="font-medium">Design Number:</span> {patent.designNumber}
               </p>
             )}
 
             {patent.applicationNumber && (
-              <p className="text-neutral-300 text-sm mb-1">
+              <p className="text-neutral-900 text-sm mb-1">
                 <span className="font-medium">Application Number:</span> {patent.applicationNumber}
               </p>
             )}
 
-            <p className="text-neutral-400 text-xs mb-1">
+            <p className="text-neutral-900 text-xs mb-1">
               <span className="font-medium">Country:</span> {patent.country}
             </p>
 
             {patent.status && (
-              <p className="text-neutral-400 text-xs mb-1">
+              <p className="text-neutral-900 text-xs mb-1">
                 <span className="font-medium">Status:</span> {patent.status}
               </p>
             )}
 
-            <p className="text-neutral-400 text-xs mt-auto">
+            <p className="text-neutral-900 text-xs mt-auto">
               <span className="font-medium">Type:</span> {patent.type}
             </p>
           </div>

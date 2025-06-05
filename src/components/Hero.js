@@ -35,9 +35,9 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden px-4 py-16 md:py-24 text-white bg-gradient-to-b from-black via-gray-900 to-black">
+    <section className="relative w-full bg-white overflow-hidden px-4 py-16 md:py-24 text-black ">
 
-      <Spotlight />
+    
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
         {/* Left Content */}
@@ -47,7 +47,7 @@ export default function Hero() {
             className="text-3xl md:text-5xl font-bold leading-snug"
           >
             Dr. Amarjeet Singh Chauhan
-            <span className="block mt-2 text-blue-400 text-lg md:text-2xl font-semibold">
+            <span className="block mt-2 text-blue-900 text-lg md:text-2xl font-semibold">
               Ph.D. (CS) | M.Tech. (CS) | B.Tech. (CS)
             </span>
           </h1>

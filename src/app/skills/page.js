@@ -114,10 +114,10 @@ export default function Page() {
 
   return (
   <>
-    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-950 py-12 px-4 sm:px-6 lg:px-8 text-white relative">
+    <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 text-black relative">
       
 
-      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-12 bg-black/30 backdrop-blur-md border border-white/10 shadow-xl">
+      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-12 bg-white backdrop-blur-md ">
         <header className="mb-12 text-center">
           <h1 className="text-2xl md:text-5xl font-bold tracking-tight" data-aos="fade-down">
             Skills & Expertise
@@ -131,7 +131,7 @@ export default function Page() {
           {skills.map((skill, index) => (
             <article
               key={index}
-              className="bg-white/90 text-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition duration-300 cursor-default"
+              className=" text-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition duration-300 cursor-default"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -145,7 +145,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-14 mt-20 bg-black/30 backdrop-blur-md border border-white/10 shadow-2xl">
+      <section className="max-w-7xl mx-auto rounded-3xl p-6 md:p-14 mt-20  backdrop-blur-md border border-white/10 ">
         <h2
           id="teaching-experience"
           className="text-2xl md:text-4xl font-bold text-yellow-400 border-b-4 border-yellow-500 pb-3 mb-12 text-center"
