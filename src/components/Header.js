@@ -90,7 +90,7 @@ export default function Header() {
       <nav className="bg-white/5 border-t border-white/10 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
        
-          <ul className="hidden md:flex md:ml-6 items-center space-x-6 font-medium text-white">
+          <ul className="hidden md:flex md:ml-10 items-center space-x-6 font-medium text-white">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <NavLink href={link.href} label={link.label} />
