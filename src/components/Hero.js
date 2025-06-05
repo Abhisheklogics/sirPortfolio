@@ -125,7 +125,7 @@ export default function Hero() {
         <div className="hidden md:block w-full md:w-[400px] relative">
           <div
             data-aos="fade-left"
-            className="absolute  md:top-[-400px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
+            className="absolute  md:top-[-440px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
           >
             <Image
               src={photo}
