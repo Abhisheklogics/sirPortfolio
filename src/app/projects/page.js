@@ -63,7 +63,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="min-h-screen py-20 px-6 md:px-16 bg-white text-black transition-colors">
+    <section className="min-h-screen py-20 w-fit px-6 md:px-16 bg-white text-black transition-colors">
       <div className="max-w-6xl mx-auto">
        
         <h1

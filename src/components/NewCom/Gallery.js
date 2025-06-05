@@ -95,7 +95,7 @@ const visits = [
 ];
 
 
-// ... keep imports and AOS.init same ...
+
 
 export default function IndustrialVisitsGallery() {
    const [selectedImage, setSelectedImage] = useState(null);
@@ -105,9 +105,10 @@ export default function IndustrialVisitsGallery() {
     AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
+ 
 const closeModal = () => {
   setSelectedImage(null);
-  setIsImageLoading(true); // reset loading for next image
+  setIsImageLoading(true); 
 }
 
 
@@ -154,7 +155,7 @@ const closeModal = () => {
       className="relative max-w-5xl w-[90vw] max-h-[90vh] p-2 sm:p-4"
       onClick={(e) => e.stopPropagation()}
     >
-      {/* Loader while image is loading */}
+     
       {isImageLoading && (
         <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40 rounded-xl">
           <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -186,7 +187,7 @@ const closeModal = () => {
 )}
 
     </div>
-      {/* Industrial Visits */}
+      
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
         data-aos="fade-up"
