@@ -96,7 +96,7 @@ const patents = [
 export default function CardSpotlightPatents() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [isImageLoading, setIsImageLoading] = useState(true);
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const closeModal = () => {
     setSelectedImages([]);
@@ -191,7 +191,7 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       aria-modal="true"
     >
       <div
-        className="relative md:w-fit w-fit md:ml-0 ml-[-60px]  max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
+        className="relative md:w-full w-fit md:ml-0 ml-[-60px]  max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
        
