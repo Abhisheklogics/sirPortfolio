@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdLocationOn } from 'react-icons/md';
+import { MdLocationOn ,FaLinkedin } from 'react-icons/md';
 import Image from "next/image";
 import { Meteors } from "@/components/ui/meteors";
 
