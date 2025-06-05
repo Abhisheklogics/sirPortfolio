@@ -10,7 +10,10 @@ import "aos/dist/aos.css";
 
 export default function SkillsPage() {
   useEffect(() => {
-    AOS.init({ duration: 900, once: true, easing: 'ease-in-out' });
+    AOS.init({ 
+      duration: 900, 
+      once: true, 
+      easing: 'ease-in-out' });
   }, []);
 
   const skills = [
@@ -40,7 +43,7 @@ export default function SkillsPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-slate-100 to-white py-12 px-4 sm:px-6 lg:px-8 text-gray-900">
-      {/* Skills & Expertise Section */}
+    
       <section className="max-w-7xl mx-auto p-6 md:p-12 bg-white/90 rounded-3xl shadow-xl">
         <header className="text-center mb-14">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-indigo-800" data-aos="fade-down">
@@ -71,7 +74,7 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      {/* Teaching Experience */}
+    
       <section className="max-w-7xl mx-auto mt-20 p-6 md:p-12 bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200 rounded-3xl shadow-xl">
         <h2
           className="text-2xl md:text-4xl font-bold text-yellow-700 text-center mb-10 border-b-2 pb-3 border-yellow-500"

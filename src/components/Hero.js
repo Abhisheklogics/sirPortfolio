@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import photo from '../../public/as.jpg';
-import { Spotlight } from './ui/spotlight-new';
+
 
 import {
   FaEnvelope,

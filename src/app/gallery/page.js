@@ -8,6 +8,11 @@ export const metadata = {
   creator: "Dr. Amarjeet Singh Chauhan",
   publisher: "Dr. Amarjeet Singh Chauhan",
 
+
+  alternates: {
+    canonical: "https://www.amarjeetsinghchauhan.com/gallery",
+  },
+
   openGraph: {
     title: "Projects Gallery & Educational Visits | Dr. Amarjeet Singh Chauhan",
     description:
@@ -33,9 +38,10 @@ export const metadata = {
     images: [
       "https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420",
     ],
-    creator: "Dr. Amarjeet Singh Chauhan", // Replace with actual handle
+    creator: "Dr. Amarjeet Singh Chauhan",
   },
 };
+
 
 
 export default function Page()

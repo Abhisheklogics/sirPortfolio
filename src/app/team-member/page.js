@@ -1,4 +1,4 @@
-'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaLinkedin } from 'react-icons/fa';
@@ -92,6 +92,44 @@ const teamMembers = [
   
 ];
 
+export const metadata = {
+  title: "Our Team | Dr. Amarjeet Singh Chauhan & Research Scholars",
+  description:
+    "Meet the expert research team led by Dr. Amarjeet Singh Chauhan, featuring scholars and professionals in IoT, AI, Embedded Systems, Drones, and Data Science—committed to driving technological innovation and education.",
+
+  authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
+  creator: "Dr. Amarjeet Singh Chauhan",
+  publisher: "Dr. Amarjeet Singh Chauhan",
+
+  openGraph: {
+    title: "Our Team | Dr. Amarjeet Singh Chauhan & Research Scholars",
+    description:
+      "Discover the passionate team working under Dr. Amarjeet Singh Chauhan in fields like IoT, Artificial Intelligence, Embedded Systems, Drones, and Data Science—driving excellence in research and innovation.",
+    url: "https://www.amarjeetsinghchauhan.com/team-member",
+    siteName: "Dr. Amarjeet Singh Chauhan",
+    type: "profile",
+    images: [
+      {
+        url: "https://ik.imagekit.io/vtbtnuxcb/Website/team-banner.webp", // Replace with your actual image
+        width: 1200,
+        height: 630,
+        alt: "Team led by Dr. Amarjeet Singh Chauhan",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Team | Dr. Amarjeet Singh Chauhan & Research Scholars",
+    description:
+      "Explore the brilliant team of researchers led by Dr. Amarjeet Singh Chauhan in IoT, AI, and emerging tech domains.",
+    images: [
+      "https://ik.imagekit.io/vtbtnuxcb/Website/team-banner.webp", 
+    ],
+    creator: "Dr. Amarjeet Singh Chauhan",
+  },
+};
+
 export default function OurTeam() {
   const leader = teamMembers[0];
   const members = teamMembers.slice(1);
@@ -99,7 +137,7 @@ export default function OurTeam() {
   return (
     <section className="bg-gradient-to-t from-blue-800 to-slate-900 py-24 sm:py-32 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section Heading */}
+       
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Meet Our Leadership</h2>
           <p className="mt-4 text-lg text-slate-300">
@@ -107,7 +145,7 @@ export default function OurTeam() {
           </p>
         </div>
 
-        {/* Team Leader */}
+       
         <div className="mb-24 flex flex-col items-center text-center">
           <Image
             src={leader.image}

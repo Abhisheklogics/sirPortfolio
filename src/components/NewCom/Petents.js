@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const patents = [
-  // International Design Patents
+  // ye hai International Design Patents
   {
     title: "Device for Distribution and Monitoring of Nutrients for Hydroponics",
     designNumber: "6326599",
@@ -62,7 +62,7 @@ const patents = [
     animation: "fade-right",
     images:['https://ik.imagekit.io/vtbtnuxcb/pettens/Remote%20Controlled%20Helicopter%20drone.pdf?updatedAt=1749154630190']
   },
-  // National Patents
+  // ye hai national Design Patents
   {
     title: "IoT Based Smart Drip Irrigation System",
     applicationNumber: "202211058572",
@@ -103,7 +103,14 @@ export default function CardSpotlightPatents() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: 'ease-in-out' });
+    AOS.init({ 
+      duration: 1000, 
+     
+      once: true, 
+     
+      easing: 'ease-in-out'
+    
+    });
   }, []);
 
   return (
@@ -173,7 +180,7 @@ export default function CardSpotlightPatents() {
     </div>
   </div>
 
-  {/* Modal Popup */}
+
   {selectedImages.length > 0 && (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
@@ -183,26 +190,26 @@ export default function CardSpotlightPatents() {
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-white p-6 rounded-xl shadow-2xl"
+        className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
+       
         <button
-          className="absolute top-3 right-3 text-black bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 text-xl flex items-center justify-center"
+          className="absolute top-3 cursor-pointer md:right-[200px] right-3 text-black bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 text-xl flex items-center justify-center"
           onClick={closeModal}
           aria-label="Close modal"
         >
           &times;
         </button>
 
-        {/* Loading Spinner */}
+      
         {isImageLoading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 rounded-xl">
             <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
 
-        {/* PDF Viewer Grid */}
+        
         <div
           className={`grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 ${
             isImageLoading ? 'opacity-0' : 'opacity-100'
@@ -212,7 +219,7 @@ export default function CardSpotlightPatents() {
             <div key={i} className="w-full">
               <iframe
                 src={img}
-                className="w-full h-[400px] sm:h-[450px] xl:h-[500px] rounded-xl border"
+                className="w-full h-[400px] sm:h-[450px] xl:h-[500px] md:ml-[340px] rounded-xl border"
                 onLoad={() => setIsImageLoading(false)}
                 title={`Patent PDF ${i + 1}`}
               ></iframe>

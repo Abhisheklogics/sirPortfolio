@@ -10,7 +10,7 @@ import { MdLocationOn } from 'react-icons/md';
 import { FaLinkedin } from 'react-icons/fa';
 import Image from "next/image";
 
-
+// ye 69 images
 
 const projectPhotos = [
   'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420',
@@ -18,68 +18,87 @@ const projectPhotos = [
   'https://ik.imagekit.io/vtbtnuxcb/Website/pic5.JPG?updatedAt=1748899012557',
   'https://ik.imagekit.io/vtbtnuxcb/Website/pic4.JPG?updatedAt=1748898996390',
   'https://ik.imagekit.io/vtbtnuxcb/Website/pic10.JPG?updatedAt=1748898993885',
+
   'https://ik.imagekit.io/vtbtnuxcb/Website/pic3.JPG?updatedAt=1748898991588',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic9.JPG?updatedAt=1748898980890',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic1.JPG?updatedAt=1748898961766',
 'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203340.jpg?updatedAt=1748898954923',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic2.JPG?updatedAt=1748898941427',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic7.jpg?updatedAt=1748898937616',
 'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221130_183255.jpg?updatedAt=1748898905014',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic8.jpg?updatedAt=1748898884075',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic6.jpeg?updatedAt=1748898878960',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20231012_122958.jpg?updatedAt=1748898867472',
+
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20250130_190120.jpg?updatedAt=1748898867298',
 'https://ik.imagekit.io/vtbtnuxcb/Website/pic11.jpg?updatedAt=1748898866614',
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5512.JPG?updatedAt=1748898865478',
-'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5514.JPG?updatedAt=1748898864314',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5514.JPG?updatedAt=1748899207978',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_1441.JPG?updatedAt=1748898856974',
+
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG20231012130539.jpg?updatedAt=1748898856530',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230813_003218.jpg?updatedAt=1748898855493',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_170221.jpg?updatedAt=1748898854581',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_091010.jpg?updatedAt=1748898852269',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG_20230825_090909.jpg?updatedAt=1748898850960',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5513.JPG?updatedAt=1748898847267',
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5510.JPG?updatedAt=1748898845024',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0054.jpg?updatedAt=1748898841092',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0052.jpg?updatedAt=1748898835582',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0053.jpg?updatedAt=1748898835447',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0012.jpg?updatedAt=1748898835414',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0014.jpg?updatedAt=1748898834825',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250212-WA0051.jpg?updatedAt=1748898834811',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250130-WA0015.jpg?updatedAt=1748898829943',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250130-WA0019.jpg?updatedAt=1748898828632',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5480.JPG?updatedAt=1748898827876',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250201-WA0011.jpg?updatedAt=1748898825440',
-'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250122-WA0026.jpg?updatedAt=1748898824373',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250131-WA0016.jpg?updatedAt=1748898824466',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250122-WA0026.jpg?updatedAt=1748898824373',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240815-WA0023.jpg?updatedAt=1748898816644',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240815-WA0022.jpg?updatedAt=1748898815710',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240802-WA0011.jpg?updatedAt=1748898815508',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20250122-WA0024.jpg?updatedAt=1748898815280',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20240509-WA0011.jpg?updatedAt=1748898811648',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0044.jpg?updatedAt=1748898807122',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0028.jpg?updatedAt=1748898806657',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0063.jpg?updatedAt=1748898805051',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20231012-WA0023.jpg?updatedAt=1748898804836',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5023.JPG?updatedAt=1748898802185',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0032.jpg?updatedAt=1748898797459',
+
+
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0045.jpg?updatedAt=1748898795447',
+'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_4828.JPG?updatedAt=1748898795040',
+'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230925-WA0031.jpg?updatedAt=1748898793519',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0012.jpg?updatedAt=1748898786585',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0043.jpg?updatedAt=1748898783150',
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0030.jpg?updatedAt=1748898781372',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0000.jpg?updatedAt=1748898769440',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230819-WA0011.jpg?updatedAt=1748898769112',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230815-WA0068.jpg?updatedAt=1748898768298',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0065.jpg?updatedAt=1748898760612',
+
+
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0242.jpg?updatedAt=1748898760289',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0038.jpg?updatedAt=1748898756572',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20220625-WA0018.jpg?updatedAt=1748898751887',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20220625-WA0019.jpg?updatedAt=1748898751233',
 'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230802-WA0035.jpg?updatedAt=1748898748653',
-'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124908.jpg?updatedAt=1748898740114',
 
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124908.jpg?updatedAt=1748898740114',
 'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124491.jpg?updatedAt=1748898739065',
 'https://ik.imagekit.io/vtbtnuxcb/Website/1717139125100.jpg?updatedAt=1748898739043',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124537.jpg?updatedAt=1748898738881'
 
-'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124537.jpg?updatedAt=1748898738881',
-'https://ik.imagekit.io/vtbtnuxcb/Website/IMG20231012130539.jpg?updatedAt=1748898856530',
-'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_5023.JPG?updatedAt=1748898802185',
-'https://ik.imagekit.io/vtbtnuxcb/Website/DSC_4828.JPG?updatedAt=1748898795040',
-'https://ik.imagekit.io/vtbtnuxcb/Website/IMG-20230825-WA0045.jpg?updatedAt=1748898795447'
 ];
 
 const visits = [
@@ -102,7 +121,15 @@ export default function IndustrialVisitsGallery() {
    const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+    AOS.init({ 
+     
+      duration: 1100,
+       
+      once: true, 
+       
+       easing: 'ease-in-out'
+      
+      });
   }, []);
 
  

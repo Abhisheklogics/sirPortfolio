@@ -191,7 +191,11 @@ import 'aos/dist/aos.css';
 
 export function CardSpotlightPublications() {
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+    AOS.init({ 
+      duration: 1100,
+       once: true, 
+      easing: 'ease-in-out'
+     });
   }, []);
 
   return (
@@ -221,7 +225,9 @@ export function CardSpotlightPublications() {
 
 export function CardSpotlightBooks() {
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
+    AOS.init({
+      
+       duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
   const renderCard = (item, idx) => (
