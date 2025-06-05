@@ -115,7 +115,7 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   }, []);
 
   return (
-    <section className="min-h-screen px-4 md:px-16 py-16 bg-gradient-to-b from-white to-slate-50 text-black">
+    <section className="min-h-screen overflow-x-hidden px-4 md:px-16 py-16 bg-gradient-to-b from-white to-slate-50 text-black">
   <div className="max-w-7xl mx-auto">
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
       {patents.map((patent, index) => (
