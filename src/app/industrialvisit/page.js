@@ -5,8 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { MdLocationOn } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
-import { ShootingStars } from '@/components/ui/shooting-stars';
-import { StarsBackground } from '@/components/ui/stars-background';
+
 const visits = [
   { place: "IoT Expo", location: "Pragati Maidan, New Delhi", year: 2022 },
   { place: "Bharat Drone Shakti", location: "Hindan Air Force Station, Ghaziabad", year: 2023 },
