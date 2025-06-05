@@ -100,7 +100,7 @@ export default function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="border-t border-white/20 shadow-lg backdrop-blur-md transition-all duration-300">
+      <nav className="border-t border-white/20  bg-gradient-to-t from-blue-900 to-slate-700 shadow-lg backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16">
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 md:ml-2 items-center font-medium text-white">
