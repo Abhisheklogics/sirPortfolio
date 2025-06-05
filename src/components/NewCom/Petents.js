@@ -88,48 +88,59 @@ export default function CardSpotlightPatents() {
   }, []);
 
   return (
-    <div className="space-y-12 px-4 sm:px-6 lg:px-8 py-8">
-     
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-        {patents.map((patent, index) => (
-          <div
-            key={index}
-            data-aos={patent.animation}
-            className=" border border-neutral-800  rounded-2xl p-4 h-full flex flex-col shadow-lg"
-          >
-            <h3 className="text-black text-base font-semibold mb-2">
-              {patent.title}
-            </h3>
+    <section className="min-h-screen px-6 md:px-16 py-16 bg-gradient-to-b from-white to-slate-50 text-black">
+      <div className="max-w-7xl mx-auto">
+       
 
-            {patent.designNumber && (
-              <p className="text-neutral-900 text-sm mb-1">
-                <span className="font-medium">Design Number:</span> {patent.designNumber}
-              </p>
-            )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+          {patents.map((patent, index) => (
+            <div
+              key={index}
+              data-aos={patent.animation}
+              className="flex flex-col justify-between h-full border border-gray-200 rounded-2xl p-6 bg-white shadow-md hover:shadow-xl transition-all duration-300"
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3 leading-snug">
+                  {patent.title}
+                </h3>
 
-            {patent.applicationNumber && (
-              <p className="text-neutral-900 text-sm mb-1">
-                <span className="font-medium">Application Number:</span> {patent.applicationNumber}
-              </p>
-            )}
+                {patent.designNumber && (
+                  <p className="text-sm text-slate-700 mb-1">
+                    <span className="font-medium text-slate-900">Design Number:</span> {patent.designNumber}
+                  </p>
+                )}
 
-            <p className="text-neutral-900 text-xs mb-1">
-              <span className="font-medium">Country:</span> {patent.country}
-            </p>
+                {patent.applicationNumber && (
+                  <p className="text-sm text-slate-700 mb-1">
+                    <span className="font-medium text-slate-900">Application Number:</span> {patent.applicationNumber}
+                  </p>
+                )}
 
-            {patent.status && (
-              <p className="text-neutral-900 text-xs mb-1">
-                <span className="font-medium">Status:</span> {patent.status}
-              </p>
-            )}
+                <p className="text-sm text-slate-700 mb-1">
+                  <span className="font-medium text-slate-900">Country:</span> {patent.country}
+                </p>
 
-            <p className="text-neutral-900 text-xs mt-auto">
-              <span className="font-medium">Type:</span> {patent.type}
-            </p>
-          </div>
-        ))}
+                {patent.status && (
+                  <p className="text-sm text-slate-700 mb-1">
+                    <span className="font-medium text-slate-900">Status:</span>{' '}
+                    <span className={`inline-block px-2 py-0.5 rounded-md text-xs font-semibold
+                      ${patent.status === 'GRANTED' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-800'}
+                    `}>
+                      {patent.status}
+                    </span>
+                  </p>
+                )}
+              </div>
+
+              <div className="mt-4">
+                <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                  {patent.type}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

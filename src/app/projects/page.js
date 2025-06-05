@@ -1,9 +1,11 @@
 'use client';
+
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaFlask, FaProjectDiagram } from 'react-icons/fa';
 import { Button } from '@/components/ui/moving-border';
+
 const fundedProjects = [
   {
     title: 'Internet of Things',
@@ -61,25 +63,24 @@ export default function Page() {
   }, []);
 
   return (
-  <section className="min-h-screen py-20 px-6 md:px-16  bg-white text-black transition-colors">
-      <div className="max-w-6xl mx-auto mt-4 ">
-
-        {/* Page Header */}
+    <section className="min-h-screen py-20 px-6 md:px-16 bg-white text-black transition-colors">
+      <div className="max-w-6xl mx-auto">
+       
         <h1
           data-aos="fade-down"
-          className="text-3xl sm:text-4xl md:mt-[-40px] text-center font-bold  tracking-wide"
+          className="text-center font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight"
         >
-          <span className="">Funded Projects</span> &{' '}
-          <span className="">Supervised Projects</span>
+          Funded <span className="text-indigo-600">Projects</span> &{' '}
+          <span className="text-purple-600">Supervised Work</span>
         </h1>
 
-        {/* Funded Projects */}
-        <div>
+        
+        <section className="mt-20">
           <h2
             data-aos="fade-up"
-            className="text-2xl md:text-3xl font-semibold mt-10  dark:text-gray-100 mb-10"
+            className="text-2xl md:text-3xl font-semibold mb-12 text-gray-900"
           >
-             Funded Projects
+            Funded Research Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {fundedProjects.map((item, index) => (
@@ -87,33 +88,33 @@ export default function Page() {
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 150}
-                className="relative  dark:bg-slate-800/80 border border-gray-300 dark:border-gray-700 rounded-3xl backdrop-blur-md shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                className="rounded-3xl border border-gray-300 bg-white shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1"
               >
-                <div className="relative z-10 p-6 md:p-8 flex flex-col h-full justify-between">
+                <div className="p-6 md:p-8 flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center gap-3 text-blue-700 dark:text-blue-400 mb-4">
-                      <FaFlask className="text-2xl" />
-                      <h2 className="text-lg md:text-xl font-bold  dark:text-white tracking-wide">
-                        {item.title}
-                      </h2>
+                    <div className="flex items-center gap-3 mb-4 text-indigo-700">
+                      <div className="p-2 rounded-full bg-indigo-100">
+                        <FaFlask className="text-xl" />
+                      </div>
+                      <h3 className="text-lg font-bold tracking-tight">{item.title}</h3>
                     </div>
-
-                    <p className="text-sm  dark:text-gray-300 mb-1">
+                    <p className="text-sm mb-1">
                       <span className="font-semibold">Sanctioned By:</span> {item.sponsor}
                     </p>
-                    <p className="text-sm  dark:text-gray-300 mb-4">
+                    <p className="text-sm mb-4">
                       <span className="font-semibold">Amount:</span> {item.amount}
                     </p>
-
-                    <p className="text-sm md:text-base  dark:text-gray-300 text-justify leading-relaxed">
+                    <p className="text-sm leading-relaxed text-gray-700">
                       {item.description}
                     </p>
                   </div>
 
                   <div className="mt-6">
                     <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <Button borderRadius="1.75rem"
-        className="bg-gray-900 dark:bg-slate-900  dark:text-white border-neutral-200 dark:border-slate-800">
+                      <Button
+                        borderRadius="1.75rem"
+                        className="bg-blue-700 hover:bg-blue-800 text-sm md:text-md font-semibold text-white border-neutral-200"
+                      >
                         View Full Details
                       </Button>
                     </a>
@@ -122,34 +123,33 @@ export default function Page() {
               </article>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Projects Supervised */}
-        <div className="mt-24">
+        <section className="mt-24">
           <h2
             data-aos="fade-up"
-            className="text-2xl md:text-3xl font-semibold  dark:text-gray-100 mb-10"
+            className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10"
           >
-             Projects Supervised
+            Academic Projects Supervised
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {supervisedProjects.map((title, idx) => (
-              <article
+              <div
                 key={idx}
                 data-aos="fade-left"
                 data-aos-delay={idx * 60}
-                className=" dark:bg-slate-800/80 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 backdrop-blur-md"
+                className="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition duration-200"
               >
-                <div className="flex items-center gap-3 text-purple-700 dark:text-purple-400 mb-2">
-                  <FaProjectDiagram className="text-xl" />
-                  <h3 className="text-sm md:text-base font-medium  dark:text-white tracking-tight">
-                    {title}
-                  </h3>
-                </div>
-              </article>
+                <div className="flex items-start gap-3 mb-2 text-purple-700">
+  <FaProjectDiagram className="text-xl flex-shrink-0" />
+  <p className="text-sm font-medium leading-snug text-gray-900">{title}</p>
+</div>
+
+              </div>
             ))}
           </div>
-        </div>
+        </section>
       </div>
-    </section>  );
+    </section>
+  );
 }
