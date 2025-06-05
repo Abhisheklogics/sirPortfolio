@@ -115,14 +115,14 @@ export default function IndustrialVisitsGallery() {
   };
 
   return (
-    <section className="bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+    <section className="bg-gradient-to-t from-blue-800 to-slate-900 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
      
 <div
   className=" mt-[-100px] rounded-3xl shadow-xl  p-8"
   data-aos="fade-up"
   aria-label=" Dr. Amarjeet Singh Chauhan  Projects Gallery Photos"
 >
-  <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
+  <h2 className="text-4xl text-white font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
     Projects Gallery
   </h2>
 
@@ -152,16 +152,16 @@ export default function IndustrialVisitsGallery() {
   
       {/* 🔽 THEN: Industrial Visits Section */}
       <div
-        className=" rounded-3xl shadow-xl p-8"
+        className=" bg-gradient-to-t from-blue-800 to-slate-900 rounded-3xl shadow-xl p-8"
         data-aos="fade-up"
         aria-label="Industrial Visits Details"
       >
         
-        <h2 className="text-4xl font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
+        <h2 className="text-4xl text-white font-extrabold mb-12 text-center border-b border-gray-700 pb-6 tracking-tight">
           Industrial Visits
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <div className=" text-white grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {visits.map(({ place, location, year }, idx) => (
             <article
               key={idx}
@@ -170,11 +170,11 @@ export default function IndustrialVisitsGallery() {
               className=" rounded-2xl p-6 shadow-lg flex flex-col justify-between hover:scale-105 transition-transform duration-300"
             >
               <h3 className="text-2xl font-semibold mb-3">{place}</h3>
-              <div className="flex items-center text-gray-800 mb-3">
+              <div className=" text-white flex items-center text-gray-800 mb-3">
                 <MdLocationOn className="text-blue-500 mr-2 text-2xl" />
                 <p className="text-lg">{location}</p>
               </div>
-              <p className="text-blue-400 font-medium text-lg">{year}</p>
+              <p className="text-blue-400 font-medium text-lg text-white">{year}</p>
             </article>
           ))}
         </div>

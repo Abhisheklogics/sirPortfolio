@@ -35,7 +35,7 @@ export default function ScholarshipsRecognitions() {
   }, []);
 
   return (
-    <section className="bg-white relative py-20 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto font-sans z-10">
+    <section className="bg-gradient-to-t from-blue-800 to-slate-900 relative py-20 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto font-sans z-10">
      
       <div className="space-y-24 relative z-10">
 
@@ -45,7 +45,7 @@ export default function ScholarshipsRecognitions() {
             <div className="p-4 bg-blue-700  rounded-full shadow-lg">
               <FaGraduationCap className="text-3xl" />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold ">
+            <h2 className="text-3xl sm:text-4xl  text-white md:text-5xl font-bold ">
               Scholarships & Fellowships
             </h2>
           </div>
@@ -53,7 +53,7 @@ export default function ScholarshipsRecognitions() {
             {scholarships.map((item, index) => (
               <li
                 key={index}
-                className="bg-white/10 border border-white/20 rounded-xl px-6 py-5  backdrop-blur-sm shadow hover:scale-[1.02] transition duration-300"
+                className="bg-white/10 border border-white/20  text-white rounded-xl px-6 py-5  backdrop-blur-sm shadow hover:scale-[1.02] transition duration-300"
               >
                 {item}
               </li>
@@ -69,7 +69,7 @@ export default function ScholarshipsRecognitions() {
             <div className="p-4 bg-yellow-500 rounded-full shadow-lg">
               <FaAward className="text-3xl " />
             </div>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold ">
+            <h3 className="text-3xl sm:text-4xl  text-white md:text-5xl font-bold ">
               Professional Recognitions
             </h3>
           </div>
@@ -77,9 +77,9 @@ export default function ScholarshipsRecognitions() {
             {recognitions.map((item, index) => (
               <li
                 key={index}
-                className="flex items-start gap-4 bg-white/10 border border-white/20  backdrop-blur-sm px-6 py-5 rounded-xl shadow hover:scale-[1.02] transition duration-300"
+                className="flex items-start text-white gap-4 bg-white/10 border border-white/20  backdrop-blur-sm px-6 py-5 rounded-xl shadow hover:scale-[1.02] transition duration-300"
               >
-                <FaStar className="mt-1 text-blue-400 text-xl shrink-0" />
+                <FaStar className="mt-1 text-blue-400 text-xl  text-white shrink-0" />
                 <p className="text-sm sm:text-base leading-relaxed">{item}</p>
               </li>
             ))}
