@@ -37,19 +37,21 @@ export default function Header() {
     const isActive = pathname === href;
     return (
       <Link
-        href={href}
-        onClick={closeMenu}
-        className={`relative px-3 py-2 text-sm font-medium transition duration-300 group ${
-          isActive ? "text-gray-900 font-semibold" : " text-white text-gray-900"
-        }`}
-      >
-        {label}
-        <span
-          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gray-900 transform transition-transform duration-300 ${
-            isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-          } origin-left`}
-        />
-      </Link>
+  href={href}
+  onClick={closeMenu}
+  className={`relative px-3 py-2 text-sm font-medium group ${
+    isActive
+      ? "text-white font-semibold"
+      : "text-slate-300 hover:text-white transition-colors duration-300"
+  }`}
+>
+  {label}
+  <span
+    className={`absolute bottom-0 left-0 right-0 h-[2px] bg-white transform transition-transform duration-300 ${
+      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+    } origin-left`}
+  />
+</Link>
     );
   };
 
