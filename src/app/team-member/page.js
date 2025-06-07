@@ -20,7 +20,7 @@ const teamMembers = [
     name: 'Dr. Amarjeet Singh Chauhan',
     role: 'Lecturer | Researcher | AI | IOT | Automation | Swarm Intelligence | UAV, Dronese',
     image: Photo1,
-    linkedin: 'https://www.linkedin.com/in/amarjeet-singh-chauhan-099243130',
+    linkedin: 'https://www.linkedin.com/in/dr-amarjeet-singh-chauhan-099243130/',
   },
   {
     name: 'Aditya Vardhan',
@@ -44,7 +44,7 @@ const teamMembers = [
     name: 'Aman Raj',
     role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
     image: Photo8,
-    linkedin: 'https://linkedin.com/in/aman-raj',
+    linkedin: 'https://www.linkedin.com/in/aman-raj-a1111a156/',
   },
   {
     name: 'Hariom Singh',
