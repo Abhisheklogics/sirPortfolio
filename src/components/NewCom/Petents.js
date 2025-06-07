@@ -196,7 +196,7 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       >
        
         <button
-          className="absolute top-3 cursor-pointer md:right-[200px] right-3 text-black bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 text-xl flex items-center justify-center"
+          className="absolute top-3 cursor-pointer md:right-[300px] right-3 text-black bg-gray-300 hover:bg-gray-500 rounded-full w-8 h-8 text-xl flex items-center justify-center"
           onClick={closeModal}
           aria-label="Close modal"
         >
