@@ -223,7 +223,7 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(img)}`
             : img
         }
-        className="w-full max-w-[100%] md:ml-[600px] sm:max-w-[95%] md:max-w-[90%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
+        className="w-full max-w-[100%] md:ml-[800px] sm:max-w-[95%] md:max-w-[100%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
         onLoad={() => setIsImageLoading(false)}
         title={`Patent PDF ${i + 1}`}
       />
