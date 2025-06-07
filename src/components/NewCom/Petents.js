@@ -191,7 +191,7 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       aria-modal="true"
     >
       <div
-        className="relative md:w-full w-fit md:ml-0  bg-white max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
+        className="relative md:w-full w-fit md:ml-0   max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
        
@@ -223,7 +223,7 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(img)}`
             : img
         }
-        className="w-full max-w-[100%] md:ml-[800px] sm:max-w-[95%] md:max-w-[100%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
+        className="w-full max-w-[100%] md:ml-[800px] sm:max-w-[95%] md:w-[100%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
         onLoad={() => setIsImageLoading(false)}
         title={`Patent PDF ${i + 1}`}
       />
