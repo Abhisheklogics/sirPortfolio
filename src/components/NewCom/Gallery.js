@@ -132,9 +132,7 @@ const visits = [
       height: rect.height,
     });
   };
- const handleImageClick = (e, src) => {
-  setZoomData({ src });
-};
+
 
   const closeZoom = () => {
     setZoomData(null);
