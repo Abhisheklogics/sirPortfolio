@@ -115,7 +115,7 @@ const visits = [
 
 
 
- export default function ProjectGallery({ projectPhotos, visits }) {
+ export default function ProjectGallery() {
   const [zoomData, setZoomData] = useState(null);
 
   useEffect(() => {
