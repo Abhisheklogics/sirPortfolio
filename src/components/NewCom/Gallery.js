@@ -115,7 +115,8 @@ const visits = [
 
 
 
- const [zoomData, setZoomData] = useState(null);
+ export default function ProjectGallery({ projectPhotos, visits }) {
+  const [zoomData, setZoomData] = useState(null);
 
   useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: "ease-in-out" });
@@ -239,5 +240,5 @@ const visits = [
         </div>
       </div>
     </section>
-  )
+  );
 }
