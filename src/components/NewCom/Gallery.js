@@ -132,6 +132,9 @@ const visits = [
       height: rect.height,
     });
   };
+ const handleImageClick = (e, src) => {
+  setZoomData({ src });
+};
 
   const closeZoom = () => {
     setZoomData(null);
@@ -166,38 +169,34 @@ const visits = [
           ))}
         </div>
 
-        {/* Zoomed Image Modal */}
-        {zoomData && (
-          <div
-            className="fixed inset-0 z-50"
-            onClick={closeZoom}
-            role="dialog"
-            aria-modal="true"
-          >
-            <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" />
-            <Image
-              src={zoomData.src}
-              alt="Zoomed project"
-              style={{
-                position: "absolute",
-                left: zoomData.x,
-                top: zoomData.y,
-                width: zoomData.width,
-                height: zoomData.height,
-                transform: "scale(2)",
-                transition: "transform 0.4s ease, opacity 0.4s ease",
-                objectFit: "contain",
-                zIndex: 60,
-                borderRadius: "1rem",
-              }}
-              onClick={(e) => e.stopPropagation()}
-              width={zoomData.width}
-              height={zoomData.height}
-              unoptimized
-            />
-          </div>
-        )}
-      </div>
+       {zoomData && (
+  <div
+    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+    onClick={closeZoom}
+    role="dialog"
+    aria-modal="true"
+  >
+    {/* Close Button */}
+    <button
+      onClick={closeZoom}
+      className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black p-2 rounded-full z-[10000]"
+      aria-label="Close Zoom"
+    >
+      ✕
+    </button>
+
+    <Image
+      src={zoomData.src}
+      alt="Zoomed project"
+      width={1200}
+      height={800}
+      className="rounded-xl object-contain transition-transform duration-500 ease-in-out scale-100 max-h-[90vh] max-w-[95vw]"
+      onClick={(e) => e.stopPropagation()}
+      unoptimized
+    />
+  </div>
+)}
+</div>
 
       {/* Industrial Visits */}
       <div
