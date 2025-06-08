@@ -115,105 +115,90 @@ const visits = [
 
 
 
-export default function IndustrialVisitsGallery() {
-   const [selectedImage, setSelectedImage] = useState(null);
-   const [isImageLoading, setIsImageLoading] = useState(true);
+ const [zoomData, setZoomData] = useState(null);
 
   useEffect(() => {
-    AOS.init({ 
-     
-      duration: 1100,
-       
-      once: true, 
-       
-       easing: 'ease-in-out'
-      
-      });
+    AOS.init({ duration: 1100, once: true, easing: "ease-in-out" });
   }, []);
 
- 
-const closeModal = () => {
-  setSelectedImage(null);
-  setIsImageLoading(true); 
-}
+  const handleImageClick = (e, src) => {
+    const rect = e.target.getBoundingClientRect();
+    setZoomData({
+      src,
+      x: rect.left,
+      y: rect.top + window.scrollY,
+      width: rect.width,
+      height: rect.height,
+    });
+  };
 
+  const closeZoom = () => {
+    setZoomData(null);
+  };
 
-
-
- return (
+  return (
     <section className="bg-gradient-to-t from-blue-900 to-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
-      
-<div data-aos="fade-up" aria-label="Project Gallery" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
-      <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
-        Project Gallery
-      </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {projectPhotos.map((src, idx) => (
+      {/* Project Gallery */}
+      <div data-aos="fade-up" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
+        <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
+          Project Gallery
+        </h2>
+
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {projectPhotos.map((src, idx) => (
+            <div
+              key={idx}
+              onClick={(e) => handleImageClick(e, src)}
+              className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-pointer"
+              tabIndex={0}
+              aria-label={`Project photo ${idx + 1}`}
+            >
+              <Image
+                src={src}
+                alt={`Project photo ${idx + 1}`}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Zoomed Image Modal */}
+        {zoomData && (
           <div
-            key={idx}
-            onClick={() => setSelectedImage(src)}
-            className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-pointer"
-            tabIndex={0}
-            aria-label={`Project photo ${idx + 1}`}
+            className="fixed inset-0 z-50"
+            onClick={closeZoom}
+            role="dialog"
+            aria-modal="true"
           >
+            <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" />
             <Image
-              src={src}
-              alt={`Project photo ${idx + 1}`}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+              src={zoomData.src}
+              alt="Zoomed project"
+              style={{
+                position: "absolute",
+                left: zoomData.x,
+                top: zoomData.y,
+                width: zoomData.width,
+                height: zoomData.height,
+                transform: "scale(2)",
+                transition: "transform 0.4s ease, opacity 0.4s ease",
+                objectFit: "contain",
+                zIndex: 60,
+                borderRadius: "1rem",
+              }}
+              onClick={(e) => e.stopPropagation()}
+              width={zoomData.width}
+              height={zoomData.height}
+              unoptimized
             />
           </div>
-        ))}
+        )}
       </div>
 
-    {selectedImage && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md transition-opacity duration-300"
-    onClick={closeModal}
-    onKeyDown={(e) => e.key === 'Escape' && closeModal()}
-    role="dialog"
-    aria-modal="true"
-    tabIndex={-1}
-  >
-    <div
-      className="relative max-w-5xl w-[90vw] max-h-[90vh] p-2 sm:p-4"
-      onClick={(e) => e.stopPropagation()}
-    >
-     
-      {isImageLoading && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40 rounded-xl">
-          <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-        </div>
-      )}
-
-      <Image
-        src={selectedImage}
-        alt="Enlarged project"
-        width={1200}
-        height={800}
-        className={`w-full h-auto max-h-[80vh] object-contain rounded-xl shadow-2xl transition-opacity duration-300 ease-in-out ${
-          isImageLoading ? 'opacity-0' : 'opacity-100'
-        }`}
-        onLoad={() => setIsImageLoading(false)}
-        sizes="(max-width: 768px) 90vw, (max-width: 1280px) 70vw, 50vw"
-        priority
-      />
-
-      <button
-        className="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 text-2xl flex items-center justify-center z-20"
-        onClick={closeModal}
-        aria-label="Close image modal"
-      >
-        &times;
-      </button>
-    </div>
-  </div>
-)}
-
-    </div>
-      
+      {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
         data-aos="fade-up"
@@ -237,7 +222,6 @@ const closeModal = () => {
                 <p className="text-md">{location}</p>
               </div>
               <p className="text-blue-300 font-medium mb-3">{year}</p>
-
               {linkedin && (
                 <a
                   href={linkedin}
@@ -255,5 +239,5 @@ const closeModal = () => {
         </div>
       </div>
     </section>
-  );
+  )
 }
