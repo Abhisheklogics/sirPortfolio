@@ -188,7 +188,18 @@ const visits = [
       alt="Zoomed project"
       width={1200}
       height={800}
-      className="rounded-xl object-contain transition-transform duration-500 ease-in-out scale-100 max-h-[90vh] max-w-[95vw]"
+      style={{
+                position: "absolute",
+                left: zoomData.x,
+                top: zoomData.y,
+                width: zoomData.width,
+                height: zoomData.height,
+                transform: "scale(2)",
+                transition: "transform 0.4s ease, opacity 0.4s ease",
+                objectFit: "contain",
+                zIndex: 60,
+                borderRadius: "1rem",
+              }}
       onClick={(e) => e.stopPropagation()}
       unoptimized
     />
