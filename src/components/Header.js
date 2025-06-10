@@ -49,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 font-sans backdrop-blur-xl bg-gradient-to-b from-blue-900/70 to-slate-800/60 border-b border-white/10 shadow-md">
+    <header className="sticky top-0 z-50 font-sans  bg-gradient-to-b from-blue-900/70 to-slate-800/60 border-b border-white/10 shadow-md">
      
       <div className="text-white px-4 py-2 md:py-1 animate-fadeInDown">
         <div className="max-w-7xl mx-auto text-center space-y-1">
