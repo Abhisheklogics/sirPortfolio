@@ -116,31 +116,17 @@ const visits = [
 
 
  export default function ProjectGallery() {
-  const [zoomData, setZoomData] = useState(null);
+  const [zoomSrc, setZoomSrc] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: "ease-in-out" });
+    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
   }, []);
 
-  const handleImageClick = (e, src) => {
-    const rect = e.target.getBoundingClientRect();
-    setZoomData({
-      src,
-      x: rect.left,
-      y: rect.top + window.scrollY,
-      width: rect.width,
-      height: rect.height,
-    });
-  };
-
-
-  const closeZoom = () => {
-    setZoomData(null);
-  };
+  const openZoom = (src) => setZoomSrc(src);
+  const closeZoom = () => setZoomSrc(null);
 
   return (
     <section className="bg-gradient-to-t from-blue-900 to-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
-
       {/* Project Gallery */}
       <div data-aos="fade-up" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
@@ -151,7 +137,7 @@ const visits = [
           {projectPhotos.map((src, idx) => (
             <div
               key={idx}
-              onClick={(e) => handleImageClick(e, src)}
+              onClick={() => openZoom(src)}
               className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-pointer"
               tabIndex={0}
               aria-label={`Project photo ${idx + 1}`}
@@ -167,45 +153,31 @@ const visits = [
           ))}
         </div>
 
-       {zoomData && (
-  <div
-    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
-    onClick={closeZoom}
-    role="dialog"
-    aria-modal="true"
-  >
-    {/* Close Button */}
-    <button
-      onClick={closeZoom}
-      className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black p-2 rounded-full z-[10000]"
-      aria-label="Close Zoom"
-    >
-      ✕
-    </button>
-
-    <Image
-      src={zoomData.src}
-      alt="Zoomed project"
-      width={1200}
-      height={800}
-      style={{
-                position: "absolute",
-                left: zoomData.x,
-                top: zoomData.y,
-                width: zoomData.width,
-                height: zoomData.height,
-                transform: "scale(2)",
-                transition: "transform 0.4s ease, opacity 0.4s ease",
-                objectFit: "contain",
-                zIndex: 60,
-                borderRadius: "1rem",
-              }}
-      onClick={(e) => e.stopPropagation()}
-      unoptimized
-    />
-  </div>
-)}
-</div>
+        {zoomSrc && (
+          <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Close Button */}
+              <button
+                onClick={closeZoom}
+                className="absolute top-4 right-4 text-white text-2xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
+                aria-label="Close Zoom"
+              >
+                ✕
+              </button>
+              <div className="relative w-[90vw] h-[80vh] sm:w-[80vw] sm:h-[80vh] md:w-[70vw] md:h-[80vh] lg:w-[60vw] lg:h-[80vh]">
+                <Image
+                  src={zoomSrc}
+                  alt="Zoomed project"
+                  fill
+                  className="object-contain rounded-xl shadow-xl"
+                  onClick={(e) => e.stopPropagation()}
+                  unoptimized
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Industrial Visits */}
       <div
