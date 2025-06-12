@@ -194,23 +194,26 @@ export default function ProjectGallery() {
 
          
 
-            <div
-              className="relative transition-transform duration-500 ease-in-out"
-              style={{
-                width: '90vw',
-                height: '80vh',
-                transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
-              }}
-            >
-              <Image
-                src={zoomData.src}
-                alt="Zoomed project"
-                fill
-                className="object-contain rounded-xl shadow-xl"
-                onClick={(e) => e.stopPropagation()}
-                unoptimized
-              />
-            </div>
+       <div
+  className="relative w-full h-full max-w-7xl mx-auto px-4 "
+  style={{
+    transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
+  }}
+>
+  <div className="relative w-full h-[80vh]">
+    <Image
+      src={zoomData.src}
+      alt="Zoomed project"
+      fill
+      className="object-contain rounded-xl shadow-xl"
+      onClick={(e) => e.stopPropagation()}
+      unoptimized
+      sizes="100vw"
+      priority
+    />
+  </div>
+</div>
+
           </div>
         )}
       </div>
