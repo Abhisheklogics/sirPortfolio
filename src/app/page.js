@@ -3,7 +3,7 @@
 import Hero from '@/components/Hero'
 import Head from "next/head";
 export const metadata = {
-  title: "Dr. Amarjeet Singh Chauhan - Lecturer at DEI Agra | IoT, AI & Computer Science Expert",
+  title: "Dr. Amarjeet Singh Chauhan – IoT, AI & CS Expert | Lecturer, Dayalbagh Educational Institute, Agra",
   description:
     "Dr. Amarjeet Singh Chauhan, Ph.D. in Computer Science from DEI Agra, is a distinguished lecturer and multidisciplinary researcher specializing in IoT, Drone Technologies, AI-driven Agriculture, Embedded Systems, and Cloud Computing. With multiple international publications and over 10 patents, he excels in teaching Big Data, Cognitive Robotics, Machine Learning, and more.",
   authors: [{ name: "Dr. Amarjeet Singh Chauhan" }],
