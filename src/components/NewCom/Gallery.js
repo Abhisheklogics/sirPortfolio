@@ -162,10 +162,9 @@ const closeZoom = () => setZoomData({ src: null, x: 0, y: 0 });
           ))}
         </div>
 
-        {zoomData.src && (
+     {zoomData.src && (
   <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center">
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Close Button */}
       <button
         onClick={closeZoom}
         className="absolute top-4 right-4 text-white text-2xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
@@ -192,9 +191,8 @@ const closeZoom = () => setZoomData({ src: null, x: 0, y: 0 });
       </div>
     </div>
   </div>
-)}
-
-      {/* Industrial Visits */}
+)} 
+{/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
         data-aos="fade-up"
