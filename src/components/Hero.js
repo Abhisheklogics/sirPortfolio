@@ -40,7 +40,7 @@ export default function Hero() {
 
         <div className="w-full md:w-7/12 space-y-6 text-sm md:text-base">
           <h1
-            data-aos="fade-right"
+            
             className="text-3xl md:text-5xl font-bold leading-snug text-center md:text-left"
           >
             Dr. Amarjeet Singh Chauhan
@@ -61,7 +61,7 @@ export default function Hero() {
             />
           </div>
 
-          <div data-aos="fade-up" className="space-y-4 text-justify leading-relaxed">
+          <div  className="space-y-4 text-justify leading-relaxed">
             <p>
               I am a dedicated academician and researcher with a Ph.D. in Computer Science,
               specializing in Resource Allocation in IoT Cloud Environments using Swarm Optimization,
@@ -124,7 +124,7 @@ export default function Hero() {
 
         <div className="hidden md:block w-full md:w-[400px] relative">
           <div
-            data-aos="fade-left"
+          
             className="absolute  md:top-[-440px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
           >
             <Image
