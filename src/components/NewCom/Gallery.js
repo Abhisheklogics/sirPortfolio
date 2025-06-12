@@ -178,7 +178,7 @@ export default function ProjectGallery() {
 
         {/* Lightbox Zoom Modal */}
         {zoomData.src && (
-          <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center">
+          <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm ">
             <button
               onClick={closeZoom}
               className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
