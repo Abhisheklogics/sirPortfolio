@@ -118,12 +118,17 @@ const visits = [
 export default function ProjectGallery() {
   const [zoomData, setZoomData] = useState({ src: null, index: 0, x: 0, y: 0 });
 
-  const openZoom = (e, src, index) => {
-    const rect = e.target.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const clickY = e.clientY - rect.top;
-    setZoomData({ src, index, x: clickX, y: clickY });
-  };
+ const openZoom = (e, src, index) => {
+  const rect = e.target.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const clickY = e.clientY - rect.top;
+
+  // ✅ Scroll to top when image is clicked
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setZoomData({ src, index, x: clickX, y: clickY });
+};
+
 
   const closeZoom = () => setZoomData({ src: null, index: 0, x: 0, y: 0 });
 
@@ -187,21 +192,7 @@ export default function ProjectGallery() {
               ✕
             </button>
 
-            <button
-              onClick={() => changeImage(-1)}
-              className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white text-4xl bg-black/40 hover:bg-black p-2 rounded-full"
-              aria-label="Previous Image"
-            >
-              ‹
-            </button>
-
-            <button
-              onClick={() => changeImage(1)}
-              className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white text-4xl bg-black/40 hover:bg-black p-2 rounded-full"
-              aria-label="Next Image"
-            >
-              ›
-            </button>
+         
 
             <div
               className="relative transition-transform duration-500 ease-in-out"
