@@ -35,7 +35,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative w-full bg-white overflow-hidden px-4 py-16 md:py-6 text-gray-900">
+    <section className="relative w-full bg-white overflow-hidden px-4 py-16 md:py-8 md:ml-4 text-gray-900">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
 
         <div className="w-full md:w-7/12 space-y-6 text-sm md:text-base">
