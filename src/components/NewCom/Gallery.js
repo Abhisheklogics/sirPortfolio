@@ -209,18 +209,20 @@ export default function ProjectGallery() {
       </button>
 
       {/* Zoomed Image */}
-      <div className="relative flex-1 h-[80vh]">
-        <Image
-          src={zoomData.src}
-          alt="Zoomed project"
-          fill
-          className="object-contain rounded-xl shadow-xl"
-          onClick={(e) => e.stopPropagation()}
-          unoptimized
-          sizes="100vw"
-          priority
-        />
-      </div>
+    <div className="relative flex-1 h-screen sm:h-[80vh]">
+
+  <Image
+    src={zoomData.src}
+    alt="Zoomed project"
+    fill
+    className="object-contain rounded-xl shadow-xl"
+    onClick={(e) => e.stopPropagation()}
+    unoptimized
+    sizes="100vw"
+    priority
+  />
+</div>
+
 
       {/* Right Arrow (beside image) */}
       <button
