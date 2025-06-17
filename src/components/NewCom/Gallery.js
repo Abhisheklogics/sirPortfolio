@@ -233,6 +233,7 @@ export default function ProjectGallery() {
     </div>
   </div>
 )}
+  </div>
 
       {/* Industrial Visits */}
       <div
