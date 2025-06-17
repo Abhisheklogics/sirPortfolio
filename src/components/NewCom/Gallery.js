@@ -192,22 +192,24 @@ export default function ProjectGallery() {
       ✕
     </button>
 
+   {zoomData.src && (
+  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm px-4">
+    {/* Close Button */}
+    <button
+      onClick={closeZoom}
+      className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
+      aria-label="Close Zoom"
+    >
+      ✕
+    </button>
+
     {/* Zoom Container */}
     <div
-      className=" flex items-center justify-center h-full w-full gap-4 max-w-screen overflow-hidden"
+      className="flex flex-col  h-full w-full gap-6 max-w-screen overflow-hidden"
       style={{
         transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
       }}
     >
-      {/* Left Arrow */}
-      <button
-        onClick={() => changeImage(-1)}
-        className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-        aria-label="Previous Image"
-      >
-        ←
-      </button>
-
       {/* Image Container */}
       <div className="relative w-full h-full max-h-screen max-w-[90vw] sm:max-w-[80vw]">
         <Image
@@ -222,14 +224,23 @@ export default function ProjectGallery() {
         />
       </div>
 
-      {/* Right Arrow */}
-      <button
-        onClick={() => changeImage(1)}
-        className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-        aria-label="Next Image"
-      >
-        →
-      </button>
+      {/* Arrows below image */}
+      <div className="flex justify-center items-center gap-8 mt-4">
+        <button
+          onClick={() => changeImage(-1)}
+          className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
+          aria-label="Previous Image"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => changeImage(1)}
+          className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
+          aria-label="Next Image"
+        >
+          →
+        </button>
+      </div>
     </div>
   </div>
 )}
