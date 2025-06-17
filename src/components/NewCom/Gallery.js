@@ -212,7 +212,7 @@ export default function ProjectGallery() {
 
     {/* Zoomed Image */}
     <div
-      className="relative w-full h-full max-w-7xl mx-auto px-4 flex items-center justify-center"
+      className="relative w-full h-full max-w-7xl mx-auto px-4 "
       style={{
         transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
       }}
