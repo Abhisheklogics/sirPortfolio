@@ -232,7 +232,7 @@ export default function ProjectGallery() {
     </div>
   </div>
 )}
-
+  </div>
       {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
