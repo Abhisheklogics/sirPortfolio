@@ -214,7 +214,7 @@ export default function ProjectGallery() {
       </div>
 
       {/* Arrows below image */}
-      <div className=" gap-8 h-[80px] ">
+      <div className=" flex justify-center items-center md:mt-0 mt-[-100px] gap-8 h-[80px] ">
         <button
           onClick={() => changeImage(-1)}
           className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
