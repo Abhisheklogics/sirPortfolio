@@ -182,7 +182,7 @@ export default function ProjectGallery() {
         </div>
 
    {zoomData.src && (
-  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center px-4">
+  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm  px-4">
     {/* Close Button */}
     <button
       onClick={closeZoom}
