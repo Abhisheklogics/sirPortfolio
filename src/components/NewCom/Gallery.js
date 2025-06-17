@@ -181,8 +181,8 @@ export default function ProjectGallery() {
           ))}
         </div>
 
-      {zoomData.src && (
-  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center ">
+   {zoomData.src && (
+  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center px-4">
     {/* Close Button */}
     <button
       onClick={closeZoom}
@@ -192,32 +192,24 @@ export default function ProjectGallery() {
       ✕
     </button>
 
-    {/* Left Arrow */}
-    <button
-      onClick={() => changeImage(-1)}
-      className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
-      aria-label="Previous Image"
-    >
-      ←
-    </button>
-
-    {/* Right Arrow */}
-    <button
-      onClick={() => changeImage(1)}
-      className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
-      aria-label="Next Image"
-    >
-      →
-    </button>
-
-    {/* Zoomed Image */}
+    {/* Zoom Container */}
     <div
-      className="relative w-full h-full max-w-7xl mx-auto px-4 "
+      className="relative flex items-center gap-4 max-w-7xl w-full"
       style={{
         transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
       }}
     >
-      <div className="relative w-full h-[80vh]">
+      {/* Left Arrow (beside image) */}
+      <button
+        onClick={() => changeImage(-1)}
+        className="text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+        aria-label="Previous Image"
+      >
+        ←
+      </button>
+
+      {/* Zoomed Image */}
+      <div className="relative flex-1 h-[80vh]">
         <Image
           src={zoomData.src}
           alt="Zoomed project"
@@ -229,10 +221,19 @@ export default function ProjectGallery() {
           priority
         />
       </div>
+
+      {/* Right Arrow (beside image) */}
+      <button
+        onClick={() => changeImage(1)}
+        className="text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+        aria-label="Next Image"
+      >
+        →
+      </button>
     </div>
   </div>
 )}
-  </div>
+
       {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
