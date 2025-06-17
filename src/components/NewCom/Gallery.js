@@ -205,7 +205,7 @@ export default function ProjectGallery() {
 
     {/* Zoom Container */}
     <div
-      className="flex flex-col  h-full w-full gap-6 max-w-screen overflow-hidden"
+      className="  h-full w-full gap-6 max-w-screen overflow-hidden"
       style={{
         transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
       }}
