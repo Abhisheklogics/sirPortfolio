@@ -209,8 +209,7 @@ export default function ProjectGallery() {
       </button>
 
       {/* Zoomed Image */}
-    <div className="relative flex-1 h-screen sm:h-[80vh]">
-
+  <div className="relative min-h-screen sm:h-[80vh] w-full">
   <Image
     src={zoomData.src}
     alt="Zoomed project"
@@ -222,6 +221,7 @@ export default function ProjectGallery() {
     priority
   />
 </div>
+
 
 
       {/* Right Arrow (beside image) */}
