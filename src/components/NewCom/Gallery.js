@@ -181,8 +181,8 @@ export default function ProjectGallery() {
           ))}
         </div>
 
-   {zoomData.src && (
-  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm  px-4">
+{zoomData.src && (
+  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm px-4">
     {/* Close Button */}
     <button
       onClick={closeZoom}
@@ -194,40 +194,38 @@ export default function ProjectGallery() {
 
     {/* Zoom Container */}
     <div
-      className="relative flex items-center gap-4 max-w-7xl w-full"
+      className=" h-full w-full gap-4 max-w-screen overflow-hidden"
       style={{
         transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
       }}
     >
-      {/* Left Arrow (beside image) */}
+      {/* Left Arrow */}
       <button
         onClick={() => changeImage(-1)}
-        className="text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+        className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
         aria-label="Previous Image"
       >
         ←
       </button>
 
-      {/* Zoomed Image */}
-  <div className="relative min-h-screen sm:h-[80vh] w-full">
-  <Image
-    src={zoomData.src}
-    alt="Zoomed project"
-    fill
-    className="object-contain rounded-xl shadow-xl"
-    onClick={(e) => e.stopPropagation()}
-    unoptimized
-    sizes="100vw"
-    priority
-  />
-</div>
+      {/* Image Container */}
+      <div className="relative w-full h-full max-h-screen max-w-[90vw] sm:max-w-[80vw]">
+        <Image
+          src={zoomData.src}
+          alt="Zoomed project"
+          fill
+          className="object-contain rounded-xl shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+          unoptimized
+          sizes="100vw"
+          priority
+        />
+      </div>
 
-
-
-      {/* Right Arrow (beside image) */}
+      {/* Right Arrow */}
       <button
         onClick={() => changeImage(1)}
-        className="text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+        className="text-white text-3xl sm:text-5xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
         aria-label="Next Image"
       >
         →
@@ -236,7 +234,6 @@ export default function ProjectGallery() {
   </div>
 )}
   </div>
-
       {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
