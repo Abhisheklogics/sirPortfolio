@@ -181,42 +181,57 @@ export default function ProjectGallery() {
           ))}
         </div>
 
-        {/* Lightbox Zoom Modal */}
-        {zoomData.src && (
-          <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm ">
-            <button
-              onClick={closeZoom}
-              className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
-              aria-label="Close Zoom"
-            >
-              ✕
-            </button>
+      {zoomData.src && (
+  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center">
+    {/* Close Button */}
+    <button
+      onClick={closeZoom}
+      className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
+      aria-label="Close Zoom"
+    >
+      ✕
+    </button>
 
-         
+    {/* Left Arrow */}
+    <button
+      onClick={() => changeImage(-1)}
+      className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+      aria-label="Previous Image"
+    >
+      ←
+    </button>
 
-       <div
-  className="relative w-full h-full max-w-7xl mx-auto px-4 "
-  style={{
-    transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
-  }}
->
-  <div className="relative w-full h-[80vh]">
-    <Image
-      src={zoomData.src}
-      alt="Zoomed project"
-      fill
-      className="object-contain rounded-xl shadow-xl"
-      onClick={(e) => e.stopPropagation()}
-      unoptimized
-      sizes="100vw"
-      priority
-    />
-  </div>
-</div>
+    {/* Right Arrow */}
+    <button
+      onClick={() => changeImage(1)}
+      className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000] transition"
+      aria-label="Next Image"
+    >
+      →
+    </button>
 
-          </div>
-        )}
+    {/* Zoomed Image */}
+    <div
+      className="relative w-full h-full max-w-7xl mx-auto px-4 flex items-center justify-center"
+      style={{
+        transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
+      }}
+    >
+      <div className="relative w-full h-[80vh]">
+        <Image
+          src={zoomData.src}
+          alt="Zoomed project"
+          fill
+          className="object-contain rounded-xl shadow-xl"
+          onClick={(e) => e.stopPropagation()}
+          unoptimized
+          sizes="100vw"
+          priority
+        />
       </div>
+    </div>
+  </div>
+)}
 
       {/* Industrial Visits */}
       <div
