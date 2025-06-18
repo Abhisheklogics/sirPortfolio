@@ -193,7 +193,7 @@ export default function ProjectGallery() {
             >
               <Image
                 src={src}
-                alt={Project photo ${idx + 1}}
+                alt={`Project photo ${idx + 1}`}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
