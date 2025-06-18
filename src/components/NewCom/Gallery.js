@@ -135,8 +135,7 @@ const visits = [
 
 
 
-Skip to content
-You said:
+
 export default function ProjectGallery() {
   const [zoomData, setZoomData] = useState({ src: null, index: 0, x: 0, y: 0 });
 
