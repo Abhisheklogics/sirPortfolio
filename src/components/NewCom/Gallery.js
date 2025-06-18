@@ -9,9 +9,27 @@ import { MdLocationOn } from 'react-icons/md';
 import { FaLinkedin } from 'react-icons/fa';
 import Image from "next/image";
 
-// ye 69 images
+// ye 82 images
 
 const projectPhotos = [
+
+
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202354.jpg?updatedAt=1750286163405',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202337.jpg?updatedAt=1750286162308',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202319.jpg?updatedAt=1750286161420',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202287.jpg?updatedAt=1750286161118',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202387.jpg?updatedAt=1750286160855',
+
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202402.jpg?updatedAt=1750286160679',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202303.jpg?updatedAt=1750286160227',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202418.jpg?updatedAt=1750286159521',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202370.jpg?updatedAt=1750286158323',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202435.jpg?updatedAt=1750286155735',
+  
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202271.jpg?updatedAt=1750286155517',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202234.jpg?updatedAt=1750286155467',
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202255.jpg?updatedAt=1750286155400',
+  
   'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203309.jpg?updatedAt=1748899039420',
   'https://ik.imagekit.io/vtbtnuxcb/Website/SAVE_20221225_203144.jpg?updatedAt=1748899033776',
   'https://ik.imagekit.io/vtbtnuxcb/Website/pic5.JPG?updatedAt=1748899012557',
@@ -98,6 +116,8 @@ const projectPhotos = [
 'https://ik.imagekit.io/vtbtnuxcb/Website/1717139125100.jpg?updatedAt=1748898739043',
 'https://ik.imagekit.io/vtbtnuxcb/Website/1717139124537.jpg?updatedAt=1748898738881'
 
+
+
 ];
 
 const visits = [
@@ -116,29 +136,21 @@ const visits = [
 
 
 export default function ProjectGallery() {
-  const [zoomData, setZoomData] = useState({ src: null, index: 0, x: 0, y: 0 });
+  const [zoomData, setZoomData] = useState({ src: null, index: 0 });
 
- const openZoom = (e, src, index) => {
-  const rect = e.target.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const clickY = e.clientY - rect.top;
+  const openZoom = (index) => {
+    setZoomData({ src: projectPhotos[index], index });
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
 
-  // ✅ Scroll to top when image is clicked
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  setZoomData({ src, index, x: clickX, y: clickY });
-};
-
-
-  const closeZoom = () => setZoomData({ src: null, index: 0, x: 0, y: 0 });
+  const closeZoom = () => {
+    setZoomData({ src: null, index: 0 });
+    document.body.style.overflow = 'auto';
+  };
 
   const changeImage = (direction) => {
     const newIndex = (zoomData.index + direction + projectPhotos.length) % projectPhotos.length;
-    setZoomData({
-      ...zoomData,
-      src: projectPhotos[newIndex],
-      index: newIndex,
-    });
+    setZoomData({ src: projectPhotos[newIndex], index: newIndex });
   };
 
   useEffect(() => {
@@ -153,90 +165,75 @@ export default function ProjectGallery() {
   }, [zoomData]);
 
   useEffect(() => {
-    AOS.init({ duration: 1100, once: true, easing: 'ease-in-out' });
-  }, []);  return (
+    AOS.init({ duration: 1100, once: true });
+  }, []);
+
+  return (
     <section className="bg-gradient-to-t from-blue-900 to-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
+      
       {/* Project Gallery */}
       <div data-aos="fade-up" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
           Project Gallery
         </h2>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {projectPhotos.map((src, idx) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
+          {projectPhotos.map((src, index) => (
             <div
-              key={idx}
-              onClick={(e) => openZoom(e, src, idx)}
-              className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-zoom-in"
-              tabIndex={0}
+              key={index}
+              className="relative group cursor-pointer overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md"
+              onClick={() => openZoom(index)}
             >
               <Image
                 src={src}
-                alt={`Project photo ${idx + 1}`}
+                alt={`Project photo ${index + 1}`}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           ))}
         </div>
 
-{zoomData.src && (
-  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm px-4">
-    {/* Close Button */}
-    <button
-      onClick={closeZoom}
-      className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
-      aria-label="Close Zoom"
-    >
-      ✕
-    </button>
+        {/* Zoom Modal */}
+        {zoomData.src && (
+          <div className="fixed inset-0 z-[9999] bg-black bg-opacity-90 flex flex-col justify-center items-center p-4">
+            <button
+              onClick={closeZoom}
+              className="absolute top-4 right-4 text-white text-3xl bg-black/60 hover:bg-black p-2 rounded-full"
+            >
+              ✕
+            </button>
 
-    {/* Zoom Container */}
-    <div
-      className=" h-full w-full max-w-screen"
-      style={{
-        transformOrigin: `${zoomData.x}px ${zoomData.y}px`,
-      }}
-    >
-      {/* Image Container */}
-      <div className="relative w-full max-w-[95vw] sm:max-w-[80vw] h-[calc(100vh-100px)]">
-        <Image
-          src={zoomData.src}
-          alt="Zoomed project"
-          fill
-          className="object-contain rounded-xl shadow-xl"
-          onClick={(e) => e.stopPropagation()}
-          unoptimized
-          sizes="100vw"
-          priority
-        />
+            <div className="relative w-full max-w-5xl h-[70vh] sm:h-[85vh]">
+              <Image
+                src={zoomData.src}
+                alt="Zoomed"
+                fill
+                className="object-contain rounded-xl shadow-2xl"
+                priority
+              />
+            </div>
+
+            <div className="flex justify-center items-center mt-6 gap-8">
+              <button
+                onClick={() => changeImage(-1)}
+                className="text-white text-3xl bg-black/50 hover:bg-black p-3 rounded-full"
+              >
+                ←
+              </button>
+              <button
+                onClick={() => changeImage(1)}
+                className="text-white text-3xl bg-black/50 hover:bg-black p-3 rounded-full"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Arrows below image */}
-      <div className=" flex justify-center items-center md:mt-0 mt-[-100px] gap-8 h-[80px] ">
-        <button
-          onClick={() => changeImage(-1)}
-          className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-          aria-label="Previous Image"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => changeImage(1)}
-          className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-          aria-label="Next Image"
-        >
-          →
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
-  
-  </div>
-      {/* Industrial Visits */}
+      {/* Industrial Visits (keep as-is) */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
         data-aos="fade-up"
@@ -266,7 +263,6 @@ export default function ProjectGallery() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-400 hover:text-blue-300 transition"
-                  aria-label={`Visit ${place} LinkedIn Profile`}
                 >
                   <FaLinkedin className="mr-2" />
                   <span>LinkedIn</span>
