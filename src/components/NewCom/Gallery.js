@@ -273,7 +273,7 @@ export default function ProjectGallery() {
               key={idx}
               tabIndex={0}
               className="group rounded-2xl p-6 shadow-lg border border-white/10 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-900 hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
-              aria-label={${place} visit in ${year} at ${location}}
+              aria-label={`${place} visit in ${year} at ${location}`}
             >
               <h3 className="text-2xl font-bold mb-2">{place}</h3>
               <div className="flex items-center mb-2 text-gray-300">
@@ -287,7 +287,7 @@ export default function ProjectGallery() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-400 hover:text-blue-300 transition"
-                  aria-label={Visit ${place} LinkedIn Profile}
+                  aria-label={`Visit ${place} LinkedIn Profile`}
                 >
                   <FaLinkedin className="mr-2" />
                   <span>LinkedIn</span>
