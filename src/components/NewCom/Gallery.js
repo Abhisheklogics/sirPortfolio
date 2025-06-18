@@ -216,9 +216,9 @@ export default function ProjectGallery() {
     {/* Zoom Container */}
     <div
       className=" h-full w-full max-w-screen"
-      style={{`
-        transformOrigin: ${zoomData.x}px ${zoomData.y}px,
-      `}}
+      style={{
+        transformOrigin: `${zoomData.x}px ${zoomData.y}px`
+      }}
     >
       {/* Image Container */}
       <div className="relative w-full max-w-[95vw] sm:max-w-[80vw] h-[calc(100vh-100px)]">
