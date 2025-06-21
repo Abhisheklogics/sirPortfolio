@@ -178,85 +178,85 @@ export default function ProjectGallery() {
   }, []);  return (
     <section className="bg-gradient-to-t from-blue-900 to-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
       {/* Project Gallery */}
-      <div data-aos="fade-up" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8">
-        <h2 className="text-4xl font-extrabold text-center text-white mb-12 border-b border-white/10 pb-6 tracking-tight">
-          Project Gallery
-        </h2>
+<div data-aos="fade-up" className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 sm:p-8">
+  <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-white mb-10 border-b border-white/10 pb-5 tracking-tight">
+    Project Gallery
+  </h2>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {projectPhotos.map((src, idx) => (
-            <div
-              key={idx}
-              onClick={(e) => openZoom(e, src, idx)}
-              className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-zoom-in"
-              tabIndex={0}
-            >
-              <Image
-                src={src}
-                alt={`Project photo ${idx + 1}`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
-              />
-            </div>
-          ))}
-        </div>
-
-{zoomData.src && (
-  <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm px-4">
-    {/* Close Button */}
-    <button
-      onClick={closeZoom}
-      className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
-      aria-label="Close Zoom"
-    >
-      ✕
-    </button>
-
-    {/* Zoom Container */}
-    <div
-      className=" h-full w-full max-w-screen"
-      style={{
-        transformOrigin: `${zoomData.x}px ${zoomData.y}px`
-      }}
-    >
-      {/* Image Container */}
-      <div className="relative w-full max-w-[95vw] sm:max-w-[80vw] h-[calc(100vh-100px)]">
+  {/* Image Grid */}
+  <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    {projectPhotos.map((src, idx) => (
+      <div
+        key={idx}
+        onClick={(e) => openZoom(e, src, idx)}
+        className="relative group overflow-hidden rounded-xl aspect-[4/3] border border-white/10 shadow-md cursor-zoom-in"
+        tabIndex={0}
+      >
         <Image
-          src={zoomData.src}
-          alt="Zoomed project"
+          src={src}
+          alt={`Project photo ${idx + 1}`}
           fill
-          className="object-contain rounded-xl shadow-xl"
-          onClick={(e) => e.stopPropagation()}
-          unoptimized
-          sizes="100vw"
-          priority
+          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
         />
       </div>
+    ))}
+  </div>
 
-      {/* Arrows below image */}
-      <div className=" flex justify-center items-center md:mt-0 mt-[-100px] gap-8 h-[80px] ">
-        <button
-          onClick={() => changeImage(-1)}
-          className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-          aria-label="Previous Image"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => changeImage(1)}
-          className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-2 sm:p-3 rounded-full z-[10000] transition"
-          aria-label="Next Image"
-        >
-          →
-        </button>
+  {/* Zoom Modal */}
+  {zoomData.src && (
+    <div
+      className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center px-4"
+      onClick={closeZoom}
+    >
+      {/* Close Button */}
+      <button
+        onClick={closeZoom}
+        className="absolute top-4 right-4 text-white text-3xl bg-black/50 hover:bg-black p-2 rounded-full z-[10000]"
+        aria-label="Close Zoom"
+      >
+        ✕
+      </button>
+
+      {/* Image Container */}
+      <div
+        className="flex flex-col items-center w-full max-w-[95vw] sm:max-w-[85vw]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative w-full h-[calc(100vh-160px)]">
+          <Image
+            src={zoomData.src}
+            alt="Zoomed project"
+            fill
+            className="object-contain rounded-xl shadow-2xl"
+            unoptimized
+            sizes="100vw"
+            priority
+          />
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex justify-center items-center mt-6 gap-6">
+          <button
+            onClick={() => changeImage(-1)}
+            className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-3 rounded-full z-[10000] transition"
+            aria-label="Previous Image"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => changeImage(1)}
+            className="text-white text-3xl sm:text-4xl bg-black/50 hover:bg-black p-3 rounded-full z-[10000] transition"
+            aria-label="Next Image"
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-)}
+  )}
+</div>
 
-  
-  </div>
       {/* Industrial Visits */}
       <div
         className="rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8"
