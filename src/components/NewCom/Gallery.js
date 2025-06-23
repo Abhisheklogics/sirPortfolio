@@ -12,8 +12,36 @@ import Image from "next/image";
 // ye 82 images
 
 const projectPhotos = [
+'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993434.jpg?updatedAt=1750721589522',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993481.jpg?updatedAt=1750721588432',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993450.jpg?updatedAt=1750721588321',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993466.jpg?updatedAt=1750721588161',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993415.jpg?updatedAt=1750721587153',
 
-
+   'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993369.jpg?updatedAt=1750721586020',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993400.jpg?updatedAt=1750721585455',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993383.jpg?updatedAt=1750721585013',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993351.jpg?updatedAt=1750721583775',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993336.jpg?updatedAt=1750721583698',
+  
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993307.jpg?updatedAt=1750721583060',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993322.jpg?updatedAt=1750721582571',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993291.jpg?updatedAt=1750721582387',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993217.jpg?updatedAt=1750721582036',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993201.jpg?updatedAt=1750721579432',
+  
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993054.jpg?updatedAt=1750721576632',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993070.jpg?updatedAt=1750721576350',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993172.jpg?updatedAt=1750721576178',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993187.jpg?updatedAt=1750721576152',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993155.jpg?updatedAt=1750721576002',
+  
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993086.jpg?updatedAt=1750721575936',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993126.jpg?updatedAt=1750721575386',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993100.jpg?updatedAt=1750721575383',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993140.jpg?updatedAt=1750721575385',
+  'https://ik.imagekit.io/vtbtnuxcb/Website/1750545993114.jpg?updatedAt=1750721574964',
+  
   'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202354.jpg?updatedAt=1750286163405',
 'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202337.jpg?updatedAt=1750286162308',
 'https://ik.imagekit.io/vtbtnuxcb/Website/1750284202319.jpg?updatedAt=1750286161420',
