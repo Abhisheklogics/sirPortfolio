@@ -15,7 +15,7 @@ import Photo9 from '../../../public/hariom.jpg';
 import Photo10 from '../../../public/mohit1styear.jpg';
 import Photo11 from '../../../public/nitin.jpg';
 import Photo12 from '../../../public/Gaurav.jpg';
-import Photo13 from '../../../public/akashsikarwar.jpg';
+import Photo13 from '../../../public/amanraj.jpgg';
 const teamMembers = [
   {
     name: 'Dr. Amarjeet Singh Chauhan',
