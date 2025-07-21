@@ -15,6 +15,7 @@ import Photo9 from '../../../public/hariom.jpg';
 import Photo10 from '../../../public/mohit1styear.jpg';
 import Photo11 from '../../../public/nitin.jpg';
 import Photo12 from '../../../public/Gaurav.jpg';
+import Photo13 from '../../../public/akashsikarwar.jpg';
 const teamMembers = [
   {
     name: 'Dr. Amarjeet Singh Chauhan',
@@ -45,6 +46,12 @@ const teamMembers = [
     role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
     image: Photo8,
     linkedin: 'https://www.linkedin.com/in/aman-raj-a1111a156/',
+  },
+    {
+    name: 'Akash Sikarwar',
+    role: 'Pursuing a Bachelor s of Vocational Courses in IoT(Internet Of Things)',
+    image: Photo13,
+    linkedin: 'https://www.linkedin.com/in/akash-sikarwar-849a5b346',
   },
   {
     name: 'Hariom Singh',
