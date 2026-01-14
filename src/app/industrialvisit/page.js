@@ -1,8 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { MdLocationOn } from 'react-icons/md';
 import { FaUniversity } from 'react-icons/fa';
 
@@ -18,21 +15,15 @@ const visits = [
   { place: "IFFCO", location: "Aonla, Bareilly", year: 2022 },
 ];
 
-export default function IndustrialVisits() {
-  useEffect(() => {
-     AOS.init({
-       duration: 800,      
-       easing: 'ease-in-out',
-       once: true           
-     });
-   }, []);
+export default function industreisvisits() {
+
 
   return (
     <section className="bg-white max-w-7xl mx-auto mt-8 px-6 sm:px-10 lg:px-16 py-16  rounded-3xl shadow-xl ">
      
       <div
         className="flex items-center gap-4 mb-14 border-b border-gray-300 pb-5"
-        data-aos="fade-down"
+        
       >
         <FaUniversity className="text-blue-700 text-4xl shrink-0" />
         <h2 className="text-3xl sm:text-4xl font-extrabold  tracking-wide">
@@ -40,13 +31,11 @@ export default function IndustrialVisits() {
         </h2>
       </div>
 
-      {/* Grid Items */}
+     
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {visits.map(({ place, location, year }, index) => (
           <li
             key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 120}
             className="group flex items-start gap-5 p-6  rounded-3xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-blue-400 transition-shadow transition-colors duration-300 ease-in-out cursor-pointer"
           >
             <MdLocationOn className="text-blue-700 text-3xl mt-1 shrink-0 transition-transform group-hover:scale-110" />
