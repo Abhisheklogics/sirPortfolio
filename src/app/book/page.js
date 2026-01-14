@@ -34,7 +34,7 @@ export default function BooksPage() {
         <CardSpotlightBooks />
       </section>
       <section>
-        <h2 className="text-2xl sm:text-3xl font-bold  mb-6">📄 Research Publications</h2>
+        
         <CardSpotlightPublications />
       </section>
     </main>
