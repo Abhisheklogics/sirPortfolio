@@ -1,35 +1,27 @@
 'use client';
 
 import { FaGraduationCap, FaAward, FaStar } from 'react-icons/fa';
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 export default function ScholarshipsRecognitions() {
-  useEffect(() => {
-    AOS.init({
-      duration: 900,
-      easing: 'ease-in-out',
-      once: true,
-    });
-  }, []);
+
 
   return (
-    <section className="relative py-24 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-sans bg-gradient-to-t from-blue-900 to-slate-900 z-10 rounded-3xl shadow-2xl overflow-hidden">
+    <section className="relative py-24 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto font-sans bg-gradient-to-b from-white to-slate-50 text-black z-10 rounded-3xl shadow-2xl overflow-hidden">
      
 
       <div className="space-y-28 relative z-10">
        
         <div
-          data-aos="fade-up"
+        
           className="space-y-12"
           aria-label="Scholarships and Fellowships"
         >
           <div className="flex items-center gap-5">
             <div className="p-5 bg-blue-700 rounded-full shadow-xl flex items-center justify-center ring-2 ring-blue-500">
-              <FaGraduationCap className="text-4xl text-white" />
+              <FaGraduationCap className="text-4xl " />
             </div>
-            <h2 className="text-4xl sm:text-5xl text-white font-extrabold tracking-tight drop-shadow-lg">
+            <h2 className="text-4xl sm:text-5xl  text-indigo-600 font-bold tracking-tight drop-shadow-lg">
               Scholarships & Fellowships
             </h2>
           </div>
@@ -40,7 +32,7 @@ export default function ScholarshipsRecognitions() {
             ].map((item, index) => (
               <li
                 key={index}
-                className="bg-white/10 border border-white/25 text-white rounded-2xl px-8 py-6 backdrop-blur-md shadow-lg hover:shadow-2xl transform hover:scale-[1.04] transition duration-350 ease-in-out cursor-default"
+                className="bg-white/10 border border-white/25  rounded-2xl px-8 py-6 backdrop-blur-md shadow-lg hover:shadow-2xl transform hover:scale-[1.04] transition duration-350 ease-in-out cursor-default"
               >
                 <p className="text-lg sm:text-xl leading-relaxed font-medium tracking-wide">
                   {item}
@@ -54,15 +46,15 @@ export default function ScholarshipsRecognitions() {
 
        
         <div
-          data-aos="fade-up"
+         
           className="space-y-12"
           aria-label="Professional Recognitions"
         >
           <div className="flex items-center gap-5">
             <div className="p-5 bg-yellow-500 rounded-full shadow-xl flex items-center justify-center ring-2 ring-yellow-400">
-              <FaAward className="text-4xl text-white" />
+              <FaAward className="text-4xl " />
             </div>
-            <h3 className="text-4xl sm:text-5xl text-white font-extrabold tracking-tight drop-shadow-lg">
+            <h3 className="text-4xl sm:text-5xl text-indigo-600 font-bold tracking-tight drop-shadow-lg">
               Professional Recognitions
             </h3>
           </div>
@@ -84,7 +76,7 @@ export default function ScholarshipsRecognitions() {
                 className="flex items-start gap-5 bg-white/10 border border-white/25 backdrop-blur-md px-8 py-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.04] transition duration-350 ease-in-out cursor-default"
               >
                 <FaStar className="mt-1 text-yellow-400 text-2xl flex-shrink-0 drop-shadow" />
-                <p className="text-base sm:text-lg text-white leading-relaxed font-medium tracking-wide">
+                <p className="text-base sm:text-lg  leading-relaxed font-medium tracking-wide">
                   {item}
                 </p>
               </li>
