@@ -1,20 +1,17 @@
 'use client'
 
 import {
+  
   FaCloud, FaMicrochip, FaProjectDiagram, FaRobot, FaSatelliteDish,
   FaSwatchbook, FaNetworkWired, FaCode
 } from "react-icons/fa";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-export default function SkillsPage() {
-  useEffect(() => {
-    AOS.init({ 
-      duration: 900, 
-      once: true, 
-      easing: 'ease-in-out' });
-  }, []);
+
+
+
+
+export default function skillspage() {
+ 
 
   const skills = [
     { name: "Internet of Things (IoT)", icon: <FaNetworkWired />, desc: "Interconnected systems with sensors, microcontrollers (Arduino, ESP32), and protocols like MQTT, BLE, and HTTP." },
@@ -59,8 +56,7 @@ export default function SkillsPage() {
             <div
               key={i}
               className="rounded-2xl border border-gray-200 bg-white shadow-md hover:shadow-lg p-6 transition duration-300"
-              data-aos="fade-up"
-              data-aos-delay={i * 80}
+              
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="text-indigo-600 text-3xl bg-indigo-100 p-3 rounded-full shadow-inner">
@@ -105,8 +101,7 @@ export default function SkillsPage() {
             <div
               key={idx}
               className="bg-white border border-gray-200 p-4 rounded-xl shadow hover:shadow-md text-sm text-gray-800"
-              data-aos="fade-up"
-              data-aos-delay={idx * 60}
+             
             >
               {course}
             </div>
@@ -116,3 +111,4 @@ export default function SkillsPage() {
     </main>
   );
 }
+ 
