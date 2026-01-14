@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect ,useState} from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const patents = [
   // ye hai International Design Patents
@@ -62,6 +61,7 @@ const patents = [
     animation: "fade-right",
     images:['https://ik.imagekit.io/vtbtnuxcb/pettens/Remote%20Controlled%20Helicopter%20drone.pdf?updatedAt=1749154630190']
   },
+    
   // ye hai national Design Patents
   {
     title: "IoT Based Smart Drip Irrigation System",
@@ -103,28 +103,19 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     setIsImageLoading(true);
   };
 
-  useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
-     
-      once: true, 
-     
-      easing: 'ease-in-out'
-    
-    });
-  }, []);
+
 
   return (
     <section className="min-h-screen overflow-x-hidden px-4 md:px-16 py-16 bg-gradient-to-b from-white to-slate-50 text-black">
-  <div className="max-w-7xl mx-auto">
+<div className="max-w-7xl mx-auto">
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
       {patents.map((patent, index) => (
         <div
           key={index}
-          data-aos={patent.animation}
+         
           className="flex flex-col justify-between h-full border border-gray-200 rounded-2xl p-6 bg-white shadow-md hover:shadow-xl transition-all duration-300"
         >
-          <div>
+     <div>
             <h3 className="text-lg font-semibold text-slate-800 mb-3 leading-snug">
               {patent.title}
             </h3>
@@ -135,19 +126,19 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
               </p>
             )}
 
-            {patent.applicationNumber && (
+      {patent.applicationNumber && (
               <p className="text-sm text-slate-700 mb-1">
                 <span className="font-medium text-slate-900">Application Number:</span> {patent.applicationNumber}
               </p>
             )}
 
-            <p className="text-sm text-slate-700 mb-1">
+        <p className="text-sm text-slate-700 mb-1">
               <span className="font-medium text-slate-900">Country:</span> {patent.country}
             </p>
 
             {patent.status && (
               <p className="text-sm text-slate-700 mb-1">
-                <span className="font-medium text-slate-900">Status:</span>{' '}
+       <span className="font-medium text-slate-900">Status:</span>{' '}
                 <span
                   className={`inline-block px-2 py-0.5 rounded-md text-xs font-semibold
                     ${
@@ -162,19 +153,19 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             )}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+    <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
             <span className="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800">
               {patent.type}
             </span>
 
-            {patent.images?.length > 0 && (
+        {patent.images?.length > 0 && (
               <button
                 onClick={() => setSelectedImages(patent.images)}
                 className="cursor-pointer bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-full text-sm font-medium shadow transition duration-200"
               >
                 View Patent
               </button>
-            )}
+        )}
           </div>
         </div>
       ))}
@@ -191,12 +182,12 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       aria-modal="true"
     >
       <div
-        className="relative md:w-full w-fit md:ml-0   max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
+        className="relative md:w-full w-fit md:ml-0  bg-white max-w-6xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
        
         <button
-          className="absolute top-3 cursor-pointer md:right-[300px] right-3 text-black bg-gray-300 hover:bg-gray-500 rounded-full w-8 h-8 text-xl flex items-center justify-center"
+          className="absolute top-3 cursor-pointer md:right-[200px] right-3 text-black bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 text-xl flex items-center justify-center"
           onClick={closeModal}
           aria-label="Close modal"
         >
@@ -223,7 +214,7 @@ const isMobile =  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             ? `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(img)}`
             : img
         }
-        className="w-full  md:ml-[800px] sm:max-w-[95%] md:w-[100%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
+        className="w-full max-w-[100%]  sm:max-w-[95%] md:max-w-[90%] xl:max-w-[800px] h-[70vh] rounded-xl border shadow-lg"
         onLoad={() => setIsImageLoading(false)}
         title={`Patent PDF ${i + 1}`}
       />
