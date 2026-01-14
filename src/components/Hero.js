@@ -1,9 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+
 import Link from 'next/link';
 import photo from '../../public/as.jpg';
 
@@ -20,9 +18,7 @@ import {
 } from 'react-icons/fa';
 
 export default function Hero() {
-  useEffect(() => {
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-  }, []);
+ 
 
   const expertise = [
     { icon: <FaBrain />, text: 'Swarm Intelligence' },
@@ -35,7 +31,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative w-full bg-white overflow-hidden px-4 py-16 md:py-8  text-gray-900">
+    <section className="relative w-full bg-white overflow-hidden px-4 py-16 md:py-24 text-gray-900">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
 
         <div className="w-full md:w-7/12 space-y-6 text-sm md:text-base">
@@ -124,7 +120,7 @@ export default function Hero() {
 
         <div className="hidden md:block w-full md:w-[400px] relative">
           <div
-          
+           
             className="absolute  md:top-[-440px] left-0 right-0 mx-auto w-fit z-20 rounded-xl border border-white/10 backdrop-blur-md bg-white/10 p-2 shadow-2xl"
           >
             <Image
