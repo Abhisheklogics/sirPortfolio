@@ -1,10 +1,5 @@
 'use client';
 
-
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
  const publications = [
     {
       no: 1,
@@ -190,20 +185,14 @@ import 'aos/dist/aos.css';
   ];
 
 export function CardSpotlightPublications() {
-  useEffect(() => {
-    AOS.init({ 
-      duration: 1100,
-       once: true, 
-      easing: 'ease-in-out'
-     });
-  }, []);
+ 
 
   return (
     <section className="px-6 md:px-16 py-16 bg-gradient-to-b from-white to-slate-50 text-black">
       <div className="max-w-7xl mx-auto">
       
-
-        <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+<h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-800">📄 Research Publications</h2>
+        <div  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
           {publications.map((item, idx) => (
             <div
               key={idx}
@@ -224,11 +213,7 @@ export function CardSpotlightPublications() {
 }
 
 export function CardSpotlightBooks() {
-  useEffect(() => {
-    AOS.init({
-      
-       duration: 1100, once: true, easing: 'ease-in-out' });
-  }, []);
+
 
   const renderCard = (item, idx) => (
     <div
@@ -255,14 +240,14 @@ export function CardSpotlightBooks() {
       <div className="max-w-7xl mx-auto space-y-20">
         <section>
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-blue-800">📘 Book Chapters</h2>
-          <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {bookChaptersData.map(renderCard)}
           </div>
         </section>
 
         <section>
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-blue-800">📝 Proposed Books</h2>
-          <div data-aos="fade-right" className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div  className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {proposedBooksData.map(renderCard)}
           </div>
         </section>
