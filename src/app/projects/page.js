@@ -1,8 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 import { FaFlask, FaProjectDiagram } from 'react-icons/fa';
 import { Button } from '@/components/ui/moving-border';
 
@@ -32,7 +30,7 @@ const fundedProjects = [
   },
 ];
 
-const supervisedProjects = [
+const supervisprojects = [
   'IoT based Automatic Irrigation System in Agriculture',
   'Smart Polyhouse using IoT',
   'Plant disease detection using Image Processing',
@@ -58,9 +56,7 @@ const supervisedProjects = [
 ];
 
 export default function Page() {
-  useEffect(() => {
-    AOS.init({ duration: 900, once: true });
-  }, []);
+
 
   return (
     <section className="min-h-screen py-20 overflow-x-hidden
@@ -68,7 +64,7 @@ export default function Page() {
       <div className="max-w-6xl mx-auto">
        
         <h1
-          data-aos="fade-down"
+         
           className="text-center font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight"
         >
           Funded <span className="text-indigo-600">Projects</span> &{' '}
@@ -77,18 +73,14 @@ export default function Page() {
 
         
         <section className="mt-20">
-          <h2
-            data-aos="fade-up"
-            className="text-2xl md:text-3xl font-semibold mb-12 text-gray-900"
-          >
+          <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-gray-900">
             Funded Research Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {fundedProjects.map((item, index) => (
               <article
                 key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 150}
+               
                 className="rounded-3xl border border-gray-300 bg-white shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1"
               >
                 <div className="p-6 md:p-8 flex flex-col justify-between h-full">
@@ -128,17 +120,16 @@ export default function Page() {
 
         <section className="mt-24">
           <h2
-            data-aos="fade-up"
+           
             className="text-2xl md:text-3xl font-semibold text-gray-900 mb-10"
           >
             Academic Projects Supervised
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {supervisedProjects.map((title, idx) => (
+            {supervisprojects.map((title, idx) => (
               <div
                 key={idx}
-                data-aos="fade-left"
-                data-aos-delay={idx * 60}
+               
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition duration-200"
               >
                 <div className="flex items-start gap-3 mb-2 text-purple-700">
